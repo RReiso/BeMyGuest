@@ -1,6 +1,6 @@
 module ApplicationHelper
   def full_title(page_title = '')
-    main_title = "Flawless Events"
+    main_title = "BeMyGuest"
     if page_title.empty?
       main_title
     else
