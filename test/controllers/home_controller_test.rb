@@ -2,7 +2,7 @@ require "test_helper"
 
 class HomeControllerTest < ActionDispatch::IntegrationTest
   def setup
-    @base_title = "Flawless Events"
+    @base_title = "BeMyGuest"
   end
 
   test "should get index" do
