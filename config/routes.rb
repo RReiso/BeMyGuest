@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  get '/contact', to: 'home#contact'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get '/contact', to: 'home#contact' # creates contact_path and contact_url
+ 
 
 end
