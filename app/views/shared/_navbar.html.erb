@@ -18,12 +18,15 @@
             RR
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><%= link_to "Edit account", root_path, class: "dropdown-item" %></li>
+
+          <li><%= link_to "Change password","#", class: "dropdown-item", "data-bs-toggle"=>"modal", "data-bs-target"=>"#exampleModal", "data-bs-whatever"=>"@mdo" %></li>
+          
             <li><hr class="dropdown-divider"></li>
             <li><%= link_to "Sign out", root_path, class: "dropdown-item" %></li>
           </ul>
         </li>
         <% else %>
+        
         <li class="nav-item ">
         <%=link_to "Contact Us", contact_path, class: "nav-link active ",  "aria-current" => "page"%>
         </li>
@@ -32,3 +35,4 @@
     </div>
       </div>
     </nav>
+          <%= render "shared/change_password_modal" %>
