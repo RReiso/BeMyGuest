@@ -1,15 +1,18 @@
 <% provide(:title, "Sign Up") %>
- <%=form_with model: @user, url: signup_path, html: {onsubmit: "return checkForm(this);"} do |f|%>
+ <%=form_with model: @user, local: true, url: signup_path, html: {onsubmit: "return checkForm(this);"} do |f|%>
 
-      <%= render 'shared/error_messages' %>
+      
 
-<section class="h-100 bg-image" style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.jpg');">
-  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+<section class="h-100 bg-image " style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.jpg');">
+
+  <div class="mask d-flex align-items-center h-100" >
+  
     <div class="container h-75">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-12 col-md-9 col-lg-7 col-xl-6 py-5">
+        <%= render 'shared/form_error_messages', form: f %>
           <div class="card" style="border-radius: 15px;">
-            <div class="card-body p-5">
+            <div class="card-body p-5 mutation">
               <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
         
@@ -40,7 +43,7 @@
                  
             </div>
                 <div class="form-check d-flex justify-content-center my-5">
-                <%= f.check_box :agree_terms, class: "form-check-input me-2", minlength: "8", maxlength: "25", required: true%>	
+                <%= f.check_box :agree_terms, class: "form-check-input me-2", required: true%>	
                  
                   <%= f.label :agree_terms, class: "form-check-label" do %>
                   I have read and agree to the 
