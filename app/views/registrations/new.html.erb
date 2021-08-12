@@ -1,3 +1,68 @@
 <% provide(:title, "Sign Up") %>
-<h1>Registrations#new</h1>
-<p>Find me in app/views/registrations/new.html.erb</p>
+ <%=form_with model: @user, url: signup_path, html: {onsubmit: "return checkForm(this);"} do |f|%>
+
+      <%= render 'shared/error_messages' %>
+
+<section class="h-100 bg-image" style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.jpg');">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-75">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6 py-5">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+        
+
+         
+
+                <div class="form-outline mb-4">
+                <%= f.text_field :name, class: "form-control form-control-lg", maxlength: "50", required: true %>
+                  
+                   <%= f.label :name, "Name", class: "form-label" %>
+                </div>
+
+                <div class="form-outline mb-4">
+        <%= f.email_field :email, class: "form-control form-control-lg", maxlength: "50", required: true%>
+                <%= f.label :email, "Email", class: "form-label" %>
+                  
+                </div>
+
+                <div class="form-outline mb-4">
+                <%= f.password_field :password, class: "form-control form-control-lg", minlength: "8", maxlength: "25", required: true%>
+                <%= f.label :password, "Password", class: "form-label" %>
+                
+                </div>
+
+                <div class="form-outline mb-4">
+        <%= f.password_field :password_confirmation, class: "form-control form-control-lg", minlength: "8", maxlength: "25", required: true%>	
+              <%= f.label :password_confirmation, "Repeat your password", class: "form-label" %>
+                 
+            </div>
+                <div class="form-check d-flex justify-content-center my-5">
+                <%= f.check_box :agree_terms, class: "form-check-input me-2", minlength: "8", maxlength: "25", required: true%>	
+                 
+                  <%= f.label :agree_terms, class: "form-check-label" do %>
+                  I have read and agree to the 
+                  <%= link_to "Terms and Conditions", root_path, class: "fw-bold text-body" %>  
+                  <% end %>
+                  
+                </div>
+
+                <div class="d-flex justify-content-center">
+                 <%=f.submit "Register", data: { disable_with: false}, class: "btn btn-success btn-block btn-lg gradient-custom-4 text-body"%>
+                
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">Already have an account?  <%= link_to "Log in", root_path, class: "fw-bold text-body" %></p>
+
+           
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ <% end %>
