@@ -9,3 +9,14 @@ window.checkForm = function (form) {
 		return false;
 	}
 };
+
+document.addEventListener("turbolinks:load", function () {
+	let errors = document.querySelectorAll(".field_with_errors");
+
+	errors.forEach((err) => {
+		console.log(err.firstChild.className);
+		if (err.firstChild.className === "form-control form-control-lg") {
+			err.firstChild.classList.add("is-invalid");
+		}
+	});
+});
