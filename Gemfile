@@ -28,6 +28,8 @@ gem 'bcrypt', '3.1.13'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
+gem "prettier"
+
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record

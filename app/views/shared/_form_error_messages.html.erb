@@ -1,5 +1,5 @@
 <% if form.object.errors.any? %>
-<div id="form_errors">
+<div id="error_explanation">
 <div class="alert alert-danger alert-dismissible d-flex align-items-center flex-column">
 The form contains <%= pluralize(form.object.errors.count,
 "error") %>.
