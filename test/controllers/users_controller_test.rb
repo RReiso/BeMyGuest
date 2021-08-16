@@ -12,11 +12,5 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_select "title", "Home | #{@base_title}"
   end
 
-  # test "should get show" do
-  #   get "/users/1"
-  #   assert_response :success
-  #   assert_select "title", "Home | #{@base_title}"
-  # end
-
  
 end

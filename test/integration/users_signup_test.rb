@@ -8,7 +8,8 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
       post signup_path, params: { user: { name: "",
       email: "user@user",
       password: "123",
-      password_confirmation: "xxx" } }
+      password_confirmation: "xxx",
+      terms_and_conditions: " " } }
     end
     assert_template 'registrations/new'
     assert_select 'div#error_explanation'
@@ -18,7 +19,8 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
 get signup_path
 assert_difference 'User.count', 1 do
 post signup_path, params: { user: { name: "User User", email: "user@user.com", password: "11111111",
-password_confirmation: "11111111" } }
+password_confirmation: "11111111",
+terms_and_conditions: "1" } }
 end
 follow_redirect!
 assert_template 'users/show'
