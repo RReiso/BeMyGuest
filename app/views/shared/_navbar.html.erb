@@ -1,12 +1,16 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-success ">
       <div class="container-fluid">
+      <% if logged_in? %>
+        <%= link_to image_tag("", class: "menu-icon", alt: "BeMyGuest logo"), current_user, class: "nav-link" %>
+        <% else %>
         <%= link_to image_tag("", class: "menu-icon", alt: "BeMyGuest logo"), root_path, class: "nav-link" %>
+        <% end %>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
        <div class="collapse navbar-collapse" id="navbarSupportedContent">
        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <% if [1,2].sample == [1,2].sample %>
+      <% if logged_in? %>
         <li class="nav-item">
          <%=link_to "+ New", root_path, class: "nav-link active",  "aria-current" => "page" %>
         </li>
@@ -15,14 +19,14 @@
         </li>
          <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            RR
+            <%=current_user.name[0..1] %>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
           <li><%= link_to "Change password","#", class: "dropdown-item", "data-bs-toggle"=>"modal", "data-bs-target"=>"#exampleModal", "data-bs-whatever"=>"@mdo" %></li>
           
             <li><hr class="dropdown-divider"></li>
-            <li><%= link_to "Sign out", root_path, class: "dropdown-item" %></li>
+            <li><%= link_to "Log out", logout_path, method: :delete, class: "dropdown-item" %></li>
           </ul>
         </li>
         <% else %>
