@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  get 'users/show'
   root 'home#index'
+  post '/', to: "sessions#create"
+  get "/login", to: "home#index"
+
+  delete "/logout", to: "sessions#destroy"
 
   get '/contact', to: 'home#contact' # creates contact_path and contact_url
 
