@@ -23,11 +23,12 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-          <li><%= link_to "Change password","#", class: "dropdown-item", "data-bs-toggle"=>"modal", "data-bs-target"=>"#exampleModal", "data-bs-whatever"=>"@mdo" %></li>
+          <li><%= link_to "Change password","#", class: "dropdown-item", "data-bs-toggle"=>"modal", "data-bs-target"=>"#passwordModal", "data-bs-whatever"=>"@mdo" %></li>
           
             <li><hr class="dropdown-divider"></li>
             <li><%= link_to "Log out", logout_path, method: :delete, class: "dropdown-item" %></li>
           </ul>
+          <%= render "shared/change_password_modal" %>
         </li>
         <% else %>
         
@@ -39,4 +40,3 @@
     </div>
       </div>
     </nav>
-          <%= render "shared/change_password_modal" %>

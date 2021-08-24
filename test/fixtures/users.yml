@@ -5,6 +5,10 @@ one:
   email: test@example.com
   password_digest: <%= User.digest('1234abcd') %>
 
+two:
+  name: Second User
+  email: user@test.lv
+  password_digest: <%= User.digest('1234abcd') %>
 
 
 
