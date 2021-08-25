@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
 before_action :require_user_loged_in, only: %i[show update]
 before_action :require_correct_user, only: %i[show update]
+before_action :require_admin_user,  only: %i[index destroy]
 
+def index
+  @users = User.all
+end
 
 
   def show
@@ -12,7 +16,6 @@ before_action :require_correct_user, only: %i[show update]
   # end
 
   def update
-
 if @user.update(user_params)
 flash.now[:success] = "Password changed!"
 else
@@ -20,6 +23,12 @@ else
 end
 render 'show'
 end
+
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User deleted"
+    redirect_to users_url
+  end
 
 private
 
@@ -35,7 +44,14 @@ end
 
 def require_correct_user
 @user = User.find(params[:id])
-redirect_to(root_url) unless current_user?(@user)
+redirect_to(current_user) unless current_user?(@user)
 end
 
+ def require_admin_user
+  if !logged_in?
+    redirect_to root_path
+  else
+      redirect_to(current_user) unless current_user.admin?
+  end
+    end
 end

@@ -22,8 +22,7 @@ log_in_as(@user)
 get user_path(@user)
 assert_template 'users/show'
 patch user_path(@user), params: { user: {
-password:
-"aaaaaaaa",
+password: "aaaaaaaa",
 password_confirmation: "aaaaaaaa" } }
 assert_not flash.empty?
 assert_select 'div.alert-success', 'Password changed!'
