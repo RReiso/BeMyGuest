@@ -3,7 +3,7 @@
 one:
   name: Example User
   email: test@example.com
-  admin: 1
+  admin: true
   password_digest: <%= User.digest('1234abcd') %>
 
 two:
