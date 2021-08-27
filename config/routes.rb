@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   get '/signup', to: 'registrations#new'
   post '/signup', to: 'registrations#create'
 
-  resources :users
+  resources :users, only: %i[index show update destroy]
+  resources :account_activations, only: %i[edit]
+
  
 
 end

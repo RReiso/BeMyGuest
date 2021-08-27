@@ -5,11 +5,17 @@ one:
   email: test@example.com
   admin: true
   password_digest: <%= User.digest('1234abcd') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
 
 two:
   name: Second User
   email: user@test.lv
   password_digest: <%= User.digest('1234abcd') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
 
 
 
