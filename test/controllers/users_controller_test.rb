@@ -57,7 +57,7 @@ assert_redirected_to @second_user
 end
 
   test "index as admin with delete links" do
-log_in_as(@user)
+log_in_as(@admin)
 get users_path
 assert_template 'users/index'
 assigns(:users).each do |user|
@@ -66,6 +66,8 @@ assigns(:users).each do |user|
         assert_select 'a[href=?]', user_path(user), text: 'delete'
       end
     end
+# assert_select 'a[href=?]', user_path(@second_user), text: @second_user.name
+# assert_select 'a[href=?]', user_path(@second_user), text: 'delete'
 assert_difference 'User.count', -1 do
 delete user_path(@second_user)
 end
