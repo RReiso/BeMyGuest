@@ -4,13 +4,13 @@ before_action :require_correct_user, only: %i[show update]
 before_action :require_admin_user,  only: %i[index destroy]
 
  def index
-    @users = User.where(activated: true)
+    @users = User.all
   end
 
 
   def show
      @user = User.find(params[:id])
-    redirect_to root_url and return unless @user.activated?
+  
   end
 
   #   def edit
@@ -45,7 +45,7 @@ redirect_to login_url, warning: "Log in to continue." unless logged_in?
 end
 
 def require_correct_user
-@user = User.find(params[:id])
+@user = User.find_by(id: params[:id])
 redirect_to(current_user) unless current_user?(@user)
 end
 
