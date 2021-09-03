@@ -19,11 +19,11 @@ before_action :require_admin_user,  only: %i[index destroy]
 
   def update
 if @user.update(user_params)
-flash.now[:success] = "Password changed!"
+flash[:success] = "Password changed!"
 else
- flash.now[:danger]='An error occured while changing password. Please try again.'
+ flash[:danger]='An error occured while changing password. Please try again.'
 end
-render 'show'
+redirect_to @user
 end
 
   def destroy

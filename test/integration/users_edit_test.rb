@@ -12,6 +12,7 @@ assert_template 'users/show'
 patch user_path(@user), params: { user: { 
 password:"123abc",
 password_confirmation: "abc123" } }
+follow_redirect!
 assert_template 'users/show'
 assert_not flash.empty?
 assert_select 'div.alert-danger', 'An error occured while changing password. Please try again.'
@@ -26,6 +27,7 @@ patch user_path(@user), params: { user: {
 password: "aaaaaaaa",
 password_confirmation: "aaaaaaaa" } }
 assert_not flash.empty?
+follow_redirect!
 assert_select 'div.alert-success', 'Password changed!'
 assert_template 'users/show'
 @user.reload
