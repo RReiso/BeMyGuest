@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   post '/signup', to: 'registrations#create'
 
   resources :users do
-    resources :events
+    resources :events, only: %i[create show update, destroy]
   end
  
 
