@@ -12,14 +12,3 @@ two:
   admin: false
   password_digest: <%= User.digest('1234abcd') %>
 
-
-
-
-
-# one:
-#   name: MyString
-#   email: MyString
-
-# two:
-#   name: MyString
-#   email: MyString
