@@ -10,7 +10,7 @@ module UsersHelper
       else
         User.find_by(id: params[:user_id])
       end
-
+    
     redirect_to(current_user) unless current_user?(@user)
   end
 end

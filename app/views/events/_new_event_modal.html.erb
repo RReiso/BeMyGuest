@@ -1,0 +1,35 @@
+<div class="modal fade" id="newEventModal" tabindex="-1" aria-labelledby="new_event" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="new_event">Create Event</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+        <%=form_with model: [@user || @current_user, @new_event], local: true do |f| %>
+         
+      <div class="modal-body">
+          <div class="mb-3">
+            <%= f.label :name, " Name", class: "col-form-label" %>
+            <%= f.text_field :name,  class: "form-control form-control-md", required: true%>
+           </div>
+           <div class="mb-3">
+            <%= f.label :event_date, "Date", class: "col-form-label" %>
+            <%= f.date_select :event_date,  class: "form-control form-control-md", required: true%>
+           </div>
+           <div class="mb-3">
+            <%= f.label :event_time, "Time", class: "col-form-label" %>
+            <%= f.time_select :event_time,  class: "form-control form-control-md", required: true%>
+           </div>
+           <div class="mb-3">
+            <%= f.label :place, "Place", class: "col-form-label" %>
+            <%= f.text_field :place,  class: "form-control form-control-md", required: true%>
+           </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <%=f.submit "Create", class: "btn btn-primary"%>
+        
+      </div>
+         <% end %>
+    </div>
+  </div>
+</div>

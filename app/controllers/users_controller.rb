@@ -11,6 +11,7 @@ before_action :require_admin_user,  only: %i[index destroy]
   def show
      @user = User.find(params[:id])
       	@events = @user.events
+        
   end
 
   #   def edit
