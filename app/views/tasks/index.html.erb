@@ -7,10 +7,20 @@
 
     <div class="row flex-nowrap">
         
+
+
 <%= render 'events/event_navbar'%>
+<div class="right">
+
 <% if !@tasks.blank? %>
-<%= render 'to_do_list'%>
+<%= render 'tasks/to_do_list'%>
+
 <%end%>
+<%= render 'tasks/new_task'%>
+</div>
+
+
+
 
 
   </div>

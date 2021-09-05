@@ -6,6 +6,7 @@
       <th>Date</th>
       <th>Time</th>
       <th>Place</th>
+      <th></th>
     </tr>
   </thead>
  
@@ -22,6 +23,7 @@
     
         <td><%= event.event_time.to_formatted_s(:time)     %></td>
         <td><%= event.place   %></td>
+        <td><%=link_to "", user_event_path(@user, event), method: :delete, data: {confirm: "Are you sure?"}, class: " btn-close", type: :button%></td>
       </tr>
     <% end %>
   </tbody>
