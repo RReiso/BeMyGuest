@@ -5,9 +5,11 @@ event_one:
   event_date: 2021-09-02
   event_time: 2021-09-02 22:18:27
   place: "My home"
+  user_id: 980190962
 
 event_two:
   name: Party
   event_date: 2021-09-02
   event_time: 2021-09-02 22:18:27
   place: "Central Park"
+  user_id: 980190962

@@ -1,9 +1,6 @@
 require 'test_helper'
 
 class UsersSignupTest < ActionDispatch::IntegrationTest
-	def setup
-		ActionMailer::Base.deliveries.clear
-	end
 
 	test 'invalid signup information' do
 		get signup_path
@@ -25,7 +22,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
 		assert_select 'div#error_explanation'
 	end
 
-	test 'valid signup information with account activation' do
+	test 'valid signup information' do
 		get signup_path
 		assert_difference 'User.count', 1 do
 			post signup_path,
