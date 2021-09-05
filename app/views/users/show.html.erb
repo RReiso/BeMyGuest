@@ -1,9 +1,12 @@
 <% provide(:title, "Home") %>
+
 <h1>
 <%= @user.name %>
 </h1>
+<section>
 <% if !@events.blank? %>
-<%= render 'users/event' %>
+<%= render 'users/event_table' %>
 <%end%>
+</section>
 
 

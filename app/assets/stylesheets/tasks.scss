@@ -1,0 +1,11 @@
+.task-table{
+  width:20rem;
+}
+
+ input:checked + label {
+      text-decoration: line-through;
+    }
+
+    .task-label{
+      margin: 0 1rem;
+    }

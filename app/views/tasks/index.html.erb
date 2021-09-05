@@ -1,0 +1,19 @@
+<% provide(:title, 'ToDo') %>
+
+
+<section>
+
+<div class="container-fluid">
+
+    <div class="row flex-nowrap">
+        
+<%= render 'events/event_navbar'%>
+<% if !@tasks.blank? %>
+<%= render 'to_do_list'%>
+<%end%>
+
+
+  </div>
+
+</div>
+</section>

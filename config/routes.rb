@@ -10,8 +10,11 @@ Rails.application.routes.draw do
   get '/signup', to: 'registrations#new'
   post '/signup', to: 'registrations#create'
 
+
   resources :users do
-    resources :events, only: %i[create show update destroy]
+    resources :events, only: %i[create show update destroy] do
+      resources :tasks, only: %i[index create update destroy]
+    end
   end
  
 

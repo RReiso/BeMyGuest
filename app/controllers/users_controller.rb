@@ -14,10 +14,6 @@ before_action :require_admin_user,  only: %i[index destroy]
         
   end
 
-  #   def edit
-  #   @user = User.find(params[:id])
-  # end
-
   def update
 if @user.update(user_params)
 flash[:success] = "Password changed!"

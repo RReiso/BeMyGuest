@@ -20,14 +20,19 @@ user2 = User.create!(name:  "Second User",
              admin:     false,
             )
 
-5.times do |i|
-  user1.events.create!(name: ["Grandma's birthday","Graduation", "House party", "Wedding"].sample,
-                      event_date: "2021-#{rand(11)+1}-#{rand(30)+1}",
-                      event_time: "2021-10-09 #{rand(20)+1}:#{[00,30,45].sample}:00 UTC",
-                    place: ['My home', "Central Park", "Big Al's Restaurant", "at Cindy's"].sample)
 
-                     user2.events.create!(name: ["Grandma's birthday","Graduation", "House party", "Wedding"].sample,
+users = [user1, user2]
+            name = ["Grandma's birthday","Graduation", "House party", "Wedding", "Disco"]
+            place = ['My home', "Central Park", "Big Al's Restaurant", "at Cindy's", "Beach"]
+            tasks = ['Buy a cake', 'Order food', 'Invite guests', 'Find a band', 'Get a haircut']
+
+        2.times do |n|
+5.times do |i|
+  users[n].events.create!(name: name[i],
                       event_date: "2021-#{rand(11)+1}-#{rand(30)+1}",
                       event_time: "2021-10-09 #{rand(20)+1}:#{[00,30,45].sample}:00 UTC",
-                    place: ['My home', "Central Park", "Big Al's Restaurant", "at Cindy's"].sample)
+                    place: place[i])
+
+  users[n].events.first.tasks.create!(description: tasks[i])
+end
 end
