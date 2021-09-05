@@ -5,12 +5,20 @@ class TasksController < ApplicationController
 
     def index
       @tasks =  Task.where(event_id: params[:event_id])
+       @task = Task.find_by(id:params[:id])
     end
   def create
   end
   def update
+   
   end
   def destroy
+  
+    
+      @task = Task.find_by(id:params[:id])
+    @task.destroy
+    redirect_to user_event_tasks_path(@user,@event)
+
   end
 
   private
