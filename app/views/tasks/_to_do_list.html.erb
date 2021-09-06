@@ -17,12 +17,12 @@
       <tr>
         
     
-        <td><input type="checkbox" id="task-<%=task.id%>"><label class="task-label" for="task-<%=task.id%>" data-completed="<%=task.completed %>"><%=task.description%></label></td>
+        <td><input type="checkbox" class="check-box" data-completed="<%=task.completed %>" id="<%=task.id%>"><label class="task-label" for="<%=task.id%>" ><%=task.description%></label></td>
         <td>  <%= link_to "Edit","#", class: "btn btn-outline-secondary btn-sm", "data-bs-toggle"=>"modal", "data-bs-target"=>"#editTaskModal-#{task.id}", "data-bs-whatever"=>"@mdo" %></td>
         <td><%=link_to "", user_event_task_path(@user, @event, task), method: :delete, class: " btn-close", type: :button%></td>
       </tr>
-      <%= render "tasks/edit_task_modal" %>
     <% end %>
+      <%= render "tasks/edit_task_modal" %>
   </tbody>
    
 

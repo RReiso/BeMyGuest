@@ -16,6 +16,9 @@ Rails.application.routes.draw do
       resources :tasks, only: %i[index create update destroy]
     end
   end
+
+  # post '/tasks/:id', to: 'tasks#update_task_state'
+  post '/users/:user_id/events/:event_id/task/:id', to: 'tasks#update_task_state'
  
 
 end

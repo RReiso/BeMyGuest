@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
-	before_action :require_user_logged_in, only: %i[index create update destroy]
-	before_action :require_correct_user, only: %i[index create update destroy]
+	before_action :require_user_logged_in, only: %i[index create update update_task_state destroy]
+	before_action :require_correct_user, only: %i[index create update update_task_state destroy]
 	before_action :require_correct_event, only: %i[index create update destroy]
 	before_action :get_task, only: %i[update destroy]
 
@@ -23,6 +23,11 @@ class TasksController < ApplicationController
 		redirect_to user_event_tasks_path(@user, @event)
 	end
 
+  def update_task_state
+    task = Task.where(id: params[:id])
+    task.update(task_state_params)
+  end
+
 	def destroy
 		@task.destroy
 		redirect_to user_event_tasks_path(@user, @event)
@@ -32,6 +37,10 @@ class TasksController < ApplicationController
 
 	def task_params
 		params.require(:task).permit(:description)
+	end
+
+  def task_state_params
+		params.require(:data).permit(:completed)
 	end
 
 	def get_task
