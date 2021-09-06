@@ -31,7 +31,6 @@ class TasksChangeTaskStateTest < ActionDispatch::IntegrationTest
 		assert_select 'input.check-box' do
 			assert_select '[data-completed=?]', 'true'
 		end
-		assert flash.empty?
 	end
 
   test 'unsuccessful state change' do
@@ -48,6 +47,5 @@ class TasksChangeTaskStateTest < ActionDispatch::IntegrationTest
 		assert_select 'input.check-box' do
 			assert_select '[data-completed=?]', 'false'
 		end
-		assert flash.empty?
 	end
 end
