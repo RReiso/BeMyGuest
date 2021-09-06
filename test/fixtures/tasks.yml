@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  description: MyString
+  description: "Buy a cake"
   completed: false
   event: one
 
 two:
-  description: MyString
+  description: "Clean the house"
   completed: false
-  event: two
+  event: one

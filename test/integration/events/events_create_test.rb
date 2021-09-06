@@ -20,6 +20,7 @@ name: "Grandma's birthday",
         event_time: 'Not a time',
         place: 'My home' } }
 		end
+    follow_redirect!
 		assert_template 'users/show'
 		assert_not flash.empty?
     assert_select 'div.alert-danger', 'Error creating event. Please try again.'
