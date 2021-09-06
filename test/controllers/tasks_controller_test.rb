@@ -51,4 +51,27 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
     assert flash.empty?
     assert_redirected_to @second_user
   end
+
+ test 'should redirect create when not logged in' do
+    put user_event_task_path(@user, @event, @task),
+          params: {
+            task: {
+              description: 'Call James'
+            }
+          }
+    assert_not flash.empty?
+    assert_redirected_to login_url
+  end
+
+  test 'should redirect create when logged in as wrong user' do
+    log_in_as(@second_user)
+    put user_event_task_path(@user, @event, @task),
+          params: {
+            task: {
+              description: 'Call James'
+            }
+          }
+    assert flash.empty?
+    assert_redirected_to @second_user
+  end
 end

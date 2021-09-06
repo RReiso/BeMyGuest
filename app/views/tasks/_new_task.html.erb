@@ -1,6 +1,6 @@
 <div class="task-new">
 <div>
-  <%= form_with model: [@current_user, @event,@new_task], local: true  do |f| %>
+  <%= form_with model: [@current_user, @event, @new_task], local: true  do |f| %>
     <%= f.text_field :description,
           class: "task-input",
           placeholder: "Your task ...",

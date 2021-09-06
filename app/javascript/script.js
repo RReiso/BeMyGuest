@@ -36,23 +36,23 @@ function checkInputBoxes() {
 
 function changeState() {
 	taskID = this.getAttribute("id");
-	let state = "";
+	let isCompleted = "";
 	if (this.checked) {
 		this.setAttribute("data-completed", "true");
-		state = "true";
+		isCompleted = "true";
 	} else {
 		this.setAttribute("data-completed", "false");
-		state = "false";
+		isCompleted = "false";
 	}
-	sendData(state, taskID);
+	sendData(isCompleted, taskID);
 }
 
-function sendData(state, taskID) {
+function sendData(isCompleted, taskID) {
 	const metaCsrf = document.querySelector("meta[name='csrf-token']");
 	const csrfToken = metaCsrf.getAttribute("content");
-	const params = { completed: `${state}` };
+	const params = { completed: `${isCompleted}` };
 
-	fetch(`task/${taskID}`, {
+	fetch(`tasks/${taskID}`, {
 		method: "POST",
 		body: JSON.stringify({
 			data: params,
