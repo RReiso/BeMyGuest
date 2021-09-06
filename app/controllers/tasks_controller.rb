@@ -1,8 +1,8 @@
 class TasksController < ApplicationController
 	before_action :require_user_logged_in, only: %i[index create update update_task_state destroy]
 	before_action :require_correct_user, only: %i[index create update update_task_state destroy]
-	before_action :require_correct_event, only: %i[index create update destroy]
-	before_action :get_task, only: %i[update destroy]
+	before_action :require_correct_event, only: %i[index create update update_task_state destroy]
+	before_action :get_task, only: %i[update update_task_state destroy]
 
 	def index
 		@tasks = Task.where(event_id: params[:event_id])
@@ -24,8 +24,7 @@ class TasksController < ApplicationController
 	end
 
   def update_task_state
-    task = Task.where(id: params[:id])
-    task.update(task_state_params)
+    @task.update(task_state_params)
   end
 
 	def destroy

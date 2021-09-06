@@ -13,7 +13,7 @@
                   <h6 class="card-subtitle mb-1 text-muted">Place</h6>
                   <p class="card-text mb-3"><%=@event.place  %></p>
                  
-                <%= link_to "Edit","#", class: "btn btn-warning btn-sm gradient-custom-5", "data-bs-toggle"=>"modal", "data-bs-target"=>"#editEventModal", "data-bs-whatever"=>"@mdo" %>
+                <%= link_to "Edit","#", class: "btn btn-warning btn-sm gradient-custom-5", "data-bs-toggle"=>"modal", "data-bs-target"=>"#editEventModal-#{@event.id}", "data-bs-whatever"=>"@mdo" %>
                 </div>
               </div>
               <%= render "events/edit_event_modal" %>

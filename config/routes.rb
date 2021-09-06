@@ -9,16 +9,15 @@ Rails.application.routes.draw do
 
   get '/signup', to: 'registrations#new'
   post '/signup', to: 'registrations#create'
-
+  
+  post '/users/:user_id/events/:event_id/task/:id', to: 'tasks#update_task_state'
 
   resources :users do
     resources :events, only: %i[create show update destroy] do
-      resources :tasks, only: %i[index create update destroy]
+      resources :tasks, only: %i[index create update destroy update_task_state]
     end
   end
 
-  # post '/tasks/:id', to: 'tasks#update_task_state'
-  post '/users/:user_id/events/:event_id/task/:id', to: 'tasks#update_task_state'
  
 
 end
