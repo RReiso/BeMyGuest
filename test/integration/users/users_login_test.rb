@@ -12,7 +12,7 @@ post root_path, params: { session: { email: "", password:
 "" } }
 assert_template 'home/index'
 assert_not flash.empty?
-get contact_path
+get login_path
 assert flash.empty?
 end
 
@@ -47,7 +47,7 @@ password: "invalid1" }
 assert_not is_logged_in?
 assert_template 'home/index'
 assert_not flash.empty?
-get contact_path
+get login_path
 assert flash.empty?
 end
 
