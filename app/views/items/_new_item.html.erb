@@ -1,6 +1,7 @@
 <div class="object-new">
 <div>
   <%= form_with model: [@current_user, @event, @new_item], local: true  do |f| %>
+  <%= f.label :name, "New item", class: "sr-only" %>
     <%= f.text_field :name,
           class: "object-input",
           placeholder: "New item ...",

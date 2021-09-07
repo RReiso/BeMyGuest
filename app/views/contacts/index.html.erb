@@ -4,6 +4,8 @@
 <%= @user.name %>
 </h1>
 <section>
+<%= link_to "+ Add contact","#", class: "btn btn-primary btn-sm", "data-bs-toggle"=>"modal", "data-bs-target"=>"#createContactModal", "data-bs-whatever"=>"@mdo" %>
+<%= render 'contacts/new_contact_modal'%>
 <% if !@contacts.blank? %>
 <%= render 'contacts/contact_table' %>
 <%end%>

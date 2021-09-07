@@ -1,6 +1,7 @@
 <div class="object-new">
 <div>
   <%= form_with model: [@current_user, @event, @new_task], local: true  do |f| %>
+  <%= f.label :description, "Your task", class: "sr-only" %>
     <%= f.text_field :description,
           class: "object-input",
           placeholder: "Your task ...",

@@ -2,6 +2,7 @@ class User < ApplicationRecord
   attr_accessor :remember_token, :reset_token
 
   has_many :events, dependent: :destroy
+  has_many :contacts, dependent: :destroy
 
   before_save { self.email = email.downcase }
 
