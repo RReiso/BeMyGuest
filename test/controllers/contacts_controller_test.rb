@@ -1,18 +1,18 @@
-require "test_helper"
+# require "test_helper"
 
-class ContactsControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get contacts_index_url
-    assert_response :success
-  end
+# class ContactsControllerTest < ActionDispatch::IntegrationTest
+#   test "should get index" do
+#     get contacts_index_url
+#     assert_response :success
+#   end
 
-  test "should get update" do
-    get contacts_update_url
-    assert_response :success
-  end
+#   test "should get update" do
+#     get contacts_update_url
+#     assert_response :success
+#   end
 
-  test "should get destroy" do
-    get contacts_destroy_url
-    assert_response :success
-  end
-end
+#   test "should get destroy" do
+#     get contacts_destroy_url
+#     assert_response :success
+#   end
+# end
