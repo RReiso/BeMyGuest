@@ -20,11 +20,11 @@ class TasksChangeTaskStateTest < ActionDispatch::IntegrationTest
 	test 'successful state change' do
 		post user_event_task_path(@user, @event, @task),
 		     params: {
-				data: {
+				task: {
 					checked: 'true',
 				},
 		     },
-		     xhr: true # for Ajax requests
+		     xhr: true # for Ajax requests (works without if head :no content in controller)
 		@task.reload
 		get user_event_tasks_path(@user, @event)
 		assert_template 'tasks/index'
@@ -36,11 +36,10 @@ class TasksChangeTaskStateTest < ActionDispatch::IntegrationTest
   test 'unsuccessful state change' do
 		post user_event_task_path(@user, @event, @task),
 		     params: {
-				data: {
+				task: {
 					content: 'something else'
 				},
-		     },
-		     xhr: true # for Ajax requests
+		     }
 		@task.reload
 		get user_event_tasks_path(@user, @event)
 		assert_template 'tasks/index'

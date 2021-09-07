@@ -28,6 +28,7 @@ class ItemsController < ApplicationController
 
 	def update_item_state
 		@item.update(item_checked_params)
+    head :no_content
 	end
 
 	def destroy
@@ -42,7 +43,7 @@ class ItemsController < ApplicationController
 	end
 
 	def item_checked_params
-		params.require(:data).permit(:checked)
+		params.require(:item).permit(:checked)
     
 	end
 

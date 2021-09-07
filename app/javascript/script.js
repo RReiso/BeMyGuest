@@ -35,6 +35,7 @@ function checkInputBoxes() {
 }
 
 function changeState() {
+	const objectName = this.getAttribute("name");
 	const objectID = this.getAttribute("id");
 	let state = "";
 	if (this.checked) {
@@ -44,18 +45,16 @@ function changeState() {
 		this.setAttribute("data-checked", "false");
 		state = "false";
 	}
-	sendData(state, objectID);
+	sendData(state, objectName, objectID);
 }
 
-function sendData(state, objectID) {
+function sendData(state, objectName, objectID) {
 	const metaCsrf = document.querySelector("meta[name='csrf-token']");
 	const csrfToken = metaCsrf.getAttribute("content");
-	const params = { checked: `${state}` };
-
-	fetch(`tasks/${objectID}`, {
+	fetch(`${objectName}s/${objectID}`, {
 		method: "POST",
 		body: JSON.stringify({
-			data: params,
+			checked: `${state}`,
 		}),
 		headers: {
 			"x-csrf-token": csrfToken,

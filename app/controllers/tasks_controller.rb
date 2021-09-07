@@ -28,6 +28,7 @@ class TasksController < ApplicationController
 
 	def update_task_state
 		@task.update(task_checked_params)
+    head :no_content
 	end
 
 	def destroy
@@ -42,7 +43,7 @@ class TasksController < ApplicationController
 	end
 
 	def task_checked_params
-		params.require(:data).permit(:checked)
+		params.require(:task).permit(:checked)
     
 	end
 
