@@ -2,10 +2,10 @@
 
 one:
   description: "Buy a cake"
-  completed: false
+  checked: false
   event: one
 
 two:
   description: "Clean the house"
-  completed: false
+  checked: false
   event: one

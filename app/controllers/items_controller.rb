@@ -38,7 +38,7 @@ class ItemsController < ApplicationController
 	private
 
 	def item_params
-		params.require(:item).permit(:description)
+		params.require(:item).permit(:name)
 	end
 
 	def item_checked_params
@@ -47,6 +47,6 @@ class ItemsController < ApplicationController
 	end
 
 	def get_item
-		@item = item.find_by(id: params[:id])
+		@item = Item.find_by(id: params[:id])
 	end
 end

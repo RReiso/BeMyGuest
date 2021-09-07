@@ -21,7 +21,7 @@ class TasksChangeTaskStateTest < ActionDispatch::IntegrationTest
 		post user_event_task_path(@user, @event, @task),
 		     params: {
 				data: {
-					completed: 'true',
+					checked: 'true',
 				},
 		     },
 		     xhr: true # for Ajax requests
@@ -29,7 +29,7 @@ class TasksChangeTaskStateTest < ActionDispatch::IntegrationTest
 		get user_event_tasks_path(@user, @event)
 		assert_template 'tasks/index'
 		assert_select 'input.check-box' do
-			assert_select '[data-completed=?]', 'true'
+			assert_select '[data-checked=?]', 'true'
 		end
 	end
 
@@ -45,7 +45,7 @@ class TasksChangeTaskStateTest < ActionDispatch::IntegrationTest
 		get user_event_tasks_path(@user, @event)
 		assert_template 'tasks/index'
 		assert_select 'input.check-box' do
-			assert_select '[data-completed=?]', 'false'
+			assert_select '[data-checked=?]', 'false'
 		end
 	end
 end

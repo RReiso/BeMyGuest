@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
   belongs_to :user
   has_many :tasks, dependent: :destroy
+  has_many :items, dependent: :destroy
 
    validates :name, presence: true, length: { maximum: 40 }
    validates :user_id, presence: true

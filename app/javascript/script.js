@@ -26,7 +26,7 @@ document.addEventListener("turbolinks:load", function () {
 function checkInputBoxes() {
 	const checkBoxes = document.querySelectorAll(".check-box");
 	checkBoxes.forEach((box) => {
-		const state = box.getAttribute("data-completed");
+		const state = box.getAttribute("data-checked");
 		if (state == "true") {
 			box.checked = "true";
 		}
@@ -35,24 +35,24 @@ function checkInputBoxes() {
 }
 
 function changeState() {
-	taskID = this.getAttribute("id");
-	let isCompleted = "";
+	const objectID = this.getAttribute("id");
+	let state = "";
 	if (this.checked) {
-		this.setAttribute("data-completed", "true");
-		isCompleted = "true";
+		this.setAttribute("data-checked", "true");
+		state = "true";
 	} else {
-		this.setAttribute("data-completed", "false");
-		isCompleted = "false";
+		this.setAttribute("data-checked", "false");
+		state = "false";
 	}
-	sendData(isCompleted, taskID);
+	sendData(state, objectID);
 }
 
-function sendData(isCompleted, taskID) {
+function sendData(state, objectID) {
 	const metaCsrf = document.querySelector("meta[name='csrf-token']");
 	const csrfToken = metaCsrf.getAttribute("content");
-	const params = { completed: `${isCompleted}` };
+	const params = { checked: `${state}` };
 
-	fetch(`tasks/${taskID}`, {
+	fetch(`tasks/${objectID}`, {
 		method: "POST",
 		body: JSON.stringify({
 			data: params,

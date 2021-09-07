@@ -1,2 +1,29 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<% provide(:title, 'Shopping') %>
+
+
+<section>
+
+<div class="container-fluid">
+
+    <div class="row flex-nowrap">
+        
+
+
+<%= render 'events/event_navbar'%>
+<div class="right">
+
+<% if !@items.blank? %>
+<%= render 'items/shopping_list'%>
+
+<%end%>
+<%= render 'items/new_item'%>
+</div>
+
+
+
+
+
+  </div>
+
+</div>
+</section>

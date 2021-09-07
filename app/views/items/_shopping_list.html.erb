@@ -1,0 +1,29 @@
+
+<table class="table  object-table  ">
+  <thead>
+    <tr>
+      
+      <th>Item</th>
+      <th></th>
+      <th></th>
+ 
+    </tr>
+  </thead>
+
+<tbody>
+
+    <% @items.each do |item| %>
+ 
+      <tr>
+        
+    
+        <td><input type="checkbox" class="check-box" data-checked="<%=item.checked %>" id="<%=item.id%>"><label class="object-label" for="<%=item.id%>" ><%=item.name%></label></td>
+        <td>  <%= link_to "Edit","#", class: "btn btn-outline-secondary btn-sm", "data-bs-toggle"=>"modal", "data-bs-target"=>"#editItemModal-#{item.id}", "data-bs-whatever"=>"@mdo" %></td>
+        <td><%=link_to "", user_event_item_path(@user, @event, item), method: :delete, class: " btn-close", type: :button%></td>
+      </tr>
+    <% end %>
+      <%= render "items/edit_item_modal" %>
+  </tbody>
+   
+
+</table>
