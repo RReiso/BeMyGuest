@@ -1,0 +1,10 @@
+<% provide(:title, "AddressBook") %>
+
+<h1>
+<%= @user.name %>
+</h1>
+<section>
+<% if !@contacts.blank? %>
+<%= render 'contacts/contact_table' %>
+<%end%>
+</section>

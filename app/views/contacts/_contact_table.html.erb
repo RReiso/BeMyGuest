@@ -1,0 +1,31 @@
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Notes</th>
+      <th></th>
+    </tr>
+  </thead>
+ 
+
+    
+
+<tbody>
+
+    <% @contacts.each do |contact| %>
+ 
+      <tr>
+        <td><%=link_to contact.name, user_contact_path(@user,contact), class: "link " %></td>
+        <td><%= contact.email %></td>
+        <td><%= contact.phone   %></td>
+        <td><%= contact.notes   %></td>
+        <td>  <%= link_to "Edit","#", class: "btn btn-outline-secondary btn-sm", "data-bs-toggle"=>"modal", "data-bs-target"=>"#editContactModal-#{contact.id}", "data-bs-whatever"=>"@mdo" %></td>
+        <td><%=link_to "", user_contact_path(@user, contact), method: :delete, data: {confirm: "Are you sure?"}, class: " btn-close", type: :button%></td>
+      </tr>
+    <% end %>
+  </tbody>
+   <%= render "contacts/edit_contact_modal" %>
+</table>
