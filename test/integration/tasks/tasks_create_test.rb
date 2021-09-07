@@ -10,10 +10,12 @@ class TasksCreateTest < ActionDispatch::IntegrationTest
 		log_in_as(@user)
 		get user_event_tasks_path(@user, @event)
 		assert_template 'tasks/index'
-		assert_select 'input.btn', value: 'Create a task'
+    assert_select 'input.btn' do
+			assert_select '[value=?]', 'Add task'
+		end
 
 		# assert_equal before_count, after_count is same as:
-		assert_no_difference 'Event.count' do
+		assert_no_difference 'Task.count' do
 			post user_event_tasks_path(@user, @event),
 			     params: {
 					task: {
@@ -31,10 +33,12 @@ class TasksCreateTest < ActionDispatch::IntegrationTest
 		log_in_as(@user)
 		get user_event_tasks_path(@user, @event)
 		assert_template 'tasks/index'
-		assert_select 'input.btn', value: 'Create a task'
+		assert_select 'input.btn' do
+			assert_select '[value=?]', 'Add task'
+		end
 
-		# assert_equal before_count, after_count is same as:
-		assert_no_difference 'Event.count' do
+		# assert_equal before_count, after_count is one more:
+		assert_difference 'Task.count', 1 do
 			post user_event_tasks_path(@user, @event),
 			     params: {
 					task: {
