@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_07_154515) do
+ActiveRecord::Schema.define(version: 2021_09_08_104042) do
+
+  create_table "connections", force: :cascade do |t|
+    t.integer "event_id"
+    t.integer "contact_id"
+    t.string "RSVP"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["contact_id"], name: "index_connections_on_contact_id"
+    t.index ["event_id", "contact_id"], name: "index_connections_on_event_id_and_contact_id", unique: true
+    t.index ["event_id"], name: "index_connections_on_event_id"
+  end
 
   create_table "contacts", force: :cascade do |t|
     t.string "name", null: false
