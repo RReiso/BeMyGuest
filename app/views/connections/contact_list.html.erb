@@ -1,6 +1,9 @@
 <p>Contact list</p>
 
-
+<% if @contacts.blank?%>
+  <p>No existing contacts! </p>
+  <p>Add some people to <%=link_to "Contacts", address_book_path(@user)%> to start adding them to the guest list.</p>
+  <%else%>
 <table class="table table-hover">
   <thead>
     <tr>
@@ -17,17 +20,17 @@
 
 <tbody>
 
-        <%=form_with model: [@current_user,@event, @new_connection], local: true do |f| %>
+        <%=form_with model: [@current_user, @event, @new_connection], local: true do |f| %>
     <% @contacts.each do |contact| %>
  
       <tr>
-        <td><%=contact.name%></td>
+       <td>
+          <%= check_box("contact", "invited", {:multiple => true, class: 'form-check-input', "data-invited"=> "true"}, contact.id, nil)%>
+         <label class="" for="contact_invited_<%=contact.id%>" ><%=contact.name%></label></td>
         <td><%= contact.email %></td>
         <td><%= contact.phone   %></td>
         <td><%= contact.notes   %></td>
-         <td>
-          <%= check_box("contact", "invited", {:multiple => true, class: 'form-check-input', "data-invited"=> "true"}, contact.id, nil)%>
-         <label class="object-label sr-only" for="contact_invited_<%=contact.id%>" ></label></td>
+         
         
 
 
@@ -42,4 +45,5 @@
 </table>
 
         <p><%=f.submit "Add to guest list", class: "btn btn-primary"%></p>
+    <% end %>
     <% end %>
