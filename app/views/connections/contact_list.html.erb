@@ -1,0 +1,45 @@
+<p>Contact list</p>
+
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Notes</th>
+      <th></th>
+    </tr>
+  </thead>
+ 
+
+    
+
+<tbody>
+
+        <%=form_with model: [@current_user,@event, @new_connection], local: true do |f| %>
+    <% @contacts.each do |contact| %>
+ 
+      <tr>
+        <td><%=contact.name%></td>
+        <td><%= contact.email %></td>
+        <td><%= contact.phone   %></td>
+        <td><%= contact.notes   %></td>
+         <td>
+          <%= check_box("contact", "invited", {:multiple => true, class: 'form-check-input', "data-invited"=> "true"}, contact.id, nil)%>
+         <label class="object-label sr-only" for="contact_invited_<%=contact.id%>" ></label></td>
+        
+
+
+    
+        
+
+
+      </tr>
+         <% end %>
+  </tbody>
+  
+</table>
+
+        <p><%=f.submit "Add to guest list", class: "btn btn-primary"%></p>
+    <% end %>
