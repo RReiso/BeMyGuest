@@ -12,9 +12,10 @@
 <%= render 'events/event_navbar'%>
 <div class="right">
 <h3 class="event-name"><%=@event.name%></h3>
-<% if !@tasks.blank? %>
+<% if @tasks.blank? %>
+<p class="empty">To do list empty!</p>
+<%else%>
 <%= render 'tasks/to_do_list'%>
-
 <%end%>
 <%= render 'tasks/new_task'%>
 </div>

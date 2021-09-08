@@ -13,19 +13,19 @@ class ContactsController < ApplicationController
 		flash[:danger] = 'Error creating contact. Please try again.' unless contact
 			.save
 
-		redirect_to address_book_path(@user)
+		redirect_to user_contacts_path(@user)
 	end
 
 	def update
 		flash[:danger] = 'Error updating contact. Please try again.' unless @contact
 			.update(contact_params)
 
-		redirect_to address_book_path(@user)
+		redirect_to user_contacts_path(@user)
 	end
 
 	def destroy
 		@contact.destroy
-		redirect_to address_book_path(@user)
+		redirect_to user_contacts_path(@user)
 	end
 
 	private

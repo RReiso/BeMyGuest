@@ -10,20 +10,20 @@ class ContactsControllerTest < ActionDispatch::IntegrationTest
 
 	test 'should get index' do
 		log_in_as(@user)
-		get address_book_path(@user)
+		get user_contacts_path(@user)
 		assert_response :success
-		assert_select 'title', "AddressBook | #{@base_title}"
+		assert_select 'title', "Contacts | #{@base_title}"
 	end
 
 	test 'should redirect index when logged in as wrong user' do
 		log_in_as(@second_user)
-		get address_book_path(@user)
+		get user_contacts_path(@user)
 		assert flash.empty?
 		assert_redirected_to @second_user
 	end
 
 	test 'should redirect index when not logged in' do
-		get address_book_path(@user)
+		get user_contacts_path(@user)
 		assert_not flash.empty?
 		assert_redirected_to login_url
 	end

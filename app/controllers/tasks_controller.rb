@@ -13,7 +13,6 @@ class TasksController < ApplicationController
 	end
 
 	def create
-    p params
 		task = @event.tasks.create(task_params)
 		flash[:danger] = 'Error creating task. Please try again.' unless task.save
 

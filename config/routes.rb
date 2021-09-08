@@ -15,12 +15,12 @@ Rails.application.routes.draw do
   post '/users/:user_id/events/:event_id/tasks/:id', to: 'tasks#update_task_state'
   post '/users/:user_id/events/:event_id/items/:id', to: 'items#update_item_state'
 
-  get 'users/:user_id/address-book', to: 'contacts#index', as: :address_book
+  # get 'users/:user_id/contacts', to: 'contacts#index', as: :user_contacts
   get '/users/:user_id/events/:event_id/guests', to: 'connections#index', as: :guests
   get '/users/:user_id/events/:event_id/guests/contact_list', to: 'connections#contact_list', as: :contact_list
 
   resources :users do
-    resources :contacts, only: %i[create update destroy]
+    resources :contacts, only: %i[index create update destroy]
     resources :events, only: %i[create show update destroy] do
       resources :connections, only: %i[create destroy]
       resources :tasks, only: %i[index create update destroy update_task_state]

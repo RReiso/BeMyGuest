@@ -8,7 +8,7 @@ end
 
 	test 'invalid create contact information' do
 		log_in_as(@user)
-get address_book_path(@user)
+get user_contacts_path(@user)
 assert_template 'contacts/index'
 assert_select 'a', '+ Add contact'
 		# assert_equal before_count, after_count is same as:
@@ -28,7 +28,7 @@ name: "",
 
 	test 'valid create contact information' do
 	log_in_as(@user)
-get address_book_path(@user)
+get user_contacts_path(@user)
 assert_template 'contacts/index'
 assert_select 'a', '+ Add contact'
 		# assert_equal before_count, after_count is same as:

@@ -2,9 +2,13 @@
 
 <% if @contacts.blank?%>
   <p>No existing contacts! </p>
-  <p>Add some people to <%=link_to "Contacts", address_book_path(@user)%> to start adding them to the guest list.</p>
+  <p>Add some people to <%=link_to "Contacts", user_contacts_path(@user)%> to start adding them to the guest list.</p>
   <%else%>
+        <%=form_with model: [@current_user, @event, @new_connection], local: true do |f| %>
 <table class="table table-hover">
+ <p><%=@current_user.inspect%></p>
+    <p><%=@new_connection.inspect%></p>
+    <p><%=@event.inspect%></p>
   <thead>
     <tr>
       <th>Name</th>
@@ -20,8 +24,8 @@
 
 <tbody>
 
-        <%=form_with model: [@current_user, @event, @new_connection], local: true do |f| %>
     <% @contacts.each do |contact| %>
+   
  
       <tr>
        <td>

@@ -6,7 +6,9 @@ class ConnectionsController < ApplicationController
 	before_action :require_correct_event,
 	              only: %i[index contact_list create destroy]
 
-	def index; end
+	def index
+  @guests = @event.guests.order('LOWER(name)')
+  end
 
 	def contact_list
 		@new_connection = Connection.new
@@ -15,19 +17,19 @@ class ConnectionsController < ApplicationController
 
 	def create
 		if !params[:contact].blank?
-			invitees = Contact.where(id: contact_params[:invited])
-			invitees.each { |invitee| @event.send_invitation(invitee) }
+			guests = Contact.where(id: contact_params[:invited])
+			guests.each { |guest| @event.send_invitation(guest) }
       redirect_to guests_path(@user, @event)
     else
       redirect_to contact_list_path(@user)
 		end
 	end
 
-	# def destroy
-	# 	user = Relationship.find(params[:id]).followed
-	# 	current_user.unfollow(user)
-	# 	redirect_to user
-	# end
+	def destroy
+		guest = Contact.find(params[:id])
+    @event.cancel_invitation(guest)
+		redirect_to guests_path(@user,@event)
+	end
 
 	private
 

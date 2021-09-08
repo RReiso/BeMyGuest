@@ -8,7 +8,7 @@ class ContactsDeleteTest < ActionDispatch::IntegrationTest
 
 	test 'successful delete' do
 		log_in_as(@user)
-		get address_book_path(@user)
+		get user_contacts_path(@user)
 		assert_template 'contacts/index'
 		assert_select 'a', 'Edit'
 		assert_difference 'Contact.count', -1 do

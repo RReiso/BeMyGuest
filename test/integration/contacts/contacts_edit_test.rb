@@ -10,7 +10,7 @@ class ContactsEditTest < ActionDispatch::IntegrationTest
 
 	test 'unsuccessful edit' do
 		log_in_as(@user)
-		get address_book_path(@user)
+		get user_contacts_path(@user)
 		assert_template 'contacts/index'
 		assert_select 'a', 'Edit'
 		patch user_contact_path(@user, @contact),
@@ -31,7 +31,7 @@ class ContactsEditTest < ActionDispatch::IntegrationTest
 
 	test 'successful edit' do
 		log_in_as(@user)
-		get address_book_path(@user)
+		get user_contacts_path(@user)
 		assert_template 'contacts/index'
 		assert_select 'a', 'Edit'
 		patch user_contact_path(@user, @contact),

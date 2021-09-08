@@ -13,7 +13,9 @@
 <div class="right">
 <h3 class="event-name"><%=@event.name%></h3>
 
-<% if !@items.blank? %>
+<% if @items.blank? %>
+<p class='empty'>Shopping list empty!</p>
+<%else%>
 <%= render 'items/shopping_list'%>
 
 <%end%>
