@@ -53,7 +53,7 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
   end
 
  test 'should redirect create when not logged in' do
-    put user_event_task_path(@user, @event, @task),
+    post user_event_task_path(@user, @event, @task),
           params: {
             task: {
               description: 'Call James'
@@ -65,7 +65,7 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
 
   test 'should redirect create when logged in as wrong user' do
     log_in_as(@second_user)
-    put user_event_task_path(@user, @event, @task),
+    post user_event_task_path(@user, @event, @task),
           params: {
             task: {
               description: 'Call James'

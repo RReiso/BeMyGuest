@@ -53,7 +53,7 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
   end
 
  test 'should redirect create when not logged in' do
-    put user_event_item_path(@user, @event, @item),
+    post user_event_item_path(@user, @event, @item),
           params: {
             item: {
               name: 'Chocolate cake'
@@ -65,7 +65,7 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should redirect create when logged in as wrong user' do
     log_in_as(@second_user)
-    put user_event_item_path(@user, @event, @item),
+    post user_event_item_path(@user, @event, @item),
           params: {
             item: {
               name: 'Chocolate cake'

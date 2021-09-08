@@ -4,12 +4,12 @@ event_one:
   name: Birthday
   event_date: 2021-09-02
   event_time: 2021-09-02 22:18:27
-  place: "My home"
+  place: My home
   user: one
 
 event_two:
   name: Party
   event_date: 2021-09-02
   event_time: 2021-09-02 22:18:27
-  place: "Central Park"
+  place: Central Park
   user: one

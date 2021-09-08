@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  description: "Buy a cake"
+  description: Buy a cake
   checked: false
   event: one
 
 two:
-  description: "Clean the house"
+  description: Clean the house
   checked: false
   event: one
