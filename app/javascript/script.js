@@ -19,22 +19,34 @@ document.addEventListener("turbolinks:load", function () {
 			err.firstChild.classList.add("is-invalid");
 		}
 	});
-
+	checkInvitationState();
 	checkInputBoxes();
 });
+
+function checkInvitationState() {
+	const checkBoxes = document.querySelectorAll(".check-inv");
+	checkBoxes.forEach((box) => {
+		const invitation_state = box.getAttribute("data-rsvp");
+		if (invitation_state != "not-invited") {
+			box.checked = true;
+			box.disabled = true;
+		}
+	});
+}
 
 function checkInputBoxes() {
 	const checkBoxes = document.querySelectorAll(".check-box");
 	checkBoxes.forEach((box) => {
-		const state = box.getAttribute("data-checked");
-		if (state == "true") {
-			box.checked = "true";
+		const checked_state = box.getAttribute("data-checked");
+		if (checked_state == "true") {
+			box.checked = true;
 		}
 		box.addEventListener("change", changeState);
 	});
 }
 
 function changeState() {
+	// manage items and tasks
 	const objectName = this.getAttribute("name");
 	const objectID = this.getAttribute("id");
 	let state = "";

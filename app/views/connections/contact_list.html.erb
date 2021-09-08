@@ -6,9 +6,7 @@
   <%else%>
         <%=form_with model: [@current_user, @event, @new_connection], local: true do |f| %>
 <table class="table table-hover">
- <p><%=@current_user.inspect%></p>
-    <p><%=@new_connection.inspect%></p>
-    <p><%=@event.inspect%></p>
+
   <thead>
     <tr>
       <th>Name</th>
@@ -29,7 +27,7 @@
  
       <tr>
        <td>
-          <%= check_box("contact", "invited", {:multiple => true, class: 'form-check-input', "data-invited"=> "true"}, contact.id, nil)%>
+          <%= check_box("contact", "invited", {:multiple => true, class: 'form-check-input check-inv', "data-rsvp"=> rsvp(contact)}, contact.id, nil)%>
          <label class="" for="contact_invited_<%=contact.id%>" ><%=contact.name%></label></td>
         <td><%= contact.email %></td>
         <td><%= contact.phone   %></td>

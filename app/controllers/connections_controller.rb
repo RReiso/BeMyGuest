@@ -7,8 +7,9 @@ class ConnectionsController < ApplicationController
 	              only: %i[index contact_list create destroy]
 
 	def index
-  @guests = @event.guests.order('LOWER(name)')
-  end
+		@guests = @event.guests.order('LOWER(name)')
+		@connections = Connection.where(event_id: params[:event_id])
+	end
 
 	def contact_list
 		@new_connection = Connection.new
@@ -18,17 +19,24 @@ class ConnectionsController < ApplicationController
 	def create
 		if !params[:contact].blank?
 			guests = Contact.where(id: contact_params[:invited])
-			guests.each { |guest| @event.send_invitation(guest) }
-      redirect_to guests_path(@user, @event)
-    else
-      redirect_to contact_list_path(@user)
+			guests.each do |guest|
+				@event.send_invitation(guest)
+				Connection
+					.where(contact_id: guest.id)
+					.where(event_id: @event.id)
+					.first
+					.update(RSVP: 'waiting for reply')
+			end
+			redirect_to guests_path(@user, @event)
+		else
+			redirect_to contact_list_path(@user)
 		end
 	end
 
 	def destroy
 		guest = Contact.find(params[:id])
-    @event.cancel_invitation(guest)
-		redirect_to guests_path(@user,@event)
+		@event.cancel_invitation(guest)
+		redirect_to guests_path(@user, @event)
 	end
 
 	private
