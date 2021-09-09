@@ -21,10 +21,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Notes</th>
-      <th></th>
+   <th></th>
     </tr>
   </thead>
  
@@ -39,18 +36,12 @@
       <tr>
        <td>
           <%= check_box("contact", "invited", {:multiple => true, class: 'form-check-input check-inv', "data-rsvp"=> rsvp(contact)}, contact.id, nil)%>
-         <label class="" for="contact_invited_<%=contact.id%>" ><%=contact.name%></label></td>
-        <td><%= contact.email %></td>
-        <td><%= contact.phone   %></td>
-        <td><%= contact.notes   %></td>
+         <label class="" for="contact_invited_<%=contact.id%>" >
+        <%=contact.name%>
+         </label></td>
+         <td> <%= link_to "Details","#", class: "btn btn-sm btn-outline-secondary", "data-bs-toggle"=>"modal", "data-bs-target"=>"#guestInfoModal-#{contact.id}", "data-bs-whatever"=>"@mdo" %></td>
+          <%= render partial: "connections/guest_info_modal", locals: { guest: contact } %>
         
-         
-        
-
-
-    
-        
-
 
       </tr>
          <% end %>

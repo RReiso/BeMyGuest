@@ -34,7 +34,6 @@ class ConnectionsController < ApplicationController
 	end
 
 	def update
-		p rsvp_params
     connection = Connection.find(params[:id])
     connection.update(rsvp_params)
     redirect_to guests_path(@user,@event)

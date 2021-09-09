@@ -25,19 +25,9 @@
     <%guest = Contact.find_by(id: connection.contact_id)%>
  
       <tr>
-        <%
-=begin%>
- <td><%=guest.name%></td> 
-<%
-=end%>
+  
         <td>  <%= link_to guest.name,"#", class: "", "data-bs-toggle"=>"modal", "data-bs-target"=>"#guestInfoModal-#{guest.id}", "data-bs-whatever"=>"@mdo" %></td>
-        <%
-=begin%>
- <td><%= guest.email %></td>
-        <td><%= guest.phone   %></td>
-        <td><%= guest.notes   %></td> 
-<%
-=end%>
+
         <td><%= connection.RSVP %></td> 
 
       <td>  <%= link_to "Change RSVP","#", class: "btn btn-outline-secondary btn-sm", "data-bs-toggle"=>"modal", "data-bs-target"=>"#changeGuestStateModal-#{guest.id}", "data-bs-whatever"=>"@mdo" %></td>
