@@ -23,7 +23,7 @@
   
         <td>  <%= link_to guest.name,"#", class: "", "data-bs-toggle"=>"modal", "data-bs-target"=>"#guestInfoModal-#{guest.id}", "data-bs-whatever"=>"@mdo" %></td>
 
-        <td><%= connection.RSVP %></td> 
+        <td class="rsvp"><%= connection.RSVP %></td> 
 
       <td>  <%= link_to "Change RSVP","#", class: "btn btn-outline-secondary btn-sm", "data-bs-toggle"=>"modal", "data-bs-target"=>"#changeGuestStateModal-#{guest.id}", "data-bs-whatever"=>"@mdo" %></td>
         <td><%=link_to "", user_event_connection_path(@user,@event,guest), method: :delete, data: {confirm: "Are you sure?"}, class: " btn-close", type: :button%></td>

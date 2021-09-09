@@ -10,10 +10,6 @@ module ConnectionsHelper
 		['not invited', 'waiting for reply', 'confirmed', 'declined', 'not sure']
 	end
 
-  # def guest(connection)
-  #   Contact.find_by(id: connection.contact_id)
-  # end
-
   def connection(guest)
     Connection.where(contact_id: guest.id).where(event_id:@event.id).first
   end
