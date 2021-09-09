@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2021_09_08_193808) do
     t.integer "contact_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "RSVP", default: "not-invited", null: false
+    t.string "RSVP", default: "not invited", null: false
     t.index ["contact_id"], name: "index_connections_on_contact_id"
     t.index ["event_id"], name: "index_connections_on_event_id"
   end

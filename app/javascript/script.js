@@ -26,8 +26,8 @@ document.addEventListener("turbolinks:load", function () {
 function checkInvitationState() {
 	const checkBoxes = document.querySelectorAll(".check-inv");
 	checkBoxes.forEach((box) => {
-		const invitation_state = box.getAttribute("data-rsvp");
-		if (invitation_state != "not-invited") {
+		const InGuestList = box.getAttribute("data-guest-list");
+		if (InGuestList === "true") {
 			box.checked = true;
 			box.disabled = true;
 		}

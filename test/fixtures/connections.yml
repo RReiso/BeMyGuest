@@ -3,9 +3,9 @@
 one:
   event_id: 1
   contact_id: 1
-  RSVP: MyString
+  RSVP: "waiting for reply"
 
 two:
   event_id: 1
   contact_id: 1
-  RSVP: MyString
+  RSVP: "confirmed"

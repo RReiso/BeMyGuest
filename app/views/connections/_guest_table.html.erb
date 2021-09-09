@@ -15,8 +15,9 @@
 
 <tbody>
 
-    <% @connections.each do |connection| %>
-    <%guest = guest(connection)%>
+    <% @guests.each do |guest| %>
+
+    <%connection = connection(guest)%>
  
       <tr>
   
@@ -33,4 +34,5 @@
   </tbody>
 
 </table>
-       <%= render partial: "connections/change_rsvp_modal"%>
+
+ <%= render partial: "connections/change_rsvp_modal", locals: { guests: @guests }%> 

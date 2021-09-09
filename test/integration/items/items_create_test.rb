@@ -13,7 +13,6 @@ class ItemsCreateTest < ActionDispatch::IntegrationTest
 		assert_select 'input.btn' do
 			assert_select '[value=?]', 'Add item'
 		end
-
 		# assert_equal before_count, after_count is same as:
 		assert_no_difference 'Item.count' do
 			post user_event_items_path(@user, @event),
@@ -36,7 +35,6 @@ class ItemsCreateTest < ActionDispatch::IntegrationTest
 		assert_select 'input.btn' do
 			assert_select '[value=?]', 'Add item'
 		end
-
 		# assert_equal before_count, after_count is one more:
 		assert_difference 'Item.count', 1 do
 			post user_event_items_path(@user, @event),

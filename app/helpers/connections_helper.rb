@@ -1,12 +1,20 @@
 module ConnectionsHelper
-	def rsvp(contact)
+	def in_guest_list?(contact)
 		connection =
 			Connection.where(contact_id: contact.id).where(event_id: @event.id)
-		rsvp = connection.blank? ? 'not-invited' : 'invited'
-		rsvp
+		in_guest_list = connection.blank? ? false : true
+		in_guest_list
 	end
 
 	def rsvp_options
-		['Waiting for reply', 'Confirmed', 'Declined', 'Not sure']
+		['not invited', 'waiting for reply', 'confirmed', 'declined', 'not sure']
 	end
+
+  # def guest(connection)
+  #   Contact.find_by(id: connection.contact_id)
+  # end
+
+  def connection(guest)
+    Connection.where(contact_id: guest.id).where(event_id:@event.id).first
+  end
 end
