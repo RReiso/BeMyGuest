@@ -1,10 +1,10 @@
 class ConnectionsController < ApplicationController
 	before_action :require_user_logged_in,
-	              only: %i[index contact_list create destroy]
+	              only: %i[index contact_list create update destroy]
 	before_action :require_correct_user,
-	              only: %i[index contact_list create destroy]
+	              only: %i[index contact_list create update destroy]
 	before_action :require_correct_event,
-	              only: %i[index contact_list create destroy]
+	              only: %i[index contact_list create update destroy]
 
 	def index
 		@guests = @event.guests.order('LOWER(name)')
@@ -33,6 +33,13 @@ class ConnectionsController < ApplicationController
 		end
 	end
 
+	def update
+		p rsvp_params
+    connection = Connection.find(params[:id])
+    connection.update(rsvp_params)
+    redirect_to guests_path(@user,@event)
+	end
+
 	def destroy
 		guest = Contact.find(params[:id])
 		@event.cancel_invitation(guest)
@@ -44,6 +51,8 @@ class ConnectionsController < ApplicationController
 	def contact_params
 		params.require(:contact).permit(invited: [])
 	end
+
+	def rsvp_params
+    params.require(:connection).permit(:RSVP)
+  end
 end
-# "task"=>{"description"=>"bb"}
-#  "contact"=>{"invited"=>["13", "14"]}
