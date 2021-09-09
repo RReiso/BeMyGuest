@@ -1,3 +1,4 @@
+<% provide(:title, 'Contact List') %>
 <section>
 
 <div class="container-fluid">
@@ -35,7 +36,7 @@
  
       <tr>
        <td>
-          <%= check_box("contact", "invited", {:multiple => true, class: 'form-check-input check-inv', "data-rsvp"=> rsvp(contact)}, contact.id, nil)%>
+          <%= check_box("contact", "invited", {:multiple => true, class: 'form-check-input check-inv', "data-guest-list"=> in_guest_list?(contact)}, contact.id, nil)%>
          <label class="" for="contact_invited_<%=contact.id%>" >
         <%=contact.name%>
          </label></td>

@@ -2,10 +2,7 @@
 
 
 <% @connections.each do |connection| %>
-    <%guest = Contact.find_by(id: connection.contact_id)%>
-
-
-<div class="modal fade" id="changeGuestStateModal-<%=guest.id%>" tabindex="-1" aria-labelledby="change_state_guest" aria-hidden="true">
+<div class="modal fade" id="changeGuestStateModal-<%=guest(connection).id%>" tabindex="-1" aria-labelledby="change_state_guest" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -17,7 +14,7 @@
       <div class="modal-body">
           <div class="mb-3 select">
             <%= f.label :RSVP, "RSVP ", class: "col-form-label" %>
-            <%= f.select :RSVP, options_for_select(rsvp_options)%>
+            <%= f.select :RSVP, options_for_select(rsvp_options,{selected: connection.RSVP}) %>
            </div>
           
           

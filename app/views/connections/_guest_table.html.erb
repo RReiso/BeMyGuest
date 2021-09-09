@@ -3,13 +3,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <%
-=begin%>
- <th>Email</th>
-      <th>Phone</th>
-      <th>Notes</th> 
-<%
-=end%>
+
       <th>RSVP</th>
       <th></th>
       <th></th>
@@ -22,7 +16,7 @@
 <tbody>
 
     <% @connections.each do |connection| %>
-    <%guest = Contact.find_by(id: connection.contact_id)%>
+    <%guest = guest(connection)%>
  
       <tr>
   
@@ -34,7 +28,7 @@
         <td><%=link_to "", user_event_connection_path(@user,@event,guest), method: :delete, data: {confirm: "Are you sure?"}, class: " btn-close", type: :button%></td>
       </tr>
       
-       <%= render partial: "connections/guest_info_modal", locals: { guest: guest } %>
+       <%= render partial: "connections/guest_info_modal", locals: { guest: guest, connection: connection } %>
     <% end %>
   </tbody>
 
