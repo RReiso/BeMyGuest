@@ -21,7 +21,7 @@ document.addEventListener("turbolinks:load", function () {
 	});
 	checkInvitationState();
 	checkInputBoxes();
-  checkNotes();
+	checkNotes();
 });
 
 function checkInvitationState() {
@@ -79,24 +79,26 @@ function sendData(state, objectName, objectID) {
 	});
 }
 
-function checkNotes(){
-  const note = document.querySelector("#sticky-note");
-  let timer;
-  note.addEventListener("change", function(){
- if (timer){clearTimeout(timer)};
- timer = setTimeout(saveNotes, 3000);
-  })
+function checkNotes() {
+	const note = document.querySelector("#sticky-note");
+	let timer;
+	note.addEventListener("change", function () {
+		if (timer) {
+			clearTimeout(timer);
+		}
+		timer = setTimeout(saveNotes, 3000);
+	});
 }
 
-function saveNotes (){
-  const notes = document.querySelector("#sticky-note");
-  const event_id = notes.getAttribute("data-event");
-  // const metaCsrf = document.querySelector("meta[name='csrf-token']");
-	// const csrfToken = metaCsrf.getAttribute("content");
+function saveNotes() {
+	const notes = document.querySelector("#sticky-note");
+	const event_id = notes.getAttribute("data-event");
+	const metaCsrf = document.querySelector("meta[name='csrf-token']");
+	const csrfToken = metaCsrf.getAttribute("content");
 	fetch(`${event_id}/notes`, {
 		method: "POST",
 		body: JSON.stringify({
-      id: event_id,
+			id: event_id,
 			notes: `${notes.value}`,
 		}),
 		headers: {

@@ -5,7 +5,6 @@ class Contact < ApplicationRecord
 	         foreign_key: 'contact_id',
 	         dependent: :destroy
 	has_many :invitations, through: :event_connections, source: :event
-  has_many :apples
 
 	validates :user_id, presence: true
 	validates :name, presence: true
