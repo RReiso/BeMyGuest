@@ -1,4 +1,4 @@
-const { check } = require("prettier");
+// const { check } = require("prettier");
 
 window.checkForm = function (form) {
 	if (
@@ -91,8 +91,8 @@ function checkNotes(){
 function saveNotes (){
   const notes = document.querySelector("#sticky-note");
   const event_id = notes.getAttribute("data-event");
-  const metaCsrf = document.querySelector("meta[name='csrf-token']");
-	const csrfToken = metaCsrf.getAttribute("content");
+  // const metaCsrf = document.querySelector("meta[name='csrf-token']");
+	// const csrfToken = metaCsrf.getAttribute("content");
 	fetch(`${event_id}/notes`, {
 		method: "POST",
 		body: JSON.stringify({
