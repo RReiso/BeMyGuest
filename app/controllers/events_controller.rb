@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
-	before_action :require_user_logged_in, only: %i[create show update destroy]
-	before_action :require_correct_user, only: %i[create show update destroy]
-	before_action :require_correct_event, only: %i[show update destroy]
+	before_action :require_user_logged_in, only: %i[create show update save_notes destroy]
+	before_action :require_correct_user, only: %i[create show update save_notes destroy]
+	before_action :require_correct_event, only: %i[show update save_notes destroy]
 
 	def create
 		event = @user.events.create(event_params)
@@ -19,6 +19,9 @@ class EventsController < ApplicationController
 			.update(event_params)
 		redirect_to user_event_path(@user, @event)
 	end
+
+  def save_notes
+  end
 
 	def destroy
 		@event.destroy

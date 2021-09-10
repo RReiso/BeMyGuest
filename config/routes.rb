@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   
   post '/users/:user_id/events/:event_id/tasks/:id', to: 'tasks#update_task_state'
   post '/users/:user_id/events/:event_id/items/:id', to: 'items#update_item_state'
+  post '/users/:user_id/events/:event_id/notes', to: 'events#save_notes'
 
   get '/users/:user_id/events/:event_id/guests', to: 'connections#index', as: :guests
   get '/users/:user_id/events/:event_id/guests/contact_list', to: 'connections#contact_list', as: :contact_list
