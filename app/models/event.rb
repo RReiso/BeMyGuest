@@ -14,11 +14,11 @@ class Event < ApplicationRecord
 	validates :event_date, presence: true
 	validates :place, length: { maximum: 40 }, presence: true
 
-	def send_invitation(contact) #follow(anotheruser)
+	def send_invitation(contact)
 		guests << contact
 	end
 
-	def cancel_invitation(contact) # unfollow(other_user)
+	def cancel_invitation(contact)
 		guests.delete(contact)
 	end
 
