@@ -44,7 +44,6 @@ class ItemsController < ApplicationController
 
 	def item_checked_params
 		params.require(:item).permit(:checked)
-    
 	end
 
 	def get_item

@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
-	before_action :require_user_logged_in, only: %i[create show update save_notes destroy]
-	before_action :require_correct_user, only: %i[create show update save_notes destroy]
+	before_action :require_user_logged_in,
+	              only: %i[create show update save_notes destroy]
+	before_action :require_correct_user,
+	              only: %i[create show update save_notes destroy]
 	before_action :require_correct_event, only: %i[show update save_notes destroy]
 
 	def create
@@ -8,7 +10,7 @@ class EventsController < ApplicationController
 		if event.save
 			redirect_to user_event_path(@user, event)
 		else
-			redirect_to @user, danger:'Error creating event. Please try again.'
+			redirect_to @user, danger: 'Error creating event. Please try again.'
 		end
 	end
 
@@ -20,8 +22,10 @@ class EventsController < ApplicationController
 		redirect_to user_event_path(@user, @event)
 	end
 
-  def save_notes
-  end
+	def save_notes
+		@event.update(notes_params)
+		head :no_content
+	end
 
 	def destroy
 		@event.destroy
@@ -32,5 +36,9 @@ class EventsController < ApplicationController
 
 	def event_params
 		params.require(:event).permit(:name, :event_date, :event_time, :place)
+	end
+
+	def notes_params
+		params.require(:event).permit(:notes)
 	end
 end

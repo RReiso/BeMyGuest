@@ -1,5 +1,4 @@
-// const { check } = require("prettier");
-
+// signup form validations
 window.checkForm = function (form) {
 	if (
 		form["user[password]"].value !== form["user[password_confirmation]"].value
@@ -28,6 +27,7 @@ function checkInvitationState() {
 	const checkBoxes = document.querySelectorAll(".check-inv");
 	checkBoxes.forEach((box) => {
 		const InGuestList = box.getAttribute("data-guest-list");
+		console.log(InGuestList.dataset);
 		if (InGuestList === "true") {
 			box.checked = true;
 			box.disabled = true;
@@ -46,6 +46,30 @@ function checkInputBoxes() {
 	});
 }
 
+function checkNotes() {
+	const notes = document.querySelector("#sticky-note");
+	let timer = 0;
+	if (notes) {
+		notes.addEventListener("keypress", function () {
+			if (timer) {
+				clearTimeout(timer);
+			}
+			timer = setTimeout(saveNotes, 1000);
+		});
+	}
+}
+
+function saveNotes() {
+	const notes = document.querySelector("#sticky-note");
+	const event_id = notes.getAttribute("data-event");
+	const uri = `${event_id}/notes`;
+	requestBody = {
+		id: event_id,
+		notes: `${notes.value}`,
+	};
+	sendData(uri, requestBody);
+}
+
 function changeState() {
 	// manage items and tasks
 	const objectName = this.getAttribute("name");
@@ -58,49 +82,19 @@ function changeState() {
 		this.setAttribute("data-checked", "false");
 		state = "false";
 	}
-	sendData(state, objectName, objectID);
+	const uri = `${objectName}s/${objectID}`;
+	const requestBody = {
+		checked: `${state}`,
+	};
+	sendData(uri, requestBody);
 }
 
-function sendData(state, objectName, objectID) {
+function sendData(uri, requestBody) {
 	const metaCsrf = document.querySelector("meta[name='csrf-token']");
 	const csrfToken = metaCsrf.getAttribute("content");
-	fetch(`${objectName}s/${objectID}`, {
+	fetch(uri, {
 		method: "POST",
-		body: JSON.stringify({
-			checked: `${state}`,
-		}),
-		headers: {
-			"x-csrf-token": csrfToken,
-			"content-type": "application/json",
-			accept: "application/json",
-		},
-	}).then((res) => {
-		console.log("Request complete! response:", res);
-	});
-}
-
-function checkNotes() {
-	const note = document.querySelector("#sticky-note");
-	let timer;
-	note.addEventListener("change", function () {
-		if (timer) {
-			clearTimeout(timer);
-		}
-		timer = setTimeout(saveNotes, 3000);
-	});
-}
-
-function saveNotes() {
-	const notes = document.querySelector("#sticky-note");
-	const event_id = notes.getAttribute("data-event");
-	const metaCsrf = document.querySelector("meta[name='csrf-token']");
-	const csrfToken = metaCsrf.getAttribute("content");
-	fetch(`${event_id}/notes`, {
-		method: "POST",
-		body: JSON.stringify({
-			id: event_id,
-			notes: `${notes.value}`,
-		}),
+		body: JSON.stringify(requestBody),
 		headers: {
 			"x-csrf-token": csrfToken,
 			"content-type": "application/json",

@@ -25,7 +25,7 @@
         </div>
         <div class="notes">
               <div class="tape">Notes</div>
-              <textarea name="note" id="sticky-note" data-event="<%=@event.id%>"></textarea>
+              <textarea name="note" id="sticky-note" data-event="<%=@event.id%>"><%=@event.notes%></textarea>
               <%
 =begin%>
  <button class="note-btn rounded-2 bg-warning gradient-custom-5 text-white">Save notes</button> 
