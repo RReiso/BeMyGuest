@@ -8,7 +8,8 @@ class EventTest < ActiveSupport::TestCase
         name: "Grandma's birthday",
         event_date: '2021-10-09',
         event_time: '2021-10-09 12:30:00 UTC',
-        place: 'My home'
+        place: 'My home',
+        notes: 'Remind guests that Grandma can not hear well.'
       )
   end
 
@@ -30,6 +31,12 @@ class EventTest < ActiveSupport::TestCase
     @birthday.user_id = ' '
     assert_not @birthday.valid?
   end
+
+  test 'place should be present' do
+    @birthday.place = ' '
+    assert_not @birthday.valid?
+  end
+
 
   test 'place should not be too long' do
     @birthday.place = 'x' * 41

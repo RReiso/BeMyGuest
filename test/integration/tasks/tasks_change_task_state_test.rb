@@ -24,7 +24,7 @@ class TasksChangeTaskStateTest < ActionDispatch::IntegrationTest
 					checked: 'true',
 				},
 		     },
-		     xhr: true # for Ajax requests (works without if head :no content in controller)
+		     xhr: true # for Ajax requests (works without if 'head :no content' in controller)
 		@task.reload
 		get user_event_tasks_path(@user, @event)
 		assert_template 'tasks/index'

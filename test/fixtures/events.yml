@@ -5,6 +5,7 @@ event_one:
   event_date: 2021-09-02
   event_time: 2021-09-02 22:18:27
   place: My home
+  notes: Party time
   user: one
 
 event_two:
@@ -12,4 +13,5 @@ event_two:
   event_date: 2021-09-02
   event_time: 2021-09-02 22:18:27
   place: Central Park
+  notes: Woo
   user: one
