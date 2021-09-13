@@ -1,40 +1,36 @@
 class ContactsController < ApplicationController
-	before_action :require_user_logged_in, only: %i[index create update destroy]
-	before_action :require_correct_user, only: %i[index create update destroy]
-	before_action :get_contact, only: %i[update destroy]
+  before_action :require_user_logged_in, only: %i[index create update destroy]
+  before_action :require_correct_user, only: %i[index create update destroy]
+  before_action :contact, only: %i[update destroy]
 
-	def index
-		@new_contact = Contact.new
-		@contacts = @user.contacts.order('LOWER(name)') # Case insensitive ordering
-	end
+  def index
+    @new_contact = Contact.new
+    @contacts = @user.contacts.order('LOWER(name)') # Case insensitive ordering
+  end
 
-	def create
-		contact = @user.contacts.create(contact_params)
-		flash[:danger] = 'Error creating contact. Please try again.' unless contact
-			.save
+  def create
+    new_contact = @user.contacts.create(contact_params)
+    flash_danger('creating', 'contact') unless new_contact.save
+    redirect_to user_contacts_path(@user)
+  end
 
-		redirect_to user_contacts_path(@user)
-	end
+  def update
+    flash_danger('updating', 'contact') unless @contact.update(contact_params)
+    redirect_to user_contacts_path(@user)
+  end
 
-	def update
-		flash[:danger] = 'Error updating contact. Please try again.' unless @contact
-			.update(contact_params)
+  def destroy
+    @contact.destroy
+    redirect_to user_contacts_path(@user)
+  end
 
-		redirect_to user_contacts_path(@user)
-	end
+  private
 
-	def destroy
-		@contact.destroy
-		redirect_to user_contacts_path(@user)
-	end
+  def contact_params
+    params.require(:contact).permit(:name, :email, :phone, :notes)
+  end
 
-	private
-
-	def contact_params
-		params.require(:contact).permit(:name, :email, :phone, :notes)
-	end
-
-	def get_contact
-		@contact = Contact.find_by(id: params[:id])
-	end
+  def contact
+    @contact = Contact.find_by(id: params[:id])
+  end
 end

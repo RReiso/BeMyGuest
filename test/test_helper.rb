@@ -1,9 +1,8 @@
 ENV['RAILS_ENV'] ||= 'test'
-require_relative "../config/environment"
-require "rails/test_help"
-require "minitest/reporters"
+require_relative '../config/environment'
+require 'rails/test_help'
+require 'minitest/reporters'
 Minitest::Reporters.use!
-
 
 class ActiveSupport::TestCase
   # Run tests in parallel with specified workers
@@ -14,21 +13,25 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
   def is_logged_in?
-!session[:user_id].nil?
-end
+    !session[:user_id].nil?
+  end
 
-# Log in as a particular user.
-def log_in_as(user)
-session[:user_id] = user.id
+  # Log in as a particular user.
+  def log_in_as(user)
+    session[:user_id] = user.id
+  end
 end
-
-end
-
 
 class ActionDispatch::IntegrationTest
-# Log in as a particular user.
+  # Log in as a particular user.
   def log_in_as(user, password: '1234abcd', remember_me: '1')
-    post root_path, params: { session: { email: user.email,
-    password: password, remember_me: remember_me } }
+    post root_path,
+         params: {
+           session: {
+             email: user.email,
+             password: password,
+             remember_me: remember_me
+           }
+         }
   end
 end

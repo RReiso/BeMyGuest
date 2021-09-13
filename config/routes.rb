@@ -31,7 +31,4 @@ Rails.application.routes.draw do
       resources :guests, only: %i[index]
     end
   end
-
- 
-
 end

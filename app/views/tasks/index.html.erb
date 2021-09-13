@@ -1,30 +1,17 @@
 <% provide(:title, 'To Do') %>
-
-
 <section>
-
-<div class="container-fluid">
-
+  <div class="container-fluid">
     <div class="row flex-nowrap">
-        
-
-
-<%= render 'events/event_navbar'%>
-<div class="right">
-<h3 class="event-name"><%=@event.name%></h3>
-<% if @tasks.blank? %>
-<p class="empty">To do list empty!</p>
-<%else%>
-<%= render 'tasks/to_do_list'%>
-<%end%>
-<%= render 'tasks/new_task'%>
-</div>
-
-
-
-
-
+      <%= render 'events/event_navbar'%>
+      <div class="right">
+        <h3 class="event-name"><%=@event.name%></h3>
+        <% if @tasks.blank? %>
+          <p class="empty">To do list empty!</p>
+        <% else %>
+          <%= render 'tasks/to_do_list'%>
+        <% end %>
+        <%= render 'tasks/new_task'%>
+      </div>
+    </div>
   </div>
-
-</div>
 </section>

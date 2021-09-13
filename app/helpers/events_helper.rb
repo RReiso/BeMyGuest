@@ -1,5 +1,4 @@
 module EventsHelper
-  
   def new_event
     @new_event = Event.new
   end
@@ -11,8 +10,8 @@ module EventsHelper
       else
         Event.find_by(id: params[:event_id])
       end
-    
-    redirect_to(current_user) unless (current_user?(@user) && event_exists?(@event))
+
+    redirect_to(current_user) unless current_user?(@user) && event_exists?(@event)
   end
 
   private

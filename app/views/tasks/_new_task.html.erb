@@ -1,14 +1,12 @@
 <div class="object-new">
-<div>
   <%= form_with model: [@current_user, @event, @new_task], local: true  do |f| %>
-  <%= f.label :description, "Your task", class: "sr-only" %>
+    <%= f.label :description, "Your task", class: "sr-only" %>
     <%= f.text_field :description,
-          class: "object-input",
-          placeholder: "Your task ...",
-          autofocus: true,
-          autocomplete: "off",
-          required: true %>
-           <%=f.submit "Add task", class: "btn btn-primary btn-sm"%>
+        class: "object-input",
+        placeholder: "Your task ...",
+        autofocus: true,
+        autocomplete: "off",
+        required: true %>
+    <%=f.submit "Add task", class: "btn btn-primary btn-sm"%>
   <% end %>
-</div>
 </div>

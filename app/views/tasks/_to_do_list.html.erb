@@ -1,29 +1,19 @@
-
 <table class="table object-table  ">
   <thead>
-    <tr>
-      
+    <tr> 
       <th>Task</th>
       <th></th>
       <th></th>
- 
     </tr>
   </thead>
-
-<tbody>
-
+  <tbody>
     <% @tasks.each do |task| %>
- 
       <tr>
-        
-    
-        <td><input type="checkbox" class="check-box" data-checked="<%=task.checked %>"  name="task" id="<%=task.id%>"><label class="object-label" for="<%=task.id%>" ><%=task.description%></label></td>
-        <td>  <%= link_to "Edit","#", class: "btn btn-outline-secondary btn-sm", "data-bs-toggle"=>"modal", "data-bs-target"=>"#editTaskModal-#{task.id}", "data-bs-whatever"=>"@mdo" %></td>
-        <td><%=link_to "", user_event_task_path(@user, @event, task), method: :delete, class: " btn-close", type: :button%></td>
+        <td><input type="checkbox" class="check-box" data-checked="<%= task.checked %>" name="task" id="<%= task.id %>"><label class="object-label" for="<%= task.id %>" ><%= task.description %></label></td>
+        <td> <%= link_to "Edit","#", class: "btn btn-outline-secondary btn-sm", "data-bs-toggle"=>"modal", "data-bs-target"=>"#editTaskModal-#{task.id}", "data-bs-whatever"=>"@mdo" %></td>
+        <td><%=link_to "", user_event_task_path(@user, @event, task), method: :delete, class: "btn-close", type: :button %></td>
       </tr>
     <% end %>
-      <%= render "tasks/edit_task_modal" %>
   </tbody>
-   
-
 </table>
+<%= render "tasks/edit_task_modal" %>

@@ -1,51 +1,37 @@
 <aside class="col-auto  col-xl-2 px-sm-1 px-0 bg-light">
-            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2  min-vh-100">
-                
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                    <li class="nav-item">
-
-          <%=link_to user_event_path(@user,@event), class: "nav-link align-middle px-0 " do %>
-            <i class="fs-5 bi-pen"></i> <span class="ms-1 d-none d-sm-inline">Notes</span>
-          <%end%>
-
-                       
-                    
-                    <li>
-                      <%=link_to guests_path(@user,@event), class: "nav-link align-middle px-0 " do %>
-            <i class="fs-5 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Guests</span>
-          <%end%>
-                        
-                    </li>
-                    
-                    
-                    <li>
-                    <%=link_to user_event_tasks_path(@user,@event), class: "nav-link align-middle px-0 " do %>
-            <i class="fs-5 bi-list-task"></i> <span class="ms-1 d-none d-sm-inline">To do</span> 
-          <%end%>
-                      
-                    </li>
-                    <li>
-                    <%=link_to user_event_items_path(@user,@event), class: "nav-link align-middle px-0 " do %>
-            <i class="fs-5 bi-basket3"></i> <span class="ms-1 d-none d-sm-inline">Shopping</span>
-          <%end%>
-                        
-                    </li>
-                     <hr>
-                     <li>
-                     <%= mail_to "rreiso@protonmail.com", class: "nav-link align-middle px-0 " do %>
-            <i class="fs-5 bi-envelope"></i> <span class="ms-1 d-none d-sm-inline">Contact us</span>
-          <%end%>
-                      
-                        
-                    </li>
-                      <li>
-                    <%=link_to "#", class: "nav-link align-middle px-0 " do %>
+  <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2  min-vh-100">
+    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+      <li class="nav-item">
+        <%= link_to user_event_path(@user,@event), class: "nav-link align-middle px-0 " do %>
+          <i class="fs-5 bi-pen"></i> <span class="ms-1 d-none d-sm-inline">Notes</span>
+        <% end %>
+      </li>  
+      <li>
+        <%= link_to guests_path(@user,@event), class: "nav-link align-middle px-0 " do %>
+          <i class="fs-5 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Guests</span>
+        <% end %>   
+      </li>
+      <li>
+        <%=link_to user_event_tasks_path(@user,@event), class: "nav-link align-middle px-0 " do %>
+          <i class="fs-5 bi-list-task"></i> <span class="ms-1 d-none d-sm-inline">To do</span> 
+        <% end %>
+      </li>
+      <li>
+        <%=link_to user_event_items_path(@user,@event), class: "nav-link align-middle px-0 " do %>
+          <i class="fs-5 bi-basket3"></i> <span class="ms-1 d-none d-sm-inline">Shopping</span>
+        <% end %>   
+      </li>
+      <hr>
+      <li>
+        <%= mail_to "rreiso@protonmail.com", class: "nav-link align-middle px-0 " do %>
+          <i class="fs-5 bi-envelope"></i> <span class="ms-1 d-none d-sm-inline">Contact us</span>
+        <% end %>  
+      </li>
+      <li>
+          <%=link_to "#", class: "nav-link align-middle px-0 " do %>
             <i class="fs-5 bi-shield-check"></i> <span class="ms-1 d-none d-sm-inline">Privacy Policy</span>
-          <%end%>
-                     
-                    </li>
-                </ul>
-               
-                
-            </div>
-        </aside>
+          <% end %> 
+      </li>
+    </ul>      
+  </div>
+</aside>

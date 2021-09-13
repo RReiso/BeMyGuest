@@ -1,29 +1,23 @@
-
- <% @tasks.each do |task| %>
-
-<div class="modal fade" id="editTaskModal-<%=task.id%>" tabindex="-1" aria-labelledby="edit_task" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="edit_task-<%=task.id%>">Edit Task</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
+<% @tasks.each do |task| %>
+  <div class="modal fade" id="editTaskModal-<%= task.id %>" tabindex="-1" aria-labelledby="edit_task" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="edit_task-<%= task.id %>">Edit Task</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
         <%=form_with model: [@user, @event, task], local: true do |f| %>
-         
-      <div class="modal-body">
-          <div class="mb-3">
-            <%= f.label :description, "Task", class: "sr-only" %>
-            <%= f.text_field :description, value: task.description, id: "task-description-#{task.id}", class: "form-control form-control-md", required: true%>
-           </div>
-           
-           </div>
-      <div class="modal-footer">
-        <%=f.submit "Save", class: "btn btn-primary"%>
-       
-        
+          <div class="modal-body">
+            <div class="mb-3">
+              <%= f.label :description, "Task", class: "sr-only" %>
+              <%= f.text_field :description, value: task.description, id: "task-description-#{task.id}", class: "form-control form-control-md", required: true %>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <%=f.submit "Save", class: "btn btn-primary" %>
+          </div>
+        <% end %>
       </div>
-         <% end %>
     </div>
   </div>
-</div>
 <% end %>

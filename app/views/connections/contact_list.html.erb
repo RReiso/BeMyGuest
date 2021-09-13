@@ -1,60 +1,41 @@
 <% provide(:title, 'Contact List') %>
 <section>
-
-<div class="container-fluid">
-
+  <div class="container-fluid">
     <div class="row flex-nowrap">
-        
-
-
-<%= render 'events/event_navbar'%>
-<div class="right">
-
-<p>Contact list</p>
-
-<% if @contacts.blank?%>
-  <p>No existing contacts! </p>
-  <p>Add some people to <%=link_to "Contacts", user_contacts_path(@user)%> to start adding them to the guest list.</p>
-  <%else%>
-        <%=form_with model: [@current_user, @event, @new_connection], local: true do |f| %>
-<table class="table table-hover">
-
-  <thead>
-    <tr>
-      <th>Name</th>
-   <th></th>
-    </tr>
-  </thead>
- 
-
-    
-
-<tbody>
-
-    <% @contacts.each do |contact| %>
-   
- 
-      <tr>
-       <td>
-          <%= check_box("contact", "invited", {:multiple => true, class: 'form-check-input check-inv', "data-guest-list"=> in_guest_list?(contact,@event)}, contact.id, nil)%>
-         <label class="" for="contact_invited_<%=contact.id%>" >
-        <%=contact.name%>
-         </label></td>
-         <td> <%= link_to "Details","#", class: "btn btn-sm btn-outline-secondary", "data-bs-toggle"=>"modal", "data-bs-target"=>"#guestInfoModal-#{contact.id}", "data-bs-whatever"=>"@mdo" %></td>
-          <%= render partial: "connections/guest_info_modal", locals: { guest: contact } %>
-        
-
-      </tr>
-         <% end %>
-  </tbody>
-  
-</table>
-
-        <p><%=f.submit "Add to guest list", class: "btn btn-primary"%></p>
-    <% end %>
-    <% end %>
-
-     </div>
-
-</div>
+      <%= render 'events/event_navbar' %>
+      <div class="right">
+        <p>Contact list</p>
+        <% if @contacts.blank? %>
+          <p>No existing contacts! </p>
+          <p>Add some people to <%= link_to "Contacts", user_contacts_path(@user) %> to start adding them to the guest list.</p>
+        <% else %>
+          <%= form_with model: [@current_user, @event, @new_connection], local: true do |f| %>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @contacts.each do |contact| %>
+                  <tr>
+                    <td>
+                      <%= check_box("contact", "invited", {:multiple => true, class: 'form-check-input check-inv', "data-guest-list"=> in_guest_list?(contact,@event)}, contact.id, nil)%>
+                      <label class="" for="contact_invited_<%=contact.id%>" >
+                      <%= contact.name %>
+                      </label>
+                    </td>
+                    <td> <%= link_to "Details","#", class: "btn btn-sm btn-outline-secondary", "data-bs-toggle"=>"modal", "data-bs-target"=>"#guestInfoModal-#{contact.id}", "data-bs-whatever"=>"@mdo" %></td>
+                    <%= render partial: "connections/guest_info_modal", locals: { guest: contact } %>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+            <p><%= f.submit "Add to guest list", class: "btn btn-primary" %></p>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </section>

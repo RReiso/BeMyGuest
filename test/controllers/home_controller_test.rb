@@ -1,14 +1,13 @@
-require "test_helper"
+require 'test_helper'
 
 class HomeControllerTest < ActionDispatch::IntegrationTest
   def setup
-    @base_title = "BeMyGuest"
+    @base_title = 'BeMyGuest'
   end
 
-  test "should get index" do
+  test 'should get index' do
     get root_path
     assert_response :success
-    assert_select "title", "#{@base_title}"
+    assert_select 'title', @base_title.to_s
   end
-
 end

@@ -1,41 +1,35 @@
-
  <% @contacts.each do |contact| %>
-
-<div class="modal fade" id="editContactModal-<%=contact.id%>" tabindex="-1" aria-labelledby="edit_contact" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="edit_contact-<%=contact.id%>">Edit contact</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
+  <div class="modal fade" id="editContactModal-<%= contact.id %>" tabindex="-1" aria-labelledby="edit_contact" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="edit_contact-<%= contact.id %>">Edit contact</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
         <%=form_with model: [@user, @event, contact], local: true do |f| %>
-         
-      <div class="modal-body">
-          <div class="mb-3">
-            <%= f.label :name, "Name", class: "col-form-label" %>
-            <%= f.text_field :name, value: contact.name, id: "contact-name-#{contact.id}", class: "form-control form-control-md", required: true%>
-           </div>
-          <div class="mb-3">
-            <%= f.label :email, "Email", class: "col-form-label" %>
-            <%= f.email_field :email, value: contact.email, id: "contact-email-#{contact.id}", class: "form-control form-control-md"%>
-           </div>
-          <div class="mb-3">
-            <%= f.label :phone, "Phone", class: "col-form-label" %>
-            <%= f.text_field :phone, value: contact.phone, id: "contact-phone-#{contact.id}", class: "form-control form-control-md"%>
-           </div>
-          <div class="mb-3">
-            <%= f.label :notes, "Notes", class: "col-form-label" %>
-            <%= f.text_field :notes, value: contact.notes, id: "contact-notes-#{contact.id}", class: "form-control form-control-md"%>
-           </div>
-           
-           </div>
-      <div class="modal-footer">
-        <%=f.submit "Save", class: "btn btn-primary"%>
-       
-        
+          <div class="modal-body">
+            <div class="mb-3">
+              <%= f.label :name, "Name", class: "col-form-label" %>
+              <%= f.text_field :name, value: contact.name, id: "contact-name-#{contact.id}", class: "form-control form-control-md", required: true %>
+            </div>
+            <div class="mb-3">
+              <%= f.label :email, "Email", class: "col-form-label" %>
+              <%= f.email_field :email, value: contact.email, id: "contact-email-#{contact.id}", class: "form-control form-control-md" %>
+            </div>
+            <div class="mb-3">
+              <%= f.label :phone, "Phone", class: "col-form-label" %>
+              <%= f.text_field :phone, value: contact.phone, id: "contact-phone-#{contact.id}", class: "form-control form-control-md" %>
+            </div>
+            <div class="mb-3">
+              <%= f.label :notes, "Notes", class: "col-form-label" %>
+              <%= f.text_field :notes, value: contact.notes, id: "contact-notes-#{contact.id}", class: "form-control form-control-md" %>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <%=f.submit "Save", class: "btn btn-primary"%>
+          </div>
+        <% end %>
       </div>
-         <% end %>
     </div>
   </div>
-</div>
 <% end %>

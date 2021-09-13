@@ -16,7 +16,7 @@ class EventTest < ActiveSupport::TestCase
   test 'should be valid' do
     assert @birthday.valid?
   end
-  
+
   test 'name should be present' do
     @birthday.name = ' '
     assert_not @birthday.valid?
@@ -36,7 +36,6 @@ class EventTest < ActiveSupport::TestCase
     @birthday.place = ' '
     assert_not @birthday.valid?
   end
-
 
   test 'place should not be too long' do
     @birthday.place = 'x' * 41

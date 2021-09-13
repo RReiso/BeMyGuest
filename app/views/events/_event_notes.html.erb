@@ -1,35 +1,24 @@
 <div class="right">
-        <div class="d-flex flex-wrap flex-column  align-items-center justify-content-evenly py-3 event-info event-container flex-md-row">
-            <div class="event-details">
-              <div class="card card-custom bg-white border-white border-0">
-                <div class="card-custom-img" ></div>
-            
-                <div class="card-body" style="overflow-y: auto">
-                  <h4 class="card-title"><%=@event.name%></h4>
-                  <h6 class="card-subtitle mb-1 mt-3 text-muted">Date</h6>
-                  <p class="card-text mb-3"><%=@event.event_date.to_formatted_s(:rfc822)%></p>
-                  <h6 class="card-subtitle mb-1 text-muted">Time</h6>
-                  <p class="card-text mb-3"><%=@event.event_time.to_formatted_s(:time)  %></p>
-                  <h6 class="card-subtitle mb-1 text-muted">Place</h6>
-                  <p class="card-text mb-3"><%=@event.place  %></p>
-                 
-                <%= link_to "Edit","#", class: "btn btn-warning btn-sm gradient-custom-5", "data-bs-toggle"=>"modal", "data-bs-target"=>"#editEventModal-#{@event.id}", "data-bs-whatever"=>"@mdo" %>
-                </div>
-              </div>
-              <%= render "events/edit_event_modal" %>
-            </div>
-
-
-            
-            
+  <div class="d-flex flex-wrap flex-column  align-items-center justify-content-evenly py-3 event-info event-container flex-md-row">
+    <div class="event-details">
+      <div class="card card-custom bg-white border-white border-0">
+        <div class="card-custom-img"></div>
+        <div class="card-body" style="overflow-y: auto">
+          <h4 class="card-title"><%= @event.name %></h4>
+          <h6 class="card-subtitle mb-1 mt-3 text-muted">Date</h6>
+          <p class="card-text mb-3"><%= @event.event_date.to_formatted_s(:rfc822) %></p>
+          <h6 class="card-subtitle mb-1 text-muted">Time</h6>
+          <p class="card-text mb-3"><%= @event.event_time.to_formatted_s(:time) %></p>
+          <h6 class="card-subtitle mb-1 text-muted">Place</h6>
+          <p class="card-text mb-3"><%= @event.place %></p>
+          <%= link_to "Edit","#", class: "btn btn-warning btn-sm gradient-custom-5", "data-bs-toggle"=>"modal", "data-bs-target"=>"#editEventModal-#{@event.id}", "data-bs-whatever"=>"@mdo" %>
         </div>
-        <div class="notes">
-              <div class="tape">Notes</div>
-              <textarea name="note" id="sticky-note" data-event="<%=@event.id%>"><%=@event.notes%></textarea>
-              <%
-=begin%>
- <button class="note-btn rounded-2 bg-warning gradient-custom-5 text-white">Save notes</button> 
-<%
-=end%>
-            </div>
+        <%= render "events/edit_event_modal" %>
+      </div>   
+    </div>
+    <div class="notes">
+      <div class="tape">Notes</div>
+          <textarea name="note" id="sticky-note" data-event="<%= @event.id %>"><%= @event.notes %></textarea>
+    </div>
+  </div>  
 </div>

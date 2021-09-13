@@ -1,5 +1,4 @@
 class RegistrationsController < ApplicationController
-
   def new
     @user = User.new
   end
@@ -7,7 +6,7 @@ class RegistrationsController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-       log_in(@user)
+      log_in(@user)
       redirect_to @user, success: "Welcome, #{@user.name}!"
     else
       render 'new'
@@ -16,10 +15,9 @@ class RegistrationsController < ApplicationController
 
   private
 
-    def user_params
-      params
-        .require(:user)
-        .permit(:name, :email, :password, :password_confirmation, :terms_and_conditions)
-    end
+  def user_params
+    params
+      .require(:user)
+      .permit(:name, :email, :password, :password_confirmation, :terms_and_conditions)
+  end
 end
- 

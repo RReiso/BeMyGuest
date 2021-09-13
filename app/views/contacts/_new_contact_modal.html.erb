@@ -7,30 +7,29 @@
         <h5 class="modal-title" id="create_contact">Create contact</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-        <%=form_with model: [@current_user, @new_contact], local: true do |f| %>
-         <div class="modal-body">
+      <%= form_with model: [@current_user, @new_contact], local: true do |f| %>
+        <div class="modal-body">
           <div class="mb-3">
             <%= f.label :name, "Name", class: "col-form-label " %>
-            <%= f.text_field :name, id: "contact-name", class: "form-control form-control-md", required: true%>
-           </div>
+            <%= f.text_field :name, id: "contact-name", class: "form-control form-control-md", required: true %>
+          </div>
           <div class="mb-3">
             <%= f.label :email, "Email", class: "col-form-label " %>
-            <%= f.email_field :email, id: "contact-email", class: "form-control form-control-md"%>
-           </div>
+            <%= f.email_field :email, id: "contact-email", class: "form-control form-control-md" %>
+          </div>
           <div class="mb-3">
             <%= f.label :phone, "Phone", class: "col-form-label " %>
-            <%= f.text_field :phone,  id: "contact-phone", class: "form-control form-control-md"%>
-           </div>
+            <%= f.text_field :phone,  id: "contact-phone", class: "form-control form-control-md" %>
+          </div>
           <div class="mb-3">
             <%= f.label :notes, "Notes", class: "col-form-label " %>
             <%= f.text_field :notes, id: "contact-notes", class: "form-control form-control-md"%>
-           </div>
-           
-           </div>
-      <div class="modal-footer">
-        <%=f.submit "Save", class: "btn btn-primary"%>
-      </div>
-         <% end %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <%=f.submit "Save", class: "btn btn-primary"%>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

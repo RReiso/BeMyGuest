@@ -17,19 +17,11 @@ class ConnectionsController < ApplicationController
 	end
 
 	def create
-		if !params[:contact].blank?
-			guests = Contact.where(id: contact_params[:invited])
-			if guests.blank?
-				flash[:danger] = 'Error adding guests. Please try again.'
-			else
-				guests.each do |guest|
-					flash[:danger] = 'Error adding guest. Please try again.' unless @event
-						.send_invitation(guest)
-				end
-			end
-			redirect_to guests_path(@user, @event)
-		else
+		if params[:contact].blank?
 			redirect_to contact_list_path(@user)
+		else
+			invite_guests
+			redirect_to guests_path(@user, @event)
 		end
 	end
 
@@ -53,5 +45,17 @@ class ConnectionsController < ApplicationController
 
 	def rsvp_params
 		params.require(:connection).permit(:RSVP)
+	end
+
+	def invite_guests
+		guests = Contact.where(id: contact_params[:invited])
+		if guests.blank?
+			flash[:danger] = 'Error adding guests. Please try again.'
+		else
+			guests.each do |guest|
+				flash[:danger] = 'Error adding guest. Please try again.' unless @event
+					.send_invitation(guest)
+			end
+		end
 	end
 end
