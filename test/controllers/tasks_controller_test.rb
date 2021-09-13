@@ -74,4 +74,28 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
 		assert flash.empty?
 		assert_redirected_to @second_user
 	end
+
+   test 'should redirect change task state when not logged in' do
+    	patch update_task_state_path(@user, @event, @task),
+		     params: {
+				item: {
+					checked: 'true',
+				},
+		     }
+    assert_not flash.empty?
+    assert_redirected_to login_url
+  end
+
+  test 'should redirect change task state when logged in as wrong user' do
+    log_in_as(@second_user)
+   	patch update_task_state_path(@user, @event, @task),
+		     params: {
+				item: {
+					checked: 'true',
+				},
+		     }
+    assert flash.empty?
+    assert_redirected_to @second_user
+  end
+
 end

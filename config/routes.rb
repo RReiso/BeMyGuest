@@ -12,8 +12,10 @@ Rails.application.routes.draw do
   get '/signup', to: 'registrations#new'
   post '/signup', to: 'registrations#create'
   
-  patch '/users/:user_id/events/:event_id/tasks/:id', to: 'tasks#update_task_state'
-  patch '/users/:user_id/events/:event_id/items/:id', to: 'items#update_item_state'
+  patch '/users/:user_id/events/:event_id/tasks/:id/state',
+        to: 'tasks#update_task_state', as: :update_task_state
+  patch '/users/:user_id/events/:event_id/items/:id/state', 
+        to: 'items#update_item_state', as: :update_item_state
   patch '/users/:user_id/events/:event_id/notes', to: 'events#save_notes', as: :notes
 
   get '/users/:user_id/events/:event_id/guests', to: 'connections#index', as: :guests

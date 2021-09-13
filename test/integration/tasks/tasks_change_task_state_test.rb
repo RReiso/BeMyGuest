@@ -18,7 +18,7 @@ class TasksChangeTaskStateTest < ActionDispatch::IntegrationTest
 	end
 
 	test 'successful state change' do
-		post user_event_task_path(@user, @event, @task),
+		patch update_task_state_path(@user, @event, @task),
 		     params: {
 				task: {
 					checked: 'true',
@@ -34,7 +34,7 @@ class TasksChangeTaskStateTest < ActionDispatch::IntegrationTest
 	end
 
   test 'unsuccessful state change' do
-		post user_event_task_path(@user, @event, @task),
+		patch update_task_state_path(@user, @event, @task),
 		     params: {
 				task: {
 					content: 'something else'

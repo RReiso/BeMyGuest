@@ -20,6 +20,7 @@ class TasksController < ApplicationController
 	end
 
 	def update
+    p "updating"
 		flash[:danger] = 'Error updating task. Please try again.' unless @task
 			.update(task_params)
 

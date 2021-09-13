@@ -18,7 +18,7 @@ class ItemsChangeitemStateTest < ActionDispatch::IntegrationTest
 	end
 
 	test 'successful state change' do
-		post user_event_item_path(@user, @event, @item),
+		patch update_item_state_path(@user, @event, @item),
 		     params: {
 				item: {
 					checked: 'true',
@@ -34,7 +34,7 @@ class ItemsChangeitemStateTest < ActionDispatch::IntegrationTest
 	end
 
   test 'unsuccessful state change' do
-		post user_event_item_path(@user, @event, @item),
+		patch update_item_state_path(@user, @event, @item),
 		     params: {
 				item: {
 					content: 'something else'

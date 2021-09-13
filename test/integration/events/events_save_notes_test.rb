@@ -23,7 +23,7 @@ class EventsSaveNotesTest < ActionDispatch::IntegrationTest
 		assert_template 'events/show'
 		assert_select 'h4.card-title', "Grandma's birthday"
 		assert_select 'textarea#sticky-note'
-		post notes_path(@user, @event),
+		patch notes_path(@user, @event),
 		     params: {
 				id: @event.id,
 				event: {
