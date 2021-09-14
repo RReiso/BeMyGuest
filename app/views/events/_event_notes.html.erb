@@ -1,17 +1,20 @@
 <div class="right">
-  <div class="d-flex flex-wrap flex-column  align-items-center justify-content-evenly py-3 event-info event-container flex-md-row">
-    <div class="event-details">
+  <div class="d-flex flex-wrap flex-column  align-items-center justify-content-evenly py-3 event-info event-container flex-md-row mx-md-3">
+    <div class="event-details ">
       <div class="card card-custom bg-white border-white border-0">
         <div class="card-custom-img"></div>
         <div class="card-body" style="overflow-y: auto">
-          <h4 class="card-title"><%= @event.name %></h4>
-          <h6 class="card-subtitle mb-1 mt-3 text-muted">Date</h6>
-          <p class="card-text mb-3"><%= @event.event_date.to_formatted_s(:rfc822) %></p>
-          <h6 class="card-subtitle mb-1 text-muted">Time</h6>
-          <p class="card-text mb-3"><%= @event.event_time.to_formatted_s(:time) %></p>
-          <h6 class="card-subtitle mb-1 text-muted">Place</h6>
-          <p class="card-text mb-3"><%= @event.place %></p>
-          <%= link_to "Edit","#", class: "btn btn-warning btn-sm gradient-custom-5", "data-bs-toggle"=>"modal", "data-bs-target"=>"#editEventModal-#{@event.id}", "data-bs-whatever"=>"@mdo" %>
+          <h4 class="card-title mt-2"><%= @event.name %></h4>
+          <h6 class=" mb-3 mt-3 ">Date:  
+            <span class="card-text mb-3 px-1 "><%= @event.event_date.to_formatted_s(:rfc822) %></span>
+          </h6>
+          <h6 class=" mb-3">Time:
+            <span class="card-text mb-3 px-1"><%= @event.event_time.to_formatted_s(:time) %></span>
+          </h6>
+          <h6 class=" mb-3">Place:
+            <span class="card-text mb-3 px-1"><%= @event.place %></span>
+          </h6>
+          <%= link_to "Edit event details","#", class: "btn btn-warning btn-sm", "data-bs-toggle"=>"modal", "data-bs-target"=>"#editEventModal-#{@event.id}", "data-bs-whatever"=>"@mdo" %>
         </div>
         <%= render "events/edit_event_modal" %>
       </div>   

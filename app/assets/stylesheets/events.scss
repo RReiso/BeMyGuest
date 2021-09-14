@@ -1,4 +1,3 @@
-
 .right {
 	flex-shrink: 1 !important;
 }
@@ -6,22 +5,19 @@
 	margin: 0 auto;
 }
 
-// .event-info {
-// 	max-width: fit-content !important;
-// 	flex-shrink: 1 !important;
-// }
+
 .card-custom {
 	margin: 0.75rem;
-	// max-width: 10rem;
+	max-width:24rem;
 	overflow: hidden;
-	min-height: 450px;
+	// min-height: 450px;
 	-moz-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
 	-webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
 	box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .card-custom-img {
-	min-height: 140px;
+	min-height: 120px;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -30,33 +26,25 @@
 	border-bottom: 5px solid red;
 }
 
-.gradient-custom-5 {
-	background: -webkit-linear-gradient(
-		to right,
-		rgb(231, 177, 30),
-		rgb(238, 182, 61)
-	);
-	background: linear-gradient(to right, rgb(231, 177, 30), rgb(238, 182, 61));
+.card-details{
+  display:inline;
 }
 
-.gradient-custom-5:hover {
-	opacity: 0.5;
-}
 
 .notes {
 	width: 95%;
   margin:0 auto;
-  	min-height: 10rem;
+  	// min-height: 10rem;
     max-height:100vh;
 }
 
 .tape {
-	top: 25px;
+	top: 20px;
 	left: 25%;
 	position: relative;
 	width: 50%;
 	height: 40px;
-	background: rgba(255, 255, 200, 0.4);
+	background: rgba(219, 219, 139, 0.719);
 	-webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
 	-moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
 	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
@@ -70,7 +58,7 @@
 	display: block;
 	margin-bottom: 0.5rem;
 	width: 100%;
-	min-height: 15rem;
+	min-height: 26rem;
 
 	padding: 1.5rem;
 	background-color: #f0e9a0;
@@ -81,9 +69,7 @@
 	outline: none;
 }
 
-.note-btn{
-  width:100%;
-}
+
 
 
 @media (min-width:350px){
@@ -94,10 +80,27 @@
 
 @media (min-width:500px){
   .notes {
-	max-width: 30rem;
+	max-width: 25rem;
 }
 #sticky-note{
   height:20rem;
+}
+}
+
+
+@media (min-width:1000px){
+  .notes {
+	max-width: 30rem;
+}
+}
+@media (min-width:1200px){
+  .notes {
+	max-width: 35rem;
+}
+}
+@media (min-width:1300px){
+  .notes {
+	max-width: 40rem;
 }
 }
 // }
