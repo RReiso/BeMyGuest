@@ -14,7 +14,7 @@
           <h6 class=" mb-3">Place:
             <span class="card-text mb-3 px-1"><%= @event.place %></span>
           </h6>
-          <%= link_to "Edit event details","#", class: "btn btn-warning btn-sm", "data-bs-toggle"=>"modal", "data-bs-target"=>"#editEventModal-#{@event.id}", "data-bs-whatever"=>"@mdo" %>
+          <%= link_to "Edit event details","#", class: "d-flex justify-content-center btn btn-warning btn-sm", "data-bs-toggle"=>"modal", "data-bs-target"=>"#editEventModal-#{@event.id}", "data-bs-whatever"=>"@mdo" %>
         </div>
         <%= render "events/edit_event_modal" %>
       </div>   

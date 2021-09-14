@@ -9,6 +9,7 @@
 .card-custom {
 	margin: 0.75rem;
 	max-width:24rem;
+  min-width: 20rem;
 	overflow: hidden;
 	// min-height: 450px;
 	-moz-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
@@ -23,7 +24,7 @@
 	background-position: center;
 	border-color: inherit;
 	background-image: url(celebration1.png);
-	border-bottom: 5px solid red;
+	// border-bottom: 5px solid red;
 }
 
 .card-details{
@@ -58,7 +59,7 @@
 	display: block;
 	margin-bottom: 0.5rem;
 	width: 100%;
-	min-height: 26rem;
+	min-height: 15rem;
 
 	padding: 1.5rem;
 	background-color: #f0e9a0;
@@ -76,6 +77,7 @@
   .notes {
 	max-width: 25rem;
 }
+
 }
 
 @media (min-width:500px){
@@ -83,7 +85,8 @@
 	max-width: 25rem;
 }
 #sticky-note{
-  height:20rem;
+  height:26rem;
+  padding:2.5rem;
 }
 }
 
