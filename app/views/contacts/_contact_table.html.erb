@@ -1,25 +1,30 @@
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Notes</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @contacts.each do |contact| %>
-      <tr>
-        <td><%=contact.name%></td>
-        <td><%= contact.email %></td>
-        <td><%= contact.phone   %></td>
-        <td><%= contact.notes   %></td>
-        <td>  <%= link_to "Edit","#", class: "btn btn-outline-secondary btn-sm", "data-bs-toggle"=>"modal", "data-bs-target"=>"#editContactModal-#{contact.id}", "data-bs-whatever"=>"@mdo" %></td>
-        <td><%= link_to "", user_contact_path(@user, contact), method: :delete, data: {confirm: "Are you sure?"}, class: " btn-close", type: :button %></td>
+<div class="table-responsive contact-table mb-1 mt-5">
+  <table class="table table-hover mt-2 fs-6">
+    <thead>
+     <tr>
+        <td colspan="6" class=" text-dark border border-1 border-info text-center p-1 bg-success">Contacts</td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Notes</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @contacts.each do |contact| %>
+        <tr>
+          <td><%=contact.name%></td>
+          <td><%= contact.email %></td>
+          <td><%= contact.phone   %></td>
+          <td><%= contact.notes   %></td>
+          <td>  <%= link_to "Edit","#", class: "btn btn-outline-secondary btn-sm", "data-bs-toggle"=>"modal", "data-bs-target"=>"#editContactModal-#{contact.id}", "data-bs-whatever"=>"@mdo" %></td>
+          <td><%= link_to "", user_contact_path(@user, contact), method: :delete, data: {confirm: "Are you sure?"},"aria-label" => "Delete", class: " btn-close", type: :button %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <%= render "contacts/edit_contact_modal" %>

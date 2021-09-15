@@ -7,4 +7,8 @@ module ApplicationHelper
   def flash_danger(action, model)
     flash[:danger] = "Error #{action} #{model}. Please try again."
   end
+
+  def initials(current_user)
+    current_user.name[0..1].upcase
+  end
 end

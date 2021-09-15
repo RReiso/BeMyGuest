@@ -8,12 +8,12 @@
         <%= form_with model: [@user, @event, connection(guest,@event)], local: true do |f| %>
           <div class="modal-body">
             <div class="mb-3 select">
-              <%= f.label :RSVP, "RSVP ", class: "col-form-label" %>
+              <%= f.label :RSVP, "RSVP:", class: "col-form-label px-3" %>
               <%= f.select :RSVP, options_for_select(rsvp_options,{selected: connection(guest,@event).RSVP}) %>
             </div>
           </div>
           <div class="modal-footer">
-            <%= f.submit "Save", class: "btn btn-primary" %>
+            <%= f.submit "Save", class: "border border-1 border-warning btn btn-primary btn-sm" %>
           </div>
         <% end %>
       </div>

@@ -13,6 +13,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "../stylesheets/application";
 import "../stylesheets/custom.scss";
 
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

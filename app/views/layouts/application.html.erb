@@ -18,6 +18,10 @@
     <%= yield %>
     </main>
     <%= render "shared/footer" %>
-    <%= debug(params) if Rails.env.development? %>
+    <%
+=begin%>
+ <%= debug(params) if Rails.env.development? %> 
+<%
+=end%>
   </body>
 </html>

@@ -1,23 +1,20 @@
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>RSVP</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @guests.each do |guest| %>
-      <% connection = connection(guest,@event) %>
-      <tr>
-        <td><%= link_to guest.name,"#", class: "", "data-bs-toggle"=>"modal", "data-bs-target"=>"#guestInfoModal-#{guest.id}", "data-bs-whatever"=>"@mdo" %></td>
-        <td class="rsvp"><%= connection.RSVP %></td> 
-        <td><%= link_to "Change RSVP","#", class: "btn btn-outline-secondary btn-sm", "data-bs-toggle"=>"modal", "data-bs-target"=>"#changeGuestStateModal-#{guest.id}", "data-bs-whatever"=>"@mdo" %></td>
-        <td><%= link_to "", user_event_connection_path(@user,@event,guest), method: :delete, data: {confirm: "Are you sure?"}, class: " btn-close", type: :button%></td>
+<div class="table-responsive object-table mb-1 mt-5">  
+  <table class="table mt-2 table-hover">
+     <tr>
+        <td colspan="4" class="border border-info border-1 text-dark text-center p-1 bg-success">Guest list</td>
       </tr>
-      <%= render partial: "connections/guest_info_modal", locals: { guest: guest, connection: connection } %>
-    <% end %>
-  </tbody>
-</table>
- <%= render partial: "connections/change_rsvp_modal", locals: { guests: @guests }%> 
+    <tbody>
+      <% @guests.each do |guest| %>
+        <% connection = connection(guest,@event) %>
+        <tr>
+          <td><%= link_to guest.name,"#", class: "text-dark", "data-bs-toggle"=>"modal", "data-bs-target"=>"#guestInfoModal-#{guest.id}", "data-bs-whatever"=>"@mdo" %></td>
+          <td class="rsvp"><%= connection.RSVP %></td> 
+          <td><%= link_to "Edit","#", class: "btn btn-outline-secondary btn-sm", "data-bs-toggle"=>"modal", "data-bs-target"=>"#changeGuestStateModal-#{guest.id}", "data-bs-whatever"=>"@mdo" %></td>
+          <td><%= link_to "", user_event_connection_path(@user,@event,guest), method: :delete, data: {confirm: "Are you sure?"}, "aria-label" => "Delete", class: " btn-close", type: :button%></td>
+        </tr>
+        <%= render partial: "connections/guest_info_modal", locals: { guest: guest, connection: connection } %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+  <%= render partial: "connections/change_rsvp_modal", locals: { guests: @guests }%> 

@@ -5,22 +5,10 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="mb-3">
-          <p>Name</p>
-          <p><%= guest.name %></p>
-        </div>
-        <div class="mb-3">
-          <p>Email</p>
-          <p><%= guest.email %></p>
-        </div>
-        <div class="mb-3">
-          <p>Phone</p>
-          <p><%= guest.phone %></p>
-        </div>
-        <div class="mb-3">
-          <p>Notes</p>
-          <p><%= guest.notes %></p>
-        </div>                 
+          <p class="mb-3">Name: <%= guest.name %></p>
+          <p class="mb-3">Email: <%= guest.email %></p>
+          <p class="mb-3">Phone: <%= guest.phone %></p>
+          <p class="mb-3">Notes: <%= guest.notes %></p>          
       </div>
     </div>
   </div>

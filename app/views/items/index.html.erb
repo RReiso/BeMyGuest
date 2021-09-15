@@ -1,12 +1,11 @@
 <% provide(:title, 'Shopping') %>
-<section>
+<section class="h-100">
   <div class="container-fluid">
     <div class="row flex-nowrap">
       <%= render 'events/event_navbar'%>
       <div class="right">
-        <h3 class="event-name"><%= @event.name %></h3>
         <% if @items.blank? %>
-          <p class='empty'>Shopping list empty!</p>
+          <p class="text-center mt-5">Shopping list empty! Add some items!</p>
         <% else %>
           <%= render 'items/shopping_list'%>
         <% end %>

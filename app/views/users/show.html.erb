@@ -1,8 +1,10 @@
 <% provide(:title, "Home") %>
-<h1><%= @user.name %></h1>
-<section>
+<section class="vh-100">
   <% if @events.blank? %>
-    <p>Start planning by creating a new event!</p>
+    <p class="text-center fs-5 my-5">Welcome to the BeMyGuest event planner!</p> 
+    <p class="text-center my-5">Start planning by creating a 
+     <%= link_to " new event!","#","aria-current" => "page", "data-bs-toggle"=>"modal", "data-bs-target"=>"#newEventModal",class: "link-to", "data-bs-whatever"=>"@mdo" %>
+    </p>
   <% else %>
     <%= render 'users/event_table' %>
   <%end%>

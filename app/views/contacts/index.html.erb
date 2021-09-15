@@ -1,13 +1,12 @@
 <% provide(:title, "Contacts") %>
-<h1>
-  <%= @user.name %>
-</h1>
 <section>
-  <%= link_to "+ Add contact","#", class: "btn btn-primary btn-sm", "data-bs-toggle"=>"modal", "data-bs-target"=>"#createContactModal", "data-bs-whatever"=>"@mdo" %>
   <%= render 'contacts/new_contact_modal'%>
   <% if @contacts.blank? %>
-    <p class="empty">Contact list empty!</p>
+    <p class="text-center mt-5">Start adding contacts to your Contact book!</p>
   <%else%>
     <%= render 'contacts/contact_table' %>
   <%end%>
+  <div class="d-flex justify-content-center">
+    <%= link_to "+ Add contact","#", class: "border border-1 border-warning mt-3 mb-5 btn btn-primary btn-sm", "data-bs-toggle"=>"modal", "data-bs-target"=>"#createContactModal", "data-bs-whatever"=>"@mdo" %>
+  </div>
 </section>

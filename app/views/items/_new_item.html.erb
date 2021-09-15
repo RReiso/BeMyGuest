@@ -1,12 +1,11 @@
 <div class="object-new">
-  <%= form_with model: [@current_user, @event, @new_item], local: true  do |f| %>
+  <%= form_with model: [@current_user, @event, @new_item],class: "d-flex flex-column flex-md-row align-items-center justify-content-center", local: true  do |f| %>
     <%= f.label :name, "New item", class: "sr-only" %>
     <%= f.text_field :name,
-        class: "object-input",
-        placeholder: "New item ...",
-        autofocus: true,
+        class: "object-input rounded",
+        placeholder: "Balloons",
         autocomplete: "off",
         required: true %>
-    <%=f.submit "Add item", class: "btn btn-primary btn-sm"%>
+    <%=f.submit "Add item", class: "mb-4 mt-4 btn btn-primary border border-warning border-1 btn-sm mx-2"%>
   <% end %>
 </div>

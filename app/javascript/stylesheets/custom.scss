@@ -1,15 +1,18 @@
 // scss-docs-start color-variables
-$blue:    #3e5467 !default;
+$blue:    #365a7a !default;
+$dark-blue: #3c3e53  !default;
 $indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
+$purple:  #5c475a !default;
 $pink:    #d63384 !default;
 $red:     #ad3525 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #d0aa4e !default;
+$orange:  #e6b864 !default;
+$yellow:  #fbcb6f !default;
 $green:   #198754 !default;
 $teal:    #20c997 !default;
-$cyan:    #588c9d !default;
+$cyan:    #3284a0 !default;
 $brown:   #6c5341 !default;
+$grey: #706d6d !default;
+
 // scss-docs-end color-variables
 
 // scss-docs-start colors-map
@@ -29,13 +32,13 @@ $colors: (
 // scss-docs-end colors-map
 
 // scss-docs-start theme-color-variables
-$primary:       $blue !default;
-$secondary:     $brown !default;
-$success:       $green !default;
-$info:          $cyan !default;
-$warning:       $yellow !default;
+$light:         #fffae5 !default;
+$primary:      $yellow !default;
+$secondary:     $grey !default;
+$success:       $light !default;
+$info:          rgba(153, 150, 150, 0.452) !default;
+$warning:       $orange !default;
 $danger:        $red !default;
-$light:         #89bebc !default;
 // $dark:          $gray-900 !default;
 // scss-docs-end theme-color-variables
 
@@ -52,13 +55,16 @@ $theme-colors: (
 ) !default;
 // scss-docs-end theme-colors-map
 
-$body-bg:                   #e9efe9 !default;
+$body-bg:                   #fffae5 !default;
 
-$link-color:                              #e9efe9 !default;
+$link-color:                              #232532 !default;
 $link-decoration:                         none !default;
+$link-hover-color:                        #304f5f!default;
+// $link-shade-percentage:                   1% !default;
+
 
 // $component-active-color:      $white !default;
-$component-active-bg:         $primary !default;
+$component-active-bg:         $success !default;
 
 // $table-color:                 $body-color !default;
 // $table-bg:                    transparent !default;
@@ -105,5 +111,26 @@ $btn-active-border-tint-amount:   10% !default;
 
 // $nav-pills-link-active-color:       $component-active-color !default;
 // $nav-pills-link-active-bg:          $component-active-bg !default;
-@import "../../../node_modules/bootstrap/scss/bootstrap";
 
+// .navbar-nav {
+//   .nav-link {
+//     &:hover,
+//     &:focus {
+//       color: red;
+//     }
+//   }
+// }
+
+// .nav-link {
+  
+  
+//   &:hover,
+//   &:focus {
+//     color: red;
+//     // text-decoration: if($link-hover-decoration == underline, none, null);
+//   }
+// }
+
+$font-family-base:   Rubik;
+
+@import "../../../node_modules/bootstrap/scss/bootstrap";
