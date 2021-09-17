@@ -1,6 +1,6 @@
 // scss-docs-start color-variables
-$blue:    #365a7a !default;
-$dark-blue: #3c3e53  !default;
+$blue:    #396479 !default;
+$dark-blue: #42748c  !default;
 $indigo:  #6610f2 !default;
 $purple:  #5c475a !default;
 $pink:    #d63384 !default;
@@ -32,11 +32,11 @@ $colors: (
 // scss-docs-end colors-map
 
 // scss-docs-start theme-color-variables
-$light:         #fffae5 !default;
+$light:         #f4fdfd !default;
 $primary:      $yellow !default;
 $secondary:     $grey !default;
-$success:       $light !default;
-$info:          rgba(153, 150, 150, 0.452) !default;
+$success:       $blue !default;
+$info:          rgba(223, 217, 217, 0.658) !default;
 $warning:       $orange !default;
 $danger:        $red !default;
 // $dark:          $gray-900 !default;
@@ -57,9 +57,9 @@ $theme-colors: (
 
 $body-bg:                   #fffae5 !default;
 
-$link-color:                              #232532 !default;
+$link-color:                              $light !default;
 $link-decoration:                         none !default;
-$link-hover-color:                        #304f5f!default;
+$link-hover-color:                        $info!default;
 // $link-shade-percentage:                   1% !default;
 
 
@@ -98,7 +98,7 @@ $component-active-bg:         $success !default;
 
 // $btn-padding-y:               $input-btn-padding-y !default;
 // $btn-padding-x:               $input-btn-padding-x !default;
-$btn-padding-y-sm:            0.125rem !default;
+$btn-padding-y-sm:            0.25rem !default;
 $btn-padding-x-sm:            0.5rem !default;
 $btn-hover-bg-shade-amount:       25% !default;
 $btn-hover-bg-tint-amount:        15% !default;

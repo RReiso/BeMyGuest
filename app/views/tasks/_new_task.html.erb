@@ -1,11 +1,11 @@
-<div class="object-new">
+<div class="object-new mt-4 mb-5">
   <%= form_with model: [@current_user, @event, @new_task],class: "d-flex flex-column flex-md-row align-items-center justify-content-center", local: true  do |f| %>
     <%= f.label :description, "Your task", class: "sr-only" %>
     <%= f.text_field :description,
-        class: "object-input",
+        class: "object-input shadow-sm p-1 px-2",
         placeholder: "Make a cake",
         autocomplete: "off",
         required: true %>
-    <%=f.submit "Add task", class: "border border-1 border-warning mb-4 mt-4 btn btn-primary btn-sm mx-2"%>
+    <%=f.submit "Add task", class: "shadow-sm mt-3 mt-md-0 border border-1 border-warning btn btn-primary btn-sm mx-2"%>
   <% end %>
 </div>

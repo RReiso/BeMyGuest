@@ -91,19 +91,34 @@ color:var(--bs-light);
 // 	z-index: -1;
 // }
 
-footer{
-  position:relative;
-  bottom:0px;
-}
+// footer{
+//   position:absolute;
+//   bottom:0px;
+//   width:100vw;
+// }
 body{
+background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: rgba(114, 133, 165, 0.562);
  background-image: linear-gradient(
 			115deg,
-			rgba(97, 186, 202, 0.712),
-			rgba(201, 189, 80, 0.692)
+      rgba(219, 209, 114, 0.692),
+			rgba(118, 190, 201, 0.712)
+			
 		),
-		image-url("celebration1.png");
+		image-url("dim.png");
 }
 // .nav-link-hov :hover{
 // color: #b2bac2 !important;
 // }
+footer{
+  color:whitesmoke;
+}
 
+
+table{
+   border-collapse: collapse;
+  border-radius: 7px;
+  overflow: hidden;
+}
