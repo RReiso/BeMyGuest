@@ -1,17 +1,16 @@
 <div class="table-responsive object-table mb-1 mt-5">
-<table class="shadow table table-light mt-2 table-borderless border border-1 border-warning">
-  <tbody>
+  <table class="shadow table table-light mt-2 table-borderless border border-1 border-warning">
+    <tbody>
       <tr>
-        <td colspan="3" class="text-dark border border-warning border-1 text-center p-1 bg-primary">Shopping list</td>
+        <td colspan="2" class="text-dark border border-warning border-1 text-center p-1 bg-primary">Shopping list</td>
       </tr>
-    <% @items.each do |item| %>
-      <tr>
-        <td class="item ps-2"><input type="checkbox" class="check-box form-check-input" data-checked="<%= item.checked %>" name="item" id="<%= item.id %>"><label class="object-label pointer fs-6" for="<%= item.id %>" ><%= item.name %></label></td>
-        <td class="px-0"> <%= link_to "Edit","#", class: "btn btn-outline-secondary btn-sm", "data-bs-toggle"=>"modal", "data-bs-target"=>"#editItemModal-#{item.id}", "data-bs-whatever"=>"@mdo" %></td>
-        <td><%=link_to "", user_event_item_path(@user, @event, item), method: :delete, "aria-label" => "Delete", class: "btn-close", type: :button %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <% @items.each do |item| %>
+        <tr>
+          <td><input type="checkbox" class="check-box form-check-input" data-checked="<%= item.checked %>" name="item" id="<%= item.id %>"><label class="object-label pointer fs-6" for="<%= item.id %>" ><%= item.name %></label></td>
+          <td><%=link_to "", user_event_item_path(@user, @event, item), method: :delete, "aria-label" => "Delete", class: "text-center btn-close", type: :button %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
-<%= render "items/edit_item_modal" %>
+

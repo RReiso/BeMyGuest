@@ -1,5 +1,5 @@
 <% provide(:title, "Contacts") %>
-<section>
+<section class="min-vh-100">
   <%= render 'contacts/new_contact_modal'%>
   <% if @contacts.blank? %>
     <p class="text-center mt-5">Start adding contacts to your Contact book!</p>
@@ -7,6 +7,6 @@
     <%= render 'contacts/contact_table' %>
   <%end%>
   <div class="d-flex justify-content-center">
-    <%= link_to "+ Add contact","#", class: "border border-1 border-warning mt-3 mb-5 btn btn-primary btn-sm", "data-bs-toggle"=>"modal", "data-bs-target"=>"#createContactModal", "data-bs-whatever"=>"@mdo" %>
+    <%= link_to "+ Add contact","#", class: "shadow-sm border border-1 border-warning mt-3 mb-5 btn btn-primary btn-sm", "data-bs-toggle"=>"modal", "data-bs-target"=>"#createContactModal", "data-bs-whatever"=>"@mdo" %>
   </div>
 </section>

@@ -12,7 +12,7 @@ class EventsEditTest < ActionDispatch::IntegrationTest
     log_in_as(@user)
     get user_event_path(@user, @event)
     assert_template 'events/show'
-    assert_select 'a', 'Edit'
+    assert_select 'a.btn', 'Edit event details'
     patch user_event_path(@user, @event),
           params: {
             event: {
@@ -32,7 +32,7 @@ class EventsEditTest < ActionDispatch::IntegrationTest
     log_in_as(@user)
     get user_event_path(@user, @event)
     assert_template 'events/show'
-    assert_select 'a', 'Edit'
+    assert_select 'a.btn', 'Edit event details'
     patch user_event_path(@user, @event),
           params: {
             event: {

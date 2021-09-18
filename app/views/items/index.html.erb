@@ -5,7 +5,7 @@
       <%= render 'events/event_navbar'%>
       <div class="right">
         <% if @items.blank? %>
-          <p class="text-center mt-5">Shopping list empty! Add some items!</p>
+          <p class="text-center fw-bold mt-5">Shopping list empty! Add some items!</p>
         <% else %>
           <%= render 'items/shopping_list'%>
         <% end %>

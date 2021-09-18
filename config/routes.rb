@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     resources :events, only: %i[create show update destroy] do
       resources :connections, only: %i[create update destroy]
       resources :tasks, only: %i[index create update destroy]
-      resources :items, only: %i[index create update destroy]
+      resources :items, only: %i[index create destroy]
       resources :guests, only: %i[index]
     end
   end

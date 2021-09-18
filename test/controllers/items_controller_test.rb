@@ -29,29 +29,6 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to login_url
   end
 
-  test 'should redirect update when not logged in' do
-    patch user_event_item_path(@user, @event, @item),
-          params: {
-            item: {
-              name: 'Chocolate cake'
-            }
-          }
-    assert_not flash.empty?
-    assert_redirected_to login_url
-  end
-
-  test 'should redirect update when logged in as wrong user' do
-    log_in_as(@second_user)
-    patch user_event_item_path(@user, @event, @item),
-          params: {
-            item: {
-              name: 'Chocolate cake'
-            }
-          }
-    assert flash.empty?
-    assert_redirected_to @second_user
-  end
-
   test 'should redirect create when not logged in' do
     post user_event_items_path(@user, @event),
          params: {

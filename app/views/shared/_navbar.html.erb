@@ -1,9 +1,9 @@
 <nav class="shadow-sm navbar navbar-expand-sm navbar-dark bg-success ">
   <div class="container-fluid">
     <% if logged_in? %>
-      <%= link_to image_tag("", class: "menu-icon ", alt: "BeMyGuest logo"), current_user, class: "nav-link" %>
+      <%= link_to "BeMyGuest", current_user, class: "nav-link brand-name" %>
     <% else %>
-      <%= link_to image_tag("", class: "menu-icon", alt: "BeMyGuest logo"), root_path, class: "nav-link" %>
+      <%= link_to "BeMyGuest", root_path, class: "nav-link brand-name" %>
     <% end %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

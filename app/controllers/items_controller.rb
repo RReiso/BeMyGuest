@@ -1,11 +1,11 @@
 class ItemsController < ApplicationController
   before_action :require_user_logged_in,
-                only: %i[index create update update_item_state destroy]
+                only: %i[index create update_item_state destroy]
   before_action :require_correct_user,
-                only: %i[index create update update_item_state destroy]
+                only: %i[index create update_item_state destroy]
   before_action :require_correct_event,
-                only: %i[index create update update_item_state destroy]
-  before_action :item, only: %i[update update_item_state destroy]
+                only: %i[index create update_item_state destroy]
+  before_action :item, only: %i[update_item_state destroy]
 
   def index
     @items = Item.where(event_id: params[:event_id])

@@ -5,13 +5,13 @@ $indigo:  #6610f2 !default;
 $purple:  #5c475a !default;
 $pink:    #d63384 !default;
 $red:     #ad3525 !default;
-$orange:  #e6b864 !default;
+$orange:  #bb9748 !default;
 $yellow:  #fbcb6f !default;
 $green:   #198754 !default;
 $teal:    #20c997 !default;
 $cyan:    #3284a0 !default;
 $brown:   #6c5341 !default;
-$grey: #706d6d !default;
+$grey: #4f5253 !default;
 
 // scss-docs-end color-variables
 
@@ -32,7 +32,7 @@ $colors: (
 // scss-docs-end colors-map
 
 // scss-docs-start theme-color-variables
-$light:         #f4fdfd !default;
+$light:         #f6f8f8 !default;
 $primary:      $yellow !default;
 $secondary:     $grey !default;
 $success:       $blue !default;
@@ -55,11 +55,11 @@ $theme-colors: (
 ) !default;
 // scss-docs-end theme-colors-map
 
-$body-bg:                   #fffae5 !default;
+// $body-bg:                   #fffae5 !default;
 
 $link-color:                              $light !default;
 $link-decoration:                         none !default;
-$link-hover-color:                        $info!default;
+$link-hover-color:                        $cyan!default;
 // $link-shade-percentage:                   1% !default;
 
 

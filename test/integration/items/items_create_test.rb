@@ -47,7 +47,6 @@ class ItemsCreateTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_template 'items/index'
     assert flash.empty?
-    assert_select 'table.object-table'
-    assert_select 'a.btn', 'Edit'
+    assert_select 'table.table'
   end
 end

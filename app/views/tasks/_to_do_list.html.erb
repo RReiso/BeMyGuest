@@ -1,17 +1,15 @@
 <div class="table-responsive object-table mb-1 mt-5">
-  <table class="table table-light mt-2 table-borderless border border-1 border-warning">
+  <table class="shadow table table-light mt-2 table-borderless border border-1 border-warning">
     <tbody>
       <tr>
-        <td colspan="3" class=" text-dark border border-warning border-1 text-center p-1 bg-primary">To Do</td>
+        <td colspan="2" class="text-dark border border-warning border-1 text-center p-1 bg-primary">To Do</td>
       </tr>
       <% @tasks.each do |task| %>
         <tr>
           <td><input type="checkbox" class="check-box form-check-input" data-checked="<%= task.checked %>" name="task" id="<%= task.id %>"><label class="object-label pointer fs-6" for="<%= task.id %>" ><%= task.description %></label></td>
-          <td> <%= link_to "Edit","#", class: "btn btn-outline-secondary btn-sm", "data-bs-toggle"=>"modal", "data-bs-target"=>"#editTaskModal-#{task.id}", "data-bs-whatever"=>"@mdo" %></td>
           <td><%=link_to "", user_event_task_path(@user, @event, task), method: :delete, "aria-label" => "Delete", class: "btn-close", type: :button %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </div>
-<%= render "tasks/edit_task_modal" %>

@@ -1,8 +1,10 @@
 <div class="table-responsive object-table mb-1 mt-5">  
-  <table class="table mt-2 table-hover">
+  <table class="shadow table table-hover table-light mt-2 table-borderless border border-1 border-warning">
+    <thead>
      <tr>
-        <td colspan="4" class="border border-info border-1 text-dark text-center p-1 bg-success">Guest list</td>
+        <td colspan="4" class="text-dark border border-warning border-1 text-center p-1 bg-primary">Guest list</td>
       </tr>
+    </thead> 
     <tbody>
       <% @guests.each do |guest| %>
         <% connection = connection(guest,@event) %>

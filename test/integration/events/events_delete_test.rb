@@ -10,7 +10,7 @@ class EventsDeleteTest < ActionDispatch::IntegrationTest
     log_in_as(@user)
     get user_event_path(@user, @event)
     assert_template 'events/show'
-    assert_select 'a', 'Edit'
+    assert_select 'a.btn', 'Edit event details'
     assert_difference 'Event.count', -1 do
       delete user_event_path(@user, @event)
     end
