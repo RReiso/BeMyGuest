@@ -78,6 +78,9 @@
 	color: #424242;
 }
 
+
+
+
 #sticky-note {
 	display: block;
 	margin-bottom: 0.5rem;
@@ -120,9 +123,9 @@
 		max-width: 17.5rem;
 	}
 
-  .card{
-    width: 16rem;
-  }
+  // .card{
+  //   width: 16rem;
+  // }
 
   .contact-table{
     max-width: 90%;
@@ -130,9 +133,9 @@
 }
 
 @media (min-width: 500px) {
-  .card{
-    width: 18rem;
-  }
+  // .card{
+  //   width: 18rem;
+  // }
 	.notes {
 		max-width: 25rem;
 	}

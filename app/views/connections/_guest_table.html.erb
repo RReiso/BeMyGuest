@@ -5,8 +5,8 @@
       <div class="d-flex justify-content-between">
           <%= link_to guest.name,"#", class: "text-dark", "data-bs-toggle"=>"modal", "data-bs-target"=>"#guestInfoModal-#{guest.id}", "data-bs-whatever"=>"@mdo" %>
        
-          <span class="rsvp"><%= connection.RSVP %></span>
-          <%= link_to "Edit","#", class: "btn btn-outline-secondary btn-sm", "data-bs-toggle"=>"modal", "data-bs-target"=>"#changeGuestStateModal-#{guest.id}", "data-bs-whatever"=>"@mdo" %>
+          <span class="ps-2 rsvp"><%= connection.RSVP %></span>
+          <%= link_to "Edit","#", class: "mx-1 btn btn-outline-secondary btn-sm", "data-bs-toggle"=>"modal", "data-bs-target"=>"#changeGuestStateModal-#{guest.id}", "data-bs-whatever"=>"@mdo" %>
         
         <%= link_to "", user_event_connection_path(@user,@event,guest), method: :delete, data: {confirm: "Are you sure?"}, "aria-label" => "Delete", class: "px-1 btn-close", type: :button%>
       </div>

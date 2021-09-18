@@ -8,6 +8,11 @@
       text-decoration: line-through;
     }
     
+
+input[type="checkbox"]{
+min-width: 16px;
+}
+
     .object-label{
       margin: 0 0.5rem;
     }

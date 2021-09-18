@@ -2,7 +2,7 @@
   <div class="card-body d-flex flex-column" style="overflow-y: auto">
     <% @tasks.each do |task| %>
       <div class="d-flex justify-content-between">
-        <div class="p-1">
+        <div class="p-1 d-flex">
           <input type="checkbox" class="check-box form-check-input" data-checked="<%= task.checked %>" name="task" id="<%= task.id %>">
           <label class="object-label pointer fs-6" for="<%= task.id %>" ><%= task.description %></label>
         </div>  
