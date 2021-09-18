@@ -1,0 +1,21 @@
+<h1 class="mb-3 mt-5 fs-5 badge rounded-pill bg-success">My events</h1>
+<div class="mb-4 mt-2 m-1 mx-md-4 d-flex flex-wrap justify-content-evenly">
+  <% @events.each do |event| %>
+    <div class="m-2 mt-3 card card-custom bg-light border-white border-0" style="width: 17rem">
+      <div class="card-custom-img"></div>
+      <div class="card-body" style="overflow-y: auto">
+        <h4 class="card-title mt-2"><%= event.name %></h4>
+        <h6 class=" mb-3 mt-3 ">Date:  
+          <span class="card-text mb-3 px-1 "><%= event.event_date.to_formatted_s(:rfc822) %></span>
+        </h6>
+        <h6 class=" mb-3">Time:
+          <span class="card-text mb-3 px-1"><%= event.event_time.to_formatted_s(:time) %></span>
+        </h6>
+        <h6 class=" mb-3">Place:
+          <span class="card-text mb-3 px-1"><%= event.place %></span>
+        </h6>
+        <%= link_to "Select", user_event_path(@user,event), class: "d-flex justify-content-center btn btn-primary btn-sm border border-1 border-warning" %>
+      </div>
+    </div>  
+  <% end %>      
+</div>   

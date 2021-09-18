@@ -1,12 +1,12 @@
 <% provide(:title, "Home") %>
-<section class="min-vh-100">
+<section class="min-vh-100 d-flex flex-column justify-content-center align-items-center">
   <% if @events.blank? %>
     <p class="text-center fs-5 my-5">Welcome to the BeMyGuest event planner!</p> 
     <p class="text-center my-5">Start planning by creating a 
      <%= link_to " new event!","#","aria-current" => "page", "data-bs-toggle"=>"modal", "data-bs-target"=>"#newEventModal",class: "link-to", "data-bs-whatever"=>"@mdo" %>
     </p>
   <% else %>
-    <%= render 'users/event_table' %>
+    <%= render 'users/event_cards' %>
   <%end%>
 </section>
 
