@@ -3,9 +3,10 @@
   <div class="container-fluid">
     <div class="row flex-nowrap">
       <%= render 'events/event_navbar' %>
-      <div class="right">
+      <div class="right d-flex flex-column justify-content-start align-items-center">
+        <h1 class="mb-3 mt-5 fs-5 badge rounded-pill bg-success">Guest list</h1>
         <% if @guests.blank? %>
-          <p class="text-center fw-bold mt-5">Guest list empty!</p>
+          <p class="text-center fw-bold mt-2">Empty list!</p>
         <% else %>
           <%= render 'connections/guest_table', locals: { guests: @guests } %>
         <% end %>

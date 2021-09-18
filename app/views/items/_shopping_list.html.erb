@@ -1,16 +1,13 @@
-<div class="table-responsive object-table mb-1 mt-5">
-  <table class="shadow table table-light mt-2 table-borderless border border-1 border-warning">
-    <tbody>
-      <tr>
-        <td colspan="2" class="text-dark border border-warning border-1 text-center p-1 bg-primary">Shopping list</td>
-      </tr>
-      <% @items.each do |item| %>
-        <tr>
-          <td><input type="checkbox" class="check-box form-check-input" data-checked="<%= item.checked %>" name="item" id="<%= item.id %>"><label class="object-label pointer fs-6" for="<%= item.id %>" ><%= item.name %></label></td>
-          <td><%=link_to "", user_event_item_path(@user, @event, item), method: :delete, "aria-label" => "Delete", class: "text-center btn-close", type: :button %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
-
+<div class="m-2 mt-3 card card-custom bg-light border-white border-0">
+  <div class="card-body d-flex flex-column" style="overflow-y: auto">
+    <% @items.each do |item| %>
+      <div class="d-flex justify-content-between">
+        <div class="p-1">
+          <input type="checkbox" class="check-box form-check-input" data-checked="<%= item.checked %>" name="item" id="<%= item.id %>">
+          <label class="object-label pointer fs-6" for="<%= item.id %>" ><%= item.name %></label>
+        </div>  
+        <%=link_to "", user_event_item_path(@user, @event, item), method: :delete, "aria-label" => "Delete", class: "text-center btn-close px-1", type: :button %>
+      </div>  
+    <% end %>  
+  </div>
+</div>   

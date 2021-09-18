@@ -120,12 +120,19 @@
 		max-width: 17.5rem;
 	}
 
+  .card{
+    width: 16rem;
+  }
+
   .contact-table{
     max-width: 90%;
   }
 }
 
 @media (min-width: 500px) {
+  .card{
+    width: 18rem;
+  }
 	.notes {
 		max-width: 25rem;
 	}

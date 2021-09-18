@@ -1,15 +1,13 @@
-<div class="table-responsive object-table mb-1 mt-5">
-  <table class="shadow table table-light mt-2 table-borderless border border-1 border-warning">
-    <tbody>
-      <tr>
-        <td colspan="2" class="text-dark border border-warning border-1 text-center p-1 bg-primary">To Do</td>
-      </tr>
-      <% @tasks.each do |task| %>
-        <tr>
-          <td><input type="checkbox" class="check-box form-check-input" data-checked="<%= task.checked %>" name="task" id="<%= task.id %>"><label class="object-label pointer fs-6" for="<%= task.id %>" ><%= task.description %></label></td>
-          <td><%=link_to "", user_event_task_path(@user, @event, task), method: :delete, "aria-label" => "Delete", class: "btn-close", type: :button %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+<div class="m-2 mt-3 card card-custom bg-light border-white border-0">
+  <div class="card-body d-flex flex-column" style="overflow-y: auto">
+    <% @tasks.each do |task| %>
+      <div class="d-flex justify-content-between">
+        <div class="p-1">
+          <input type="checkbox" class="check-box form-check-input" data-checked="<%= task.checked %>" name="task" id="<%= task.id %>">
+          <label class="object-label pointer fs-6" for="<%= task.id %>" ><%= task.description %></label>
+        </div>  
+        <%=link_to "", user_event_task_path(@user, @event, task), method: :delete, "aria-label" => "Delete", class: "text-center btn-close px-1", type: :button %>
+      </div>  
+    <% end %>  
+  </div>
+</div>   
