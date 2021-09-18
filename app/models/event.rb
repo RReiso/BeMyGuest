@@ -8,7 +8,7 @@ class Event < ApplicationRecord
            dependent: :destroy
   has_many :guests, through: :contact_connections, source: :contact
 
-  validates :name, presence: true, length: { maximum: 40 }
+  validates :name, presence: true
   validates :user_id, presence: true
   validates :event_time, presence: true
   validates :event_date, presence: true

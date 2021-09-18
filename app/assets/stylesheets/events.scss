@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 .right {
 	flex-shrink: 1 !important;
 }
@@ -36,17 +36,15 @@
 	display: inline;
 }
 
-
-
-.side-nav-link :hover{
+.side-nav-link :hover {
 	opacity: 0.8;
-  // text-decoration: underline;
+	// text-decoration: underline;
 	// color: var(--bs-blue);
 }
 
-.brand-name{
-  font-family: Pacifico;
-  font-size: 1.5rem;
+.brand-name {
+	font-family: Pacifico;
+	font-size: 1.5rem;
 }
 
 // .object-table{
@@ -59,8 +57,6 @@
 	// min-height: 10rem;
 	max-height: 100vh;
 }
-
-
 
 .tape {
 	top: 20px;
@@ -78,9 +74,6 @@
 	color: #424242;
 }
 
-
-
-
 #sticky-note {
 	display: block;
 	margin-bottom: 0.5rem;
@@ -95,16 +88,27 @@
 	border: none;
 	outline: none;
 }
+.card{
+  max-width:11rem;
+}
 
 .object-table {
 	margin: 0 auto;
 	max-width: 12rem;
 }
 
-.side-nav{
-  min-height: 100vh;
+
+.guest-name{
+  
+  overflow: auto;
+}
+.btn-close{
+  min-width: 16px;
 }
 
+.side-nav {
+	min-height: 100vh;
+}
 
 .contact-table {
 	margin: 0 auto;
@@ -115,6 +119,13 @@
 	max-width: 12.5rem;
 }
 
+@media (min-width: 320px) {
+
+	.card {
+		max-width: 14rem;
+	}
+}
+
 @media (min-width: 350px) {
 	.notes {
 		max-width: 25rem;
@@ -123,19 +134,19 @@
 		max-width: 17.5rem;
 	}
 
-  // .card{
-  //   width: 16rem;
-  // }
+	.card {
+		max-width: 17rem;
+	}
 
-  .contact-table{
-    max-width: 90%;
-  }
+	.contact-table {
+		max-width: 90%;
+	}
 }
 
 @media (min-width: 500px) {
-  // .card{
-  //   width: 18rem;
-  // }
+	.card {
+		max-width: 25rem;
+	}
 	.notes {
 		max-width: 25rem;
 	}
@@ -146,44 +157,47 @@
 	.object-table {
 		max-width: 90%;
 	}
-  .contact-table{
-    max-width: 90%;
-  }
+	.contact-table {
+		max-width: 90%;
+	}
 }
 
 
-
+@media (min-width:576px){
+  .guest-name{
+    width: 11rem;
+  }
+}
 @media (min-width: 700px) {
- .contact-table {
+  .guest-name{
+    width: 14rem;
+  }
+	.contact-table {
 		max-width: 80%;
 	}
-  	.object-table{
-      max-width: 70%;
-    }
-    	.notes {
+	.object-table {
+		max-width: 70%;
+	}
+	.notes, .card {
 		max-width: 28rem;
 	}
 }
 
-
-
-
-
 @media (min-width: 1000px) {
-	.notes {
+	.notes,.card {
 		max-width: 30rem;
 	}
-  .object-table{
-      max-width: 55%;
-    }
+	.object-table {
+		max-width: 55%;
+	}
 }
 @media (min-width: 1200px) {
-	.notes {
+	.notes, .card {
 		max-width: 35rem;
 	}
 }
 @media (min-width: 1300px) {
-	.notes {
+	.notes, .card {
 		max-width: 40rem;
 	}
 }
