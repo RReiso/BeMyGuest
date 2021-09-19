@@ -5,11 +5,11 @@
       <div class="d-flex mb-sm-1 flex-column flex-sm-row justify-content-between ">
         <div class="d-flex align-items-baseline">
         <p class="mb-0" style="min-width: 15px"><%= "#{i + 1}." %></p>
-          <%= link_to "#{guest.name}","#", class: "ps-1 lh-sm text-dark guest-name", "data-bs-toggle"=>"modal", "data-bs-target"=>"#guestInfoModal-#{guest.id}", "data-bs-whatever"=>"@mdo" %>
+          <%= link_to "#{guest.name}","#", class: "hover ps-1 lh-sm text-dark guest-name", "data-bs-toggle"=>"modal", "data-bs-target"=>"#guestInfoModal-#{guest.id}", "data-bs-whatever"=>"@mdo" %>
         </div>
         <div class="d-flex justify-content-between w-100 mb-3 mb-sm-0">
-          <span class="text-secondary ms-2 px-2 rsvp text-start"><%= connection.RSVP %></span>
-        <%= link_to "Edit","#", class: "text-success link-to ms-2 me-2 py-0 align-self-start", "data-bs-toggle"=>"modal", "data-bs-target"=>"#changeGuestStateModal-#{guest.id}", "data-bs-whatever"=>"@mdo" %>
+          <span class="text-success ms-2 px-2 rsvp text-start"><%= connection.RSVP %></span>
+        <%= link_to "Edit","#", class: "text-secondary hover ms-2 me-2 py-0 align-self-start", "data-bs-toggle"=>"modal", "data-bs-target"=>"#changeGuestStateModal-#{guest.id}", "data-bs-whatever"=>"@mdo" %>
         
         </div>
       </div>

@@ -36,7 +36,7 @@
 	display: inline;
 }
 
-.side-nav-link :hover {
+.side-nav-link:hover, .hover:hover {
 	opacity: 0.8;
 	// text-decoration: underline;
 	// color: var(--bs-blue);
@@ -122,7 +122,7 @@
 @media (min-width: 320px) {
 
 	.card {
-		max-width: 14rem;
+		max-width: 13rem;
 	}
 }
 
@@ -135,7 +135,7 @@
 	}
 
 	.card {
-		max-width: 17rem;
+		max-width: 15rem;
 	}
 
 	.contact-table {

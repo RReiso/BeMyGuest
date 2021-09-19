@@ -35,7 +35,6 @@
               <li><hr class="dropdown-divider"></li>
               <li><%= link_to "Log out", logout_path, method: :delete, class: "dropdown-item" %></li>
             </ul>
-            <%=render 'events/new_event_modal'%>
           </li>
         </div>           
         <%= render "shared/change_password_modal" %>
@@ -46,5 +45,6 @@
         <% end %>
       </ul>
     </div>
+            <%=render 'events/new_event_modal'%>
   </div>
 </nav>
