@@ -53,10 +53,14 @@ margin-top:45px;
 -webkit-box-sizing: border-box;
 box-sizing: border-box;
 }
-
+.brand-name{
+	font-family: Pacifico;
+	font-size: 1.5rem;
+}
 
 .brand-name{
   color: var(--bs-light) !important;
+
 }
 
 .pointer{
@@ -113,13 +117,25 @@ box-sizing: border-box;
   // margin-top: 3rem;
   margin: 3rem auto 0;
 }
+.home-lead{
+  font-size:1.5rem;
+ 
+}
+.dancing{
+    letter-spacing: 2px;
 
+   font-family: "Dancing Script";
+}
+
+// .dancing{
+//    font-family: "Dancing Script";
+// }
 
 .pacifico{
   font-family: Pacifico;
 }
 .font-dark{
-  color: #202c36;
+  color: #213544;
 }
 
 .fs-7{
@@ -133,8 +149,8 @@ background-size: cover;
 	background-color: rgba(114, 133, 165, 0.562);
  background-image: linear-gradient(
 			125deg,
-      rgba(235, 223, 121, 0.692),
-			rgba(125, 143, 194, 0.712)
+      rgba(247, 232, 98, 0.692),
+			rgba(152, 201, 241, 0.712)
 			
 		),
 		image-url("dim.png");
@@ -147,8 +163,25 @@ footer{
 }
 
 
-table{
-   border-collapse: collapse;
-  border-radius: 7px;
-  overflow: hidden;
+.home-text{
+  font-size: 1rem;
+}
+
+@media (min-width: 400px){
+  .home-lead{
+  font-size:2.5rem;
+}
+.home-text{
+  font-size: 1.125rem;
+}
+}
+
+
+@media (min-width: 700px){
+  .home-lead{
+  font-size:2.75rem;
+}
+.home-text{
+  font-size: 1.25rem;
+}
 }
