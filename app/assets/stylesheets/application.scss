@@ -55,15 +55,18 @@ box-sizing: border-box;
 }
 
 
-// .brand-name{
-//   font-family: Robotico;
-// }
+.brand-name{
+  color: var(--bs-light) !important;
+}
 
 .pointer{
   cursor: pointer;
 }
 .link-to{
-  color: rgb(18, 89, 136);
+  color: rgb(16, 109, 170);
+}
+.link-to:hover{
+ color: rgba(54, 121, 167, 0.712);
 }
 
 
@@ -91,6 +94,8 @@ box-sizing: border-box;
 // 	z-index: -1;
 // }
 
+
+
 // footer{
 //   position:absolute;
 //   bottom:0px;
@@ -115,9 +120,9 @@ background-size: cover;
 	background-position: center;
 	background-color: rgba(114, 133, 165, 0.562);
  background-image: linear-gradient(
-			115deg,
-      rgba(233, 227, 172, 0.692),
-			rgba(57, 87, 172, 0.712)
+			125deg,
+      rgba(235, 223, 121, 0.692),
+			rgba(125, 143, 194, 0.712)
 			
 		),
 		image-url("dim.png");

@@ -14,6 +14,9 @@
       <%= render "shared/navbar" %>
     </header>
     <main>
+      <% if logged_in? %>
+        <%= render partial: 'events/new_event_modal' %>
+      <% end %>
       <%= render partial: "shared/flash_messages" %>
     <%= yield %>
     </main>

@@ -27,6 +27,7 @@
           </div>
           <div class="modal-footer">
             <%=f.submit "Save", class: "shadow-sm border border-1 border-warning btn btn-primary btn-sm"%>
+            <%= link_to "Delete", user_contact_path(@user, contact), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-sm btn-danger", type: :button %>
           </div>
         <% end %>
       </div>

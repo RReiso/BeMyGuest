@@ -8,7 +8,7 @@
         <% if @guests.blank? %>
           <p class="text-center fw-bold mt-2">Empty list!</p>
         <% else %>
-          <%= render 'connections/guest_table', locals: { guests: @guests } %>
+          <%= render 'connections/guest_list', locals: { guests: @guests } %>
         <% end %>
         <div class="d-flex justify-content-center">
           <%= link_to "Add guests", contact_list_path(@user,@event),  class: "shadow-sm border border-1 border-warning btn btn-sm btn-primary mt-3 mb-5"%>

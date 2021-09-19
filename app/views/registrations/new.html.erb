@@ -1,14 +1,14 @@
 <% provide(:title, "Sign Up") %>
   <%=form_with model: @user, local: true, url: signup_path, html: {onsubmit: "return checkForm(this);"} do |f|%>
-    <section class="h-100 bg-image " style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.jpg');">
+    <section class="h-100 bg-image " style="background-image: url('dim.png');">
       <div class="mask d-flex align-items-center h-100" >
         <div class="container h-75">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-12 col-md-9 col-lg-7 col-xl-6 py-5">
               <%= render 'shared/form_error_messages', form: f %>
-                <div class="card" style="border-radius: 15px;">
+                <div class="card" style="border-radius: 5px;">
                   <div class="card-body p-5">
-                    <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+                    <h2 class="text-center mb-5">Create an account</h2>
                     <div class="form-outline mb-4">
                       <%= f.text_field :name, class: "form-control form-control-lg", maxlength: "50", required: true %>
                     <%= f.label :name, "Name", class: "form-label" %>
@@ -29,15 +29,15 @@
                       <%= f.check_box :terms_and_conditions, class: "form-check-input me-2", required: true%>	
                       <%= f.label :terms_and_conditions, class: "form-check-label" do %>
                         I have read and agree to the 
-                      <%= link_to "Terms and Conditions", root_path, class: "fw-bold text-body" %>  
+                      <%= link_to "Terms and Conditions", "#", class: "fw-bold link-to" %>  
                       <% end %> 
                     </div>
                     <div class="d-flex justify-content-center">
-                      <%=f.submit "Register", data: { disable_with: false}, class: "btn btn-success btn-block btn-lg gradient-custom-4 text-body"%>
+                      <%=f.submit "Register", data: { disable_with: false}, class: "btn btn-primary shadow-sm border border-1 border-warning btn-block btn"%>
                     </div>
                     <p class="text-center text-muted mt-5 mb-0">
                     Already have an account?
-                      <%= link_to "Log in", root_path, class: "fw-bold text-body" %>
+                      <%= link_to "Log in", root_path, class: "fw-bold link-to" %>
                     </p>
                   </div>
                 </div>

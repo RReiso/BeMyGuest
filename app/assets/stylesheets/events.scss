@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+
+
+
+
+
+
 .right {
 	flex-shrink: 1 !important;
 }
@@ -13,8 +20,8 @@
 
 .card-custom {
 	margin: 0.75rem;
-	max-width: 24rem;
-	min-width: 20rem;
+	// max-width: 24rem;
+	// min-width: 20rem;
 	overflow: hidden;
 	// min-height: 450px;
 	-moz-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
@@ -88,7 +95,7 @@
 	border: none;
 	outline: none;
 }
-.card{
+.card-general{
   max-width:11rem;
 }
 
@@ -121,7 +128,7 @@
 
 @media (min-width: 320px) {
 
-	.card {
+	.card-general {
 		max-width: 13rem;
 	}
 }
@@ -134,17 +141,18 @@
 		max-width: 17.5rem;
 	}
 
-	.card {
+	.card-general {
 		max-width: 15rem;
 	}
 
+  
 	.contact-table {
 		max-width: 90%;
 	}
 }
 
 @media (min-width: 500px) {
-	.card {
+	.card-general {
 		max-width: 25rem;
 	}
 	.notes {
@@ -178,13 +186,13 @@
 	.object-table {
 		max-width: 70%;
 	}
-	.notes, .card {
+	.notes, .card-general {
 		max-width: 28rem;
 	}
 }
 
 @media (min-width: 1000px) {
-	.notes,.card {
+	.notes,.card-general {
 		max-width: 30rem;
 	}
 	.object-table {
@@ -192,12 +200,12 @@
 	}
 }
 @media (min-width: 1200px) {
-	.notes, .card {
+	.notes, .card-general {
 		max-width: 35rem;
 	}
 }
 @media (min-width: 1300px) {
-	.notes, .card {
+	.notes, .card-general {
 		max-width: 40rem;
 	}
 }

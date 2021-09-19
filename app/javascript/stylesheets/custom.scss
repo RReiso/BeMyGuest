@@ -59,7 +59,7 @@ $theme-colors: (
 
 $link-color:                              $light !default;
 $link-decoration:                         none !default;
-$link-hover-color:                        $cyan!default;
+$link-hover-color:                        $info!default;
 // $link-shade-percentage:                   1% !default;
 
 
@@ -131,6 +131,6 @@ $btn-active-border-tint-amount:   10% !default;
 //   }
 // }
 
-$font-family-base:   Rubik;
+$font-family-base:   Rubik, Helvetica, Sans-serif;
 
 @import "../../../node_modules/bootstrap/scss/bootstrap";

@@ -1,0 +1,43 @@
+<div class="mx-0 mt-3 contact-card card card-custom bg-light border-white border-0">
+  <div class="card-body d-flex flex-column" style="overflow-y: auto">
+       <% @contacts.each.with_index do |contact, i| %>
+      <div class="d-flex mb-1 flex-column justify-content-between ">
+        <div class="d-flex">
+        <p class="my-0 entry-title text-success">Name:</p>
+           <p class="mx-1 my-0"><%= contact.name %></p>
+        </div>
+        <% if !contact.email.blank? %>
+         <div class="d-flex">
+        <p class="my-0 entry-title text-success">Email:</p>
+           <p class="mx-1 my-0"><%= contact.email %></p>
+        </div>
+        <% end %>
+
+<% if !contact.phone.blank? %>
+ <div class="d-flex">
+        <p class="my-0 entry-title text-success">Phone:</p>
+           <p class="mx-1 my-0"><%= contact.phone %></p>
+        </div>
+  <% end %>
+
+<% if !contact.notes.blank? %>
+ <div class="d-flex">
+        <p class="my-0 entry-title text-success">Notes:</p>
+           <p class="mx-1 my-0"><%= contact.notes %></p>
+        </div>
+<% end %>
+
+       
+        <%= link_to "Edit","#", class: "text-secondary hover py-0 align-self-center align-self-sm-start", "data-bs-toggle"=>"modal", "data-bs-target"=>"#editContactModal-#{contact.id}", "data-bs-whatever"=>"@mdo" %>
+
+        
+<hr class="hr">    
+      </div>
+    <% end %>  
+  </div>
+</div>
+
+
+
+
+<%= render "contacts/edit_contact_modal" %>

@@ -1,4 +1,4 @@
-<nav class="shadow-sm navbar navbar-expand-sm navbar-dark bg-success ">
+<nav class="shadow py-0 navbar navbar-expand-sm navbar-dark bg-success ">
   <div class="container-fluid">
     <% if logged_in? %>
       <%= link_to "BeMyGuest", current_user, class: "px-1 nav-link brand-name" %>
@@ -39,12 +39,11 @@
         </div>           
         <%= render "shared/change_password_modal" %>
         <% else %>
-          <li class="nav-item side-nav-link">
-            <%=mail_to "rreiso@protonmail.com", "Contact Us",  class: "nav-link active ",  "aria-current" => "page"%>
+          <li class="nav-item w-100 d-flex justify-content-start justify-content-sm-end side-nav-link">
+            <%=mail_to "rreiso@protonmail.com", "Contact Us",  class: "pb-0 nav-link active ",  "aria-current" => "page"%>
           </li>
         <% end %>
       </ul>
     </div>
-            <%=render 'events/new_event_modal'%>
   </div>
 </nav>
