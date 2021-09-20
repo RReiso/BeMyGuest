@@ -4,16 +4,18 @@
     <div class="row flex-nowrap">
       <%= render 'events/event_navbar' %>
       <div class="right d-flex flex-column justify-content-start align-items-center">
-        <h1 class="mb-3 mt-5 fs-5 badge rounded-pill bg-success">Select guests</h1>
         <% if @contacts.blank? %>
-          <p class="text-center mt-5">No existing contacts! </p>
-          <p class="text-center">Add some people to <%= link_to "Contacts", user_contacts_path(@user), class:"link-to" %> to be able to add them to the guest list.</p>
+          <div class="card shadow d-flex mt-4 mx-3 flex-column justify-content-center align-items-center">
+          <p class="text-center mt-4 pt-2 mb-3 px-5">No existing contacts!</p>
+          <p class="text-center mb-5 px-3">Add some people to <%= link_to "Contacts", user_contacts_path(@user), class:"link-to" %> to be able to add them to the guest list.</p>
+        </div>
         <% else %>
           <%= form_with model: [@current_user, @event, @new_connection], local: true do |f| %>
             
 
 
-<div class="mx-0 mt-3 card-general card card-custom bg-light border-white border-0">
+<div class="mx-0 mt-5 py-1 card-general card card-custom bg-light border-white border-0">
+       <h5 class="mb-2 mt-3 text-center">Select guests</h5>
   <div class="card-body d-flex flex-column" style="overflow-y: auto">
     <% @contacts.each do |contact| %>
      
@@ -25,7 +27,7 @@
           </label>
         </div>
         
-          <%= link_to "Details","#", class: "hover text-secondary link-to ms-3 ps-1 me-2 py-0 align-self-sm-end", "data-bs-toggle"=>"modal", "data-bs-target"=>"#guestInfoModal-#{contact.id}", "data-bs-whatever"=>"@mdo" %></td>
+          <%= link_to "Details","#", class: "hover text-secondary link-to ms-3 mb-1 ps-1 me-2 pt-0 pb-1 align-self-sm-end", "data-bs-toggle"=>"modal", "data-bs-target"=>"#guestInfoModal-#{contact.id}", "data-bs-whatever"=>"@mdo" %></td>
                       <%= render partial: "connections/guest_info_modal", locals: { guest: contact } %>
         
       </div>

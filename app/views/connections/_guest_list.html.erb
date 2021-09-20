@@ -1,4 +1,5 @@
-<div class="mx-0 mt-3 card-general card card-custom bg-light border-white border-0">
+<div class="mx-0 mt-5 py-1 card-general card card-custom bg-light border-white border-0">
+<h5 class="mb-2 mt-3 text-center">Guest list</h5>
   <div class="card-body d-flex flex-column" style="overflow-y: auto">
     <% @guests.each.with_index do |guest, i| %>
       <% connection = connection(guest, @event) %>
@@ -8,7 +9,7 @@
           <%= link_to "#{guest.name}","#", class: "hover ps-1 lh-sm text-dark guest-name", "data-bs-toggle"=>"modal", "data-bs-target"=>"#guestInfoModal-#{guest.id}", "data-bs-whatever"=>"@mdo" %>
         </div>
         <div class="d-flex justify-content-between w-100 mb-3 mb-sm-0">
-          <span class="text-success ms-2 px-2 rsvp text-start"><%= connection.RSVP %></span>
+          <span class="text-light-blue ms-2 px-2 rsvp text-start"><%= connection.RSVP %></span>
         <%= link_to "Edit","#", class: "text-secondary hover ms-2 me-2 py-0 align-self-start", "data-bs-toggle"=>"modal", "data-bs-target"=>"#changeGuestStateModal-#{guest.id}", "data-bs-whatever"=>"@mdo" %>
         </div>
       </div>

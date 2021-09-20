@@ -4,9 +4,10 @@
     <div class="row flex-nowrap">
       <%= render 'events/event_navbar' %>
       <div class="right d-flex flex-column justify-content-start align-items-center">
-        <h1 class="mb-3 mt-5 fs-5 badge rounded-pill bg-success">Guest list</h1>
         <% if @guests.blank? %>
-          <p class="text-center fw-bold mt-2">Empty list!</p>
+          <div class="card shadow d-flex mt-4 mx-3 flex-column justify-content-center align-items-center">
+          <p class="text-center my-2 py-1 px-3">Empty guest list!</p>
+          </div>
         <% else %>
           <%= render 'connections/guest_list', locals: { guests: @guests } %>
         <% end %>

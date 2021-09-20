@@ -1,11 +1,12 @@
 <% provide(:title, "Contacts") %>
 <section class="min-vh-100 d-flex flex-column justify-content-start align-items-center">
   <%= render 'contacts/new_contact_modal'%>
-     <h1 class="mb-3 mt-5 fs-5 badge rounded-pill bg-success">All Contacts</h1>
   <% if @contacts.blank? %>
-    <p class="text-center mt-5">Start adding contacts to your Contact book!</p>
+   <div class="card shadow d-flex mt-4 mx-3 flex-column justify-content-center align-items-center">
+    <p class="text-center my-2 py-2 py-sm-3 px-4">Start adding contacts to your Contact book!</p>
+    </div>
   <%else%>
-    <%= render 'contacts/contact_list' %>
+    <%= render 'contacts/all_contacts' %>
   <%end%>
   <div class="d-flex justify-content-center">
     <%= link_to "+ Add contact","#", class: "shadow-sm border border-1 border-warning mt-3 mb-5 btn btn-primary btn-sm", "data-bs-toggle"=>"modal", "data-bs-target"=>"#createContactModal", "data-bs-whatever"=>"@mdo" %>

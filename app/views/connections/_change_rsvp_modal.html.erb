@@ -14,7 +14,7 @@
           </div>
           <div class="modal-footer">
             <%= f.submit "Save", class: "border border-1 border-warning btn btn-primary btn-sm" %>
-            <%= link_to "Remove from guest list", user_event_connection_path(@user,@event,guest), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-sm btn-danger px-1", type: :button%>
+            <%= link_to "Remove from guest list", user_event_connection_path(@user,@event,guest), method: :delete, class: "btn btn-sm btn-danger px-1", type: :button%>
           </div>
         <% end %>
       </div>

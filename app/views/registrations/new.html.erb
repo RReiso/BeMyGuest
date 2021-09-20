@@ -4,28 +4,28 @@
       <div class="mask d-flex align-items-center h-100" >
         <div class="container h-75">
           <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-12 col-md-9 col-lg-7 col-xl-6 py-5">
+            <div class="col-10 col-md-8 col-lg-7 col-xl-6 py-5">
               <%= render 'shared/form_error_messages', form: f %>
                 <div class="card" style="border-radius: 5px;">
                   <div class="card-body p-5">
-                    <h2 class="text-center mb-5">Create an account</h2>
-                    <div class="form-outline mb-4">
-                      <%= f.text_field :name, class: "form-control form-control-lg", maxlength: "50", required: true %>
+                    <h3 class="text-center mb-3">Create an account</h3>
+                    <div class="form-outline mb-2">
+                      <%= f.text_field :name, class: "form-control form-control-md", maxlength: "50", required: true %>
                     <%= f.label :name, "Name", class: "form-label" %>
                     </div>
-                    <div class="form-outline mb-4">
-                      <%= f.email_field :email, class: "form-control form-control-lg", maxlength: "50", required: true%>
+                    <div class="form-outline mb-2">
+                      <%= f.email_field :email, class: "form-control form-control-md", maxlength: "50", required: true%>
                       <%= f.label :email, "Email", class: "form-label" %>  
                     </div>
-                    <div class="form-outline mb-4">
-                      <%= f.password_field :password, class: "form-control form-control-lg", minlength: "8", maxlength: "25", required: true%>
+                    <div class="form-outline mb-2">
+                      <%= f.password_field :password, class: "form-control form-control-md", minlength: "8", maxlength: "25", required: true%>
                       <%= f.label :password, "Password", class: "form-label" %>
                     </div>
-                    <div class="form-outline mb-4">
-                      <%= f.password_field :password_confirmation, class: "form-control form-control-lg", minlength: "8", maxlength: "25", required: true%>	
+                    <div class="form-outline mb-2">
+                      <%= f.password_field :password_confirmation, class: "form-control form-control-md", minlength: "8", maxlength: "25", required: true%>	
                       <%= f.label :password_confirmation, "Repeat your password", class: "form-label" %>
                     </div>
-                    <div class="form-check d-flex justify-content-center my-5">
+                    <div class="form-check d-flex justify-content-center my-2">
                       <%= f.check_box :terms_and_conditions, class: "form-check-input me-2", required: true%>	
                       <%= f.label :terms_and_conditions, class: "form-check-label" do %>
                         I have read and agree to the 
@@ -33,10 +33,11 @@
                       <% end %> 
                     </div>
                     <div class="d-flex justify-content-center">
-                      <%=f.submit "Register", data: { disable_with: false}, class: "btn btn-primary shadow-sm border border-1 border-warning btn-block btn"%>
+                      <%=f.submit "Register", data: { disable_with: false}, class: "my-1 btn btn-primary shadow-sm border border-1 border-warning btn-block btn"%>
                     </div>
-                    <p class="text-center text-muted mt-5 mb-0">
-                    Already have an account?
+                    <p class="text-center text-muted mt-1 mb-0 ">
+                    Already have an account? </p>
+                    <p class="text-center text-muted mt-0 mb-2">
                       <%= link_to "Log in", root_path, class: "fw-bold link-to" %>
                     </p>
                   </div>

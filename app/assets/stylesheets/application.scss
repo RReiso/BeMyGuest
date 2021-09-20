@@ -118,7 +118,8 @@ box-sizing: border-box;
   margin: 3rem auto 0;
 }
 .home-lead{
-  font-size:1.5rem;
+  font-size:1.75rem;
+  font-weight:bold;
  
 }
 .dancing{
@@ -138,6 +139,10 @@ box-sizing: border-box;
   color: #213544;
 }
 
+.text-light-blue{
+  color:rgb(22, 82, 131)
+}
+
 .fs-7{
   font-size:0.85rem;
 }
@@ -149,7 +154,7 @@ background-size: cover;
 	background-color: rgba(114, 133, 165, 0.562);
  background-image: linear-gradient(
 			125deg,
-      rgba(247, 232, 98, 0.692),
+      rgba(241, 234, 166, 0.692),
 			rgba(152, 201, 241, 0.712)
 			
 		),
