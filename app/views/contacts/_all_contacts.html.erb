@@ -4,26 +4,26 @@
        <% @contacts.each.with_index do |contact, i| %>
       <div class="d-flex mb-1 flex-column justify-content-between ">
         <div class="d-flex">
-        <p class="my-0 entry-title text-success">Name:</p>
+        <p class="my-0 text-light-blue entry-title">Name:</p>
            <p class="mx-1 my-0"><%= contact.name %></p>
         </div>
         <% if !contact.email.blank? %>
          <div class="d-flex">
-        <p class="my-0 entry-title text-success">Email:</p>
+        <p class="my-0 text-light-blue entry-title">Email:</p>
            <p class="mx-1 my-0"><%= contact.email %></p>
         </div>
         <% end %>
 
 <% if !contact.phone.blank? %>
  <div class="d-flex">
-        <p class="my-0 entry-title text-success">Phone:</p>
+        <p class="my-0 text-light-blue entry-title">Phone:</p>
            <p class="mx-1 my-0"><%= contact.phone %></p>
         </div>
   <% end %>
 
 <% if !contact.notes.blank? %>
  <div class="d-flex">
-        <p class="my-0 entry-title text-success">Notes:</p>
+        <p class="my-0 text-light-blue entry-title">Notes:</p>
            <p class="mx-1 my-0"><%= contact.notes %></p>
         </div>
 <% end %>
