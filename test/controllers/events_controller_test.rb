@@ -12,7 +12,7 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
     log_in_as(@user)
     get user_event_url(@user, @event)
     assert_response :success
-    assert_select 'title', "#{@event.name} | #{@base_title}"
+    assert_select 'title', "Event | #{@base_title}"
   end
 
   test 'should redirect show when not logged in' do

@@ -19,7 +19,7 @@ class ConnectionsChangeGuestRsvpStateTest < ActionDispatch::IntegrationTest
 
   test 'successful guest rsvp state change' do
     assert_template 'connections/index'
-    assert_select 'a.btn-outline-secondary'
+    assert_select 'a.text-secondary'
     patch user_event_connection_path(@user, @event, @connection),
           params: {
             connection: {
@@ -29,12 +29,12 @@ class ConnectionsChangeGuestRsvpStateTest < ActionDispatch::IntegrationTest
     @connection.reload
     follow_redirect!
     assert_template 'connections/index'
-    assert_select 'td.rsvp', 'declined'
+    assert_select 'span.text-light-blue', 'declined'
   end
 
   test 'unsuccessful guest rsvp state change' do
     assert_template 'connections/index'
-    assert_select 'a.btn-outline-secondary'
+    assert_select 'a.text-secondary'
     patch user_event_connection_path(@user, @event, @connection),
           params: {
             connection: {
@@ -44,6 +44,6 @@ class ConnectionsChangeGuestRsvpStateTest < ActionDispatch::IntegrationTest
     @connection.reload
     follow_redirect!
     assert_template 'connections/index'
-    assert_select 'td.rsvp', 'not invited'
+    assert_select 'span.text-light-blue', 'not invited'
   end
 end

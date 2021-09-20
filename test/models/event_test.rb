@@ -22,11 +22,6 @@ class EventTest < ActiveSupport::TestCase
     assert_not @birthday.valid?
   end
 
-  test 'name should not be too long' do
-    @birthday.name = 'x' * 41
-    assert_not @birthday.valid?
-  end
-
   test 'user_id should be present' do
     @birthday.user_id = ' '
     assert_not @birthday.valid?

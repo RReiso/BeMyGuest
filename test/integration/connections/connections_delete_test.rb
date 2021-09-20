@@ -19,7 +19,7 @@ class ConnectionsDeleteTest < ActionDispatch::IntegrationTest
 
   test 'successful delete' do
     assert_template 'connections/index'
-    assert_select 'a.btn-close'
+    assert_select 'a.text-secondary'
     assert_difference 'Connection.count', -1 do
       delete user_event_connection_path(@user, @event, @connection.contact_id)
     end

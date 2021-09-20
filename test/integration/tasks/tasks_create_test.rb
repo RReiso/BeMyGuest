@@ -49,6 +49,6 @@ class TasksCreateTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_template 'tasks/index'
     assert flash.empty?
-    assert_select 'table.table'
+    assert_select 'div.card-general'
   end
 end

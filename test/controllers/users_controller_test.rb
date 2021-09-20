@@ -19,7 +19,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     log_in_as(@user)
     get user_url(@user)
     assert_response :success
-    assert_select 'title', "Home | #{@base_title}"
+    assert_select 'title', "My Events | #{@base_title}"
   end
 
   test 'should redirect show when not logged in' do
