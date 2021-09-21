@@ -1,48 +1,30 @@
 // scss-docs-start color-variables
 $blue:    #212944 !default;
-$dark-blue: #42748c  !default;
-$indigo:  #6610f2 !default;
-$purple:  #5c475a !default;
-$pink:    #d63384 !default;
 $red:     #ad3525 !default;
 $orange:  #bb9748 !default;
 $yellow:  #fbcb6f !default;
-$green:   #198754 !default;
-$teal:    #20c997 !default;
-$cyan:    #3284a0 !default;
-$brown:   #6c5341 !default;
-$grey: #4f5253 !default;
+$grey:    #4f5253 !default;
+$light:   #f6f8f8 !default;
+$light-grey: #a8a1a1 !default;
 
-// scss-docs-end color-variables
-
-// scss-docs-start colors-map
+// Colors-map
 $colors: (
   "blue":       $blue,
-  "indigo":     $indigo,
-  "purple":     $purple,
-  "pink":       $pink,
   "red":        $red,
   "orange":     $orange,
-  "yellow":     $yellow,
-  "green":      $green,
-  "teal":       $teal,
-  "cyan":       $cyan,
-  // "light":      #f5c96d,
+  "light":      $light,
 ) !default;
-// scss-docs-end colors-map
 
-// scss-docs-start theme-color-variables
-$light:         #f6f8f8 !default;
-$primary:      $yellow !default;
+// Theme-color-variables
+$primary:       $yellow !default;
 $secondary:     $grey !default;
 $success:       $blue !default;
-$info:          rgb(168, 161, 161) !default;
+$info:          $light-grey !default;
 $warning:       $orange !default;
 $danger:        $red !default;
-// $dark:          $gray-900 !default;
-// scss-docs-end theme-color-variables
 
-// scss-docs-start theme-colors-map
+
+// Theme-colors-map
 $theme-colors: (
   "primary":    $primary,
   "secondary":  $secondary,
@@ -51,86 +33,21 @@ $theme-colors: (
   "warning":    $warning,
   "danger":     $danger,
   "light":      $light,
-  // "dark":       $dark
 ) !default;
-// scss-docs-end theme-colors-map
 
-// $body-bg:                   #fffae5 !default;
-
+// Links
 $link-color:                              $light !default;
 $link-decoration:                         none !default;
 $link-hover-color:                        $info!default;
-// $link-shade-percentage:                   1% !default;
 
-
-// $component-active-color:      $white !default;
+// Components
 $component-active-bg:         $success !default;
 
-// $table-color:                 $body-color !default;
-// $table-bg:                    transparent !default;
-// $table-accent-bg:             transparent !default;
-// $table-th-font-weight:        null !default;
-// $table-striped-color:         $table-color !default;
-// $table-striped-bg-factor:     .05 !default;
-// $table-striped-bg:            rgba($black, $table-striped-bg-factor) !default;
-// $table-active-color:          $table-color !default;
-// $table-active-bg-factor:      .1 !default;
-// $table-active-bg:             rgba($black, $table-active-bg-factor) !default;
-// $table-hover-color:           $table-color !default;
-// $table-hover-bg-factor:       .075 !default;
-// $table-hover-bg:              rgba($black, $table-hover-bg-factor) !default;
-// $table-border-factor:         .1 !default;
-// $table-border-width:          $border-width !default;
-// $table-border-color:          $border-color !default;
-
-// // scss-docs-start table-loop
-// $table-variants: (
-//   "primary":    shift-color($primary, $table-bg-scale),
-//   "secondary":  shift-color($secondary, $table-bg-scale),
-//   "success":    shift-color($success, $table-bg-scale),
-//   "info":       shift-color($info, $table-bg-scale),
-//   "warning":    shift-color($warning, $table-bg-scale),
-//   "danger":     shift-color($danger, $table-bg-scale),
-//   "light":      $light,
-//   "dark":       $dark,
-// ) !default;
-// // scss-docs-end table-loop
-
-// $btn-padding-y:               $input-btn-padding-y !default;
-// $btn-padding-x:               $input-btn-padding-x !default;
+// Buttons
 $btn-padding-y-sm:            0.25rem !default;
 $btn-padding-x-sm:            0.5rem !default;
-$btn-hover-bg-shade-amount:       25% !default;
-$btn-hover-bg-tint-amount:        15% !default;
-$btn-hover-border-shade-amount:   20% !default;
-$btn-hover-border-tint-amount:    10% !default;
-$btn-active-bg-shade-amount:      25% !default;
-$btn-active-bg-tint-amount:       20% !default;
-$btn-active-border-shade-amount:  25% !default;
-$btn-active-border-tint-amount:   10% !default;
 
-// $nav-pills-link-active-color:       $component-active-color !default;
-// $nav-pills-link-active-bg:          $component-active-bg !default;
-
-// .navbar-nav {
-//   .nav-link {
-//     &:hover,
-//     &:focus {
-//       color: red;
-//     }
-//   }
-// }
-
-// .nav-link {
-  
-  
-//   &:hover,
-//   &:focus {
-//     color: red;
-//     // text-decoration: if($link-hover-decoration == underline, none, null);
-//   }
-// }
-
+// Fonts
 $font-family-base:   Rubik, Helvetica, Sans-serif;
 
 @import "../../../node_modules/bootstrap/scss/bootstrap";
