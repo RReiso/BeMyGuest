@@ -1,31 +1,34 @@
-// @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap");
-// // @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
-// @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-// @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Gluten:wght@100&display=swap');
+/*
+ *= require_tree .
+ *= require_self
+ */
 
-
-// @import "application.scss";
-
-
-
+/* || UTILITIES */
 
 .right {
 	flex-shrink: 1 !important;
 }
+
 .event-container {
 	margin: 0 auto;
 }
 
-// .empty {
+/* || SIDE NAVBAR */
 
-// }
+.side-nav {
+	min-height: 100vh;
+}
+
+.side-nav-link:hover,
+.hover:hover {
+	opacity: 0.7;
+}
+
+/* || CARD */
 
 .card-custom {
 	margin: 0.75rem;
-	// max-width: 24rem;
-	// min-width: 20rem;
 	overflow: hidden;
-	// min-height: 450px;
 	-moz-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
 	-webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
 	box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
@@ -38,31 +41,21 @@
 	background-position: center;
 	border-color: inherit;
 	background-image: image-url("celebration1.png");
-	// border-bottom: 5px solid red;
 }
 
 .card-details {
 	display: inline;
 }
 
-.side-nav-link:hover, .hover:hover {
-	opacity: 0.7;
-	// text-decoration: underline;
-	// color: var(--bs-blue);
+.card-general {
+	max-width: 11rem;
 }
 
-
-
-
-
-// .object-table{
-//   max-width: 12rem;
-// }
+/* || STICKY NOTE */
 
 .notes {
 	width: 95%;
 	margin: 0 auto;
-	// min-height: 10rem;
 	max-height: 100vh;
 }
 
@@ -87,7 +80,6 @@
 	margin-bottom: 0.5rem;
 	width: 100%;
 	min-height: 15rem;
-
 	padding: 1.5rem;
 	background-color: var(--bs-light);
 	-moz-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
@@ -96,39 +88,18 @@
 	border: none;
 	outline: none;
 }
-.card-general{
-  max-width:11rem;
-}
 
-.object-table {
-	margin: 0 auto;
-	max-width: 12rem;
-}
-
-
-.guest-name{
-  
-  overflow: auto;
-}
-.btn-close{
-  min-width: 16px;
-}
-
-.side-nav {
-	min-height: 100vh;
-}
-
-.contact-table {
-	margin: 0 auto;
-	max-width: 15rem;
+.guest-name {
+	overflow: auto;
 }
 
 .object-input {
 	max-width: 12.5rem;
 }
 
-@media (min-width: 320px) {
+/* || MEDIA */
 
+@media (min-width: 320px) {
 	.card-general {
 		max-width: 13rem;
 	}
@@ -138,17 +109,9 @@
 	.notes {
 		max-width: 25rem;
 	}
-	.object-table {
-		max-width: 17.5rem;
-	}
 
 	.card-general {
 		max-width: 15rem;
-	}
-
-  
-	.contact-table {
-		max-width: 90%;
 	}
 }
 
@@ -163,69 +126,41 @@
 		height: 24rem;
 		padding: 2.5rem;
 	}
-	.object-table {
-		max-width: 90%;
-	}
-	.contact-table {
-		max-width: 90%;
-	}
 }
 
-
-@media (min-width:576px){
-  .guest-name{
-    width: 11rem;
-  }
+@media (min-width: 576px) {
+	.guest-name {
+		width: 11rem;
+	}
 }
 @media (min-width: 700px) {
-  .guest-name{
-    width: 14rem;
-  }
-	.contact-table {
-		max-width: 80%;
+	.guest-name {
+		width: 14rem;
 	}
-	.object-table {
-		max-width: 70%;
-	}
-	.notes, .card-general {
+
+	.notes,
+	.card-general {
 		max-width: 28rem;
 	}
 }
 
 @media (min-width: 1000px) {
-	.notes,.card-general {
+	.notes,
+	.card-general {
 		max-width: 30rem;
 	}
-	.object-table {
-		max-width: 55%;
-	}
 }
+
 @media (min-width: 1200px) {
-	.notes, .card-general {
+	.notes,
+	.card-general {
 		max-width: 35rem;
 	}
 }
+
 @media (min-width: 1300px) {
-	.notes, .card-general {
+	.notes,
+	.card-general {
 		max-width: 40rem;
 	}
 }
-// }
-
-// @media (min-width:500px){
-//   #sticky-note{
-//   	max-width: 3rem;
-//   }
-// }
-
-// @media (min-width:700px){
-//   #sticky-note{
-//     width: 25rem;
-//   }
-// }
-
-// @media (min-width:1024px){
-//   #sticky-note{
-//     width: 33rem;
-//   }
-// }

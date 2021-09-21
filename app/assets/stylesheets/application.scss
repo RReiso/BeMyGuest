@@ -1,18 +1,9 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
  *= require_tree .
  *= require_self
  */
+
+/* || GENERAL STYLES */
 
 html {
 	box-sizing: border-box;
@@ -25,6 +16,20 @@ html {
 	box-sizing: inherit;
 }
 
+body {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: fixed;
+	background-color: rgba(114, 133, 165, 0.562);
+	background-image: linear-gradient(
+			125deg,
+			rgba(245, 240, 199, 0.692),
+			rgba(204, 227, 247, 0.863)
+		),
+		image-url("dim.png");
+}
+
+/* || UTILITIES */
 
 .sr-only {
 	position: absolute;
@@ -35,158 +40,64 @@ html {
 	overflow: hidden;
 }
 
-
-
-
-
 .field_with_errors {
-  background-color: none;
+	background-color: none;
 }
 
-/* miscellaneous */
-.debug_dump {
-clear: both;
-float: left;
-width: 100% ;
-margin-top:45px;
--moz-box-sizing: border-box;
--webkit-box-sizing: border-box;
-box-sizing: border-box;
+.pointer {
+	cursor: pointer;
 }
-.brand-name{
+.link-to {
+	color: rgb(16, 109, 170);
+}
+.link-to:hover {
+	color: rgba(54, 121, 167, 0.712);
+}
+
+.btn-close {
+	min-width: 16px;
+}
+
+.font-dark {
+	color: #213544;
+}
+
+.text-light-blue {
+	color: rgb(22, 82, 131);
+}
+
+.fs-7 {
+	font-size: 0.85rem;
+}
+
+/* || FONTS */
+
+.dancing {
+	letter-spacing: 2px;
+	font-family: "Dancing Script";
+}
+
+.pacifico {
 	font-family: Pacifico;
+}
+
+/* || NAVBAR */
+
+.navbar-nav {
+	width: 100%;
+}
+
+.brand-name {
 	font-size: 1.5rem;
+	color: var(--bs-light) !important;
 }
 
-.brand-name{
-  color: var(--bs-light) !important;
+/* || FOOTER */
 
+footer {
+	color: whitesmoke;
 }
 
-.pointer{
-  cursor: pointer;
-}
-.link-to{
-  color: rgb(16, 109, 170);
-}
-.link-to:hover{
- color: rgba(54, 121, 167, 0.712);
-}
-
-
-/* || BACKGROUND */
-
-// body::before {
-// 	content: "";
-// 	position: absolute;
-// 	top: 0;
-// 	left: 0;
-// 	min-height: 100%;
-// 	width: 100%;
-// 	z-index: -1;
-// 	background-size: cover;
-// 	background-repeat: no-repeat;
-// 	background-position: center;
-// 	background-color: rgba(114, 133, 165, 0.562);
-// 	background-image: linear-gradient(
-// 			115deg,
-// 			rgba(97, 186, 202, 0.712),
-// 			rgba(201, 189, 80, 0.692)
-// 		),
-// 		image-url("celebration1.png");
-//     opacity:0.7;
-// 	z-index: -1;
-// }
-
-
-
-// footer{
-//   position:absolute;
-//   bottom:0px;
-//   width:100vw;
-// }
-
-
-.navbar-nav{
-  width:100%;
-}
-
-.title{
-  display:block;
-  width: fit-content;
-  // margin-top: 3rem;
-  margin: 3rem auto 0;
-}
-.home-lead{
-  font-size:1.75rem;
-  font-weight:bold;
- 
-}
-.dancing{
-    letter-spacing: 2px;
-
-   font-family: "Dancing Script";
-}
-
-// .dancing{
-//    font-family: "Dancing Script";
-// }
-
-.pacifico{
-  font-family: Pacifico;
-}
-.font-dark{
-  color: #213544;
-}
-
-.text-light-blue{
-  color:rgb(22, 82, 131)
-}
-
-.fs-7{
-  font-size:0.85rem;
-}
-body{
-
-background-size: cover;
-	background-repeat: no-repeat;
-	background-position: fixed;
-	background-color: rgba(114, 133, 165, 0.562);
- background-image: linear-gradient(
-			125deg,
-      rgba(245, 240, 199, 0.692),
-			rgba(204, 227, 247, 0.863)
-			
-		),
-		image-url("dim.png");
-}
-// .nav-link-hov :hover{
-// color: #b2bac2 !important;
-// }
-footer{
-  color:whitesmoke;
-}
-
-
-.home-text{
-  font-size: 1rem;
-}
-
-@media (min-width: 400px){
-  .home-lead{
-  font-size:2.5rem;
-}
-.home-text{
-  font-size: 1.25rem;
-}
-}
-
-
-@media (min-width: 700px){
-  .home-lead{
-  font-size:2.75rem;
-}
-.home-text{
-  font-size: 1.5rem;
-}
-}
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
