@@ -6,24 +6,24 @@
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-11 col-md-8 col-lg-7 col-xl-6 py-5">
               <%= render 'shared/form_error_messages', form: f %>
-                <div class="card" style="border-radius: 5px;">
+                <div class="card shadow" style="border-radius: 5px;">
                   <div class="card-body p-5">
                     <h3 class="text-center mb-3">Create an account</h3>
                     <div class="form-outline mb-2">
+                      <%= f.label :name, "Name", class: "form-label mb-0" %>
                       <%= f.text_field :name, class: "form-control form-control-md", maxlength: "50", required: true %>
-                    <%= f.label :name, "Name", class: "form-label" %>
                     </div>
                     <div class="form-outline mb-2">
+                      <%= f.label :email, "Email", class: "form-label mb-0" %>  
                       <%= f.email_field :email, class: "form-control form-control-md", maxlength: "50", required: true%>
-                      <%= f.label :email, "Email", class: "form-label" %>  
                     </div>
                     <div class="form-outline mb-2">
+                      <%= f.label :password, "Password", class: "form-label mb-0" %>
                       <%= f.password_field :password, class: "form-control form-control-md", minlength: "8", maxlength: "25", required: true%>
-                      <%= f.label :password, "Password", class: "form-label" %>
                     </div>
                     <div class="form-outline mb-2">
+                      <%= f.label :password_confirmation, "Repeat your password", class: "form-label mb-0" %>
                       <%= f.password_field :password_confirmation, class: "form-control form-control-md", minlength: "8", maxlength: "25", required: true%>	
-                      <%= f.label :password_confirmation, "Repeat your password", class: "form-label" %>
                     </div>
                     <div class="form-check d-flex justify-content-center my-2">
                       <%= f.check_box :terms_and_conditions, class: "form-check-input me-2", required: true%>	

@@ -2,8 +2,8 @@
 <section class="min-vh-100 d-flex flex-column justify-content-start align-items-center">
   <%= render 'contacts/new_contact_modal'%>
   <% if @contacts.blank? %>
-   <div class="card shadow d-flex mt-4 mx-3 flex-column justify-content-center align-items-center">
-    <p class="text-center my-2 py-2 py-sm-3 px-4">Start adding contacts to your Contact book!</p>
+    <div class="card shadow d-flex mt-4 mx-3 flex-column justify-content-center align-items-center">
+      <p class="text-center my-2 py-2 py-sm-3 px-4">Start adding contacts to your Contact book!</p>
     </div>
   <%else%>
     <%= render 'contacts/all_contacts' %>

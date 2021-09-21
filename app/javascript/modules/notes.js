@@ -2,7 +2,6 @@ import { sendData } from './http-requests.js'
 
 export function checkNotes() {
 	const notes = document.querySelector("#sticky-note");
-  
 	let timer = 0;
 	if (notes) {
 		notes.addEventListener("keydown", function () {

@@ -6,7 +6,7 @@
       <div class="right d-flex flex-column justify-content-start align-items-center" style="overflow-y: auto">
         <% if @items.blank? %>
           <div class="card shadow d-flex mt-4 mx-3 flex-column justify-content-center align-items-center">
-          <p class="text-center my-2 py-1 px-3">Empty shopping list!</p>
+            <p class="text-center my-2 py-1 px-3">Empty shopping list!</p>
           </div>
         <% else %>
           <%= render 'items/shopping_list'%>

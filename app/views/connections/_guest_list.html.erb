@@ -1,5 +1,5 @@
 <div class="mx-0 mt-5 py-1 card-general card card-custom bg-light border-white border-0">
-<h5 class="mb-2 mt-3 text-center">Guest list</h5>
+<h5 class="mb-2 mt-3 px-4 text-center">Guest list</h5>
   <div class="card-body d-flex flex-column" style="overflow-y: auto">
     <% @guests.each.with_index do |guest, i| %>
       <% connection = connection(guest, @event) %>
@@ -14,7 +14,7 @@
         </div>
       </div>
       <%= render partial: "connections/guest_info_modal", locals: { guest: guest, connection: connection } %>
- <%= render partial: "connections/change_rsvp_modal", locals: { guests: @guests }%> 
+      <%= render partial: "connections/change_rsvp_modal", locals: { guests: @guests }%> 
     <% end %>  
   </div>
 </div>
