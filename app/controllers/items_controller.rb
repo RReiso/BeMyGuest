@@ -18,11 +18,6 @@ class ItemsController < ApplicationController
     redirect_to user_event_items_path(@user, @event)
   end
 
-  def update
-    flash_danger('updating', 'item') unless @item.update(item_params)
-    redirect_to user_event_items_path(@user, @event)
-  end
-
   def update_item_state
     @item.update(item_checked_params)
     head :no_content
