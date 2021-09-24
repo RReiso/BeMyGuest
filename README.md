@@ -4,7 +4,7 @@
   <br>
   BeMyGuest
 </h1>
-<h3 align="center">A stress-free event planner for perfect gatherings.</h3>
+<h3 align="center">A stress-free event planner for perfect events</h3>
 <p align="center">
   <img src="https://img.shields.io/badge/made%20by-RReiso-green">
   <img src ="https://img.shields.io/badge/Ruby-2.7.2-red">
@@ -18,7 +18,7 @@
 
 ## Description
 This is an event planner app that was built as a final project for Harvard's CS50 Introduction to Computer Science course. It aims to help users organize events by managing shopping, to do and guest lists.
-[Short video]()
+[Short video](https://www.youtube.com/watch?v=vYt44GFptgg)
 
 ## Key Features
 * Sign up and Log in
@@ -53,6 +53,7 @@ This is an event planner app that was built as a final project for Harvard's CS5
 * Include event budget management
 
 ## Reflection
-With this project I expanded my knowledge in writing model validations (using attributes like presence, inclusion, format, acceptance etc.), witnessed the importance of writing and running model, controller and integration tests that I wrote using Minitest, practiced writing helper methods, creating model associations, installing Bootstrap and modifying it's themes, as well as working with SASS files.
+With this project I expanded my knowledge in writing model validations (using attributes like presence, inclusion, format, acceptance etc.), witnessed the importance of writing and running model, controller and integration tests that I wrote using Minitest, practiced writing helper methods and creating model associations, and learned how to use SASS to modify Bootstrap themes.
 
 One of the main difficulties I faced was combining data from existing data tables (Events, Contacts) into a third table (Connections). Creating a Connection model and using foreign keys allowed contacts to be added as guests to multiple events without repeating information from Contacts and Events tables.
+Working on design and coloring has also been a challenge and I tried to create as smooth user experience as I could.
