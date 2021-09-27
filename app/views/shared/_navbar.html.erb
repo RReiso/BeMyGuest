@@ -19,7 +19,7 @@
             <%= link_to "+ New","#", class: "nav-link active","aria-current" => "page", "data-bs-toggle"=>"modal", "data-bs-target"=>"#newEventModal", "data-bs-whatever"=>"@mdo" %>
           </li>
           <li class="nav-item side-nav-link">
-            <%=link_to "Contacts", user_contacts_path(current_user), class: "nav-link active",  "aria-current" => "page"%>
+            <%= link_to "Contacts", user_contacts_path(current_user), class: "nav-link active",  "aria-current" => "page" %>
           </li>
         </div>
         <div class="d-sm-flex justify-content-end">
