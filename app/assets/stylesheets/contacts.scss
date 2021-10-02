@@ -14,25 +14,25 @@ min-width: 3.5rem;
   max-width: 15rem;
 }
 
-@media (min-width: 320px){
+@media (min-width: 20em){
  .contact-card{
     max-width: 18rem;
   }
 }
 
-@media (min-width: 360px){
+@media (min-width: 22.5em){
  .contact-card{
     max-width: 19rem;
   }
 }
 
-@media (min-width: 500px) {
+@media (min-width: 31.25em) {
 	 .contact-card{
     max-width: 27rem;
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 43.75em) {
    .contact-card{
     max-width: 40rem;
   }

@@ -99,13 +99,13 @@
 
 /* || MEDIA */
 
-@media (min-width: 320px) {
+@media (min-width: 20em) {
 	.card-general {
 		max-width: 13rem;
 	}
 }
 
-@media (min-width: 350px) {
+@media (min-width: 22em) {
 	.notes {
 		max-width: 25rem;
 	}
@@ -115,7 +115,7 @@
 	}
 }
 
-@media (min-width: 500px) {
+@media (min-width: 31.25em) {
 	.card-general {
 		max-width: 25rem;
 	}
@@ -128,12 +128,12 @@
 	}
 }
 
-@media (min-width: 576px) {
+@media (min-width: 36em) {
 	.guest-name {
 		width: 11rem;
 	}
 }
-@media (min-width: 700px) {
+@media (min-width: 43.75em) {
 	.guest-name {
 		width: 14rem;
 	}
@@ -144,21 +144,21 @@
 	}
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 62.5em) {
 	.notes,
 	.card-general {
 		max-width: 30rem;
 	}
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 75em) {
 	.notes,
 	.card-general {
 		max-width: 35rem;
 	}
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 81.25em) {
 	.notes,
 	.card-general {
 		max-width: 40rem;
