@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
 	include ApplicationHelper
+	include HomeHelper
 	include SessionsHelper
 	include UsersHelper
 	include EventsHelper
