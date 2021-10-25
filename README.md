@@ -47,6 +47,26 @@ This is an event planner app that was built as a final project for Harvard's CS5
 * [Ruby on Rails](https://rubyonrails.org/) - Ruby Framework
 * [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/) - CSS Framework
 
+## Installation
+Clone the repository:
+```
+git clone git@github.com:RReiso/BeMyGuest.git
+cd BeMyGuest
+```
+Install dependencies:
+```
+bundle && yarn
+```
+Initialize the database:
+```
+rails db:create db:migrate db:seed
+```
+Start the server:
+```
+rails s
+```
+You can see the project running at [http://localhost:3000](http://localhost:3000)
+
 ## Future Improvements
 * Improve password change
 * User authentication
