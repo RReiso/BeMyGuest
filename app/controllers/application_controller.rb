@@ -1,10 +1,10 @@
 class ApplicationController < ActionController::Base
-	include ApplicationHelper
-	include HomeHelper
-	include SessionsHelper
-	include UsersHelper
-	include EventsHelper
+  include ApplicationHelper
+  include HomeHelper
+  include SessionsHelper
+  include UsersHelper
+  include EventsHelper
 
-	before_action :new_event
-	add_flash_types :success, :warning, :danger, :info
+  before_action :new_event
+  add_flash_types :success, :warning, :danger, :info
 end
