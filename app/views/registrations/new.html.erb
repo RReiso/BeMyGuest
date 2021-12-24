@@ -2,7 +2,7 @@
   <%=form_with model: @user, local: true, url: signup_path, html: {onsubmit: "return checkForm(this);"} do |f|%>
     <section class="h-100 bg-image " style="background-image: url('dim.png');">
       <div class="mask d-flex align-items-center h-100" >
-        <div class="container h-75">
+        <div class="container vh-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-11 col-md-8 col-lg-7 col-xl-6 py-5">
               <%= render 'shared/form_error_messages', form: f %>
