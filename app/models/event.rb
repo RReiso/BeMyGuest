@@ -2,11 +2,8 @@ class Event < ApplicationRecord
   belongs_to :user
   has_many :tasks, dependent: :destroy
   has_many :items, dependent: :destroy
-  has_many :contact_connections,
-           class_name: 'Connection',
-           foreign_key: 'event_id',
-           dependent: :destroy
-  has_many :guests, through: :contact_connections, source: :contact
+  has_many :connections, dependent: :destroy
+  has_many :guests, through: :connections, source: :contact
 
   validates :name, presence: true
   validates :user_id, presence: true
