@@ -18,4 +18,10 @@ class SessionsController < ApplicationController
     log_out if logged_in?
     redirect_to root_url
   end
+
+  def log_in_guest
+    @user = User.find_by(email: 'guest1@email.com')
+    log_in @user
+    redirect_to @user
+  end
 end

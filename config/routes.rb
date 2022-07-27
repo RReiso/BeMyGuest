@@ -4,22 +4,23 @@ Rails.application.routes.draw do
   get 'contacts/update'
   get 'contacts/destroy'
   root 'home#index'
-  get "/login", to: "home#index"
-  post '/', to: "sessions#create"
+  get '/login', to: 'home#index'
+  post '/', to: 'sessions#create'
+  post '/guest', to: 'sessions#log_in_guest'
 
-  delete "/logout", to: "sessions#destroy"
+  delete '/logout', to: 'sessions#destroy'
 
   get '/signup', to: 'registrations#new'
   post '/signup', to: 'registrations#create'
-  
+
   patch '/users/:user_id/events/:event_id/tasks/:id/state',
         to: 'tasks#update_task_state', as: :update_task_state
-  patch '/users/:user_id/events/:event_id/items/:id/state', 
+  patch '/users/:user_id/events/:event_id/items/:id/state',
         to: 'items#update_item_state', as: :update_item_state
   patch '/users/:user_id/events/:event_id/notes', to: 'events#save_notes', as: :notes
 
   get '/users/:user_id/events/:event_id/guests', to: 'connections#index', as: :guests
-  get '/users/:user_id/events/:event_id/guests/contact_list', 
+  get '/users/:user_id/events/:event_id/guests/contact_list',
       to: 'connections#contact_list', as: :contact_list
 
   resources :users do
