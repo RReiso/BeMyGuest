@@ -14,7 +14,7 @@
 </p>
 <p align="center">
 <img src="./app/assets/video/demo-video.gif" width="500"></p>
-<h3 align="center"><a  href="https://bemyguestapp.herokuapp.com//">See live</a></h3>
+<h3 align="center"><a  href="https://bemyguestapp.herokuapp.com//"></a></h3>
 
 ## Description
 This is an event planner app that was built as a final project for Harvard's CS50 Introduction to Computer Science course. It aims to help users organize events by managing shopping, to do and guest lists.
